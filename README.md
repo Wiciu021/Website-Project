@@ -6,3 +6,9 @@ Steps: _Build webstie -> connect it with database -> add functions like comments
 PC environment: Ubuntu 22.04.4 LTS
 
 Everything we change push on this git repository with proper commit name and some desciption
+
+HTML - piszesz nazwy z myslnikami("laura-jest-gorsza")
+
+JS - piszesz w taki o to sposob("lauraJestGorsza")
+
+imo laura nie jest 10/10
