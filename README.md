@@ -7,8 +7,7 @@ PC environment: Ubuntu 22.04.4 LTS
 
 Everything we change push on this git repository with proper commit name and some desciption
 
-HTML - piszesz nazwy z myslnikami("laura-jest-gorsza")
+HTML - write with dashes in this scheme: ("you-have-diarhoea")
 
-JS - piszesz w taki o to sposob("lauraJestGorsza")
+JS - write in this scheme: ("youHaveDiarhoea")
 
-imo laura nie jest 10/10
