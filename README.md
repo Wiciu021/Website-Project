@@ -11,3 +11,4 @@ HTML - write with dashes in this scheme: ("you-have-diarhoea")
 
 JS - write in this scheme: ("youHaveDiarhoea")
 
+OMG hejkaaaaaa
