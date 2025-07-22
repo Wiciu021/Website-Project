@@ -12,3 +12,5 @@ app.use(cors()) // żądania z frontend
 app.use(helmet()) // gowno ale w poradniku mówią że to bezpieczne
 app.use(morgan('dev')) // loguje żądania
 app.use(express.json())
+
+//elo
