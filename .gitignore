@@ -1,0 +1,35 @@
+# Environment variables
+.env
+
+# Dependencies
+node_modules/
+
+# Prisma artifacts (adjust if you store migrations in this directory)
+prisma/migrations/
+prisma/dev.db*
+prisma/*.db
+prisma/*.db-journal
+
+# Build artifacts
+dist/
+build/
+*.log
+logs/
+*.pid
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Docker artifacts
+docker-compose.*.yml
+docker-compose.override.yml
