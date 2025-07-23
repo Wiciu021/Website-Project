@@ -11,6 +11,7 @@
   width: 100%;
   box-shadow: 0px 0px 20px rgba(66, 66, 62, 0.6);
   padding-inline: 1rem;
+  z-index: 1000;
 }
 
 .header .header-inner {

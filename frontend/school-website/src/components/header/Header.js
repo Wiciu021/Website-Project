@@ -1,7 +1,7 @@
 import React from 'react'
-import headerData from '../Data/header-nav'
 import ListItem from './ListItem'
 import './header.css'
+import headerData from '../../Data/header-nav'
 
 const Header = () => {
   return (
