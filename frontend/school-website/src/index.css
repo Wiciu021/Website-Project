@@ -16,6 +16,12 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  --green-1: #051F20; /* Very dark teal */
+  --green-2: #0B2B26; /* Deep forest green */
+  --green-3: #163832; /* Dark muted green */
+  --green-4: #235347; /* Medium deep green */
+  --green-5: #8EB69B; /* Soft sage green */
+  --green-6: #DAF1DE; /* Pale mint */
 }
 
 html {

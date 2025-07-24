@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: red;
+  background-color: var(--green-1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,5 +31,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  color: var(--green-6);
+  font-weight: 500;
 }

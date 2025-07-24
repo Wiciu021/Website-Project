@@ -2,8 +2,10 @@
   height: calc(100vh - 55px);
   width: 100vw;
   background-image: url('../../images/hero-image.png');
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,8 +23,8 @@
 }
 
 .hero-section h1 {
-  color: white;
-  font-size: 2.5em;
+  color: var(--green-6);
+  font-size: 3rem;
   margin-bottom: 1rem;
 }
 
