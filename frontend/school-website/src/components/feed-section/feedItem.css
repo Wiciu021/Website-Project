@@ -1,0 +1,32 @@
+.feed-item {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-height: 400px;
+  max-height: 450px;
+  min-width: 300px;
+  max-width: 450px;
+  border-radius: 8%;
+  overflow: hidden;
+}
+
+.feed-item .description-container {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  background-color: var(--green-4);
+  padding: 10px 15px;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.feed-item .description-container h3 {
+  color: var(--green-6);
+  font-weight: 600;
+  font-size: 1.125rem;
+}

@@ -1,0 +1,35 @@
+.hero-section {
+  height: calc(100vh - 55px);
+  width: 100vw;
+  background-image: url('../../photos/hero-image.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: -10;
+  overflow: hidden;
+}
+
+.hero-section::after {
+  position: absolute;
+  content: '';
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+}
+
+.hero-section h1 {
+  color: var(--green-6);
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  color: white;
+  text-align: center;
+  font-style: italic;
+}

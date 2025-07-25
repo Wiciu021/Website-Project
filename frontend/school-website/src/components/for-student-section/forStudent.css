@@ -1,0 +1,44 @@
+.for-students-section,
+.for-parents-section {
+  padding-block: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 50vh;
+  width: 100%;
+  gap: 4rem;
+  background-color: var(--green-2);
+}
+
+.for-students-section h2,
+.for-parents-section h2 {
+  font-size: 3rem;
+  color: var(--green-6);
+  position: relative;
+  text-align: center;
+}
+
+
+.for-students-section .button-container,.for-parents-section .button-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* gap: 4rem; */
+  width: 50%;
+}
+
+.for-students-section .button-container .button,
+.for-parents-section .button-container .button {
+  padding: 15px 35px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  background-color: var(--green-4);
+  color: var(--green-6);
+  box-shadow: 0 0 15px var(--green-5);
+  cursor: pointer;
+}
+
