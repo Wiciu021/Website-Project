@@ -17,3 +17,6 @@ app.get('/api/ping', (req, res) => { // endpoint
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+const newsRouter = require('./routes/news');
+app.use('/api/news', newsRouter);
