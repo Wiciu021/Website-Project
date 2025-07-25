@@ -1,6 +1,7 @@
 import React from 'react'
 import FeedItem from './FeedItem'
 import feedData from '../../Data/feed-data'
+import './feed.css'
 
 const Feed = () => {
   return (
