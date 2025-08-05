@@ -10,6 +10,7 @@ const FeedPageItem = ({ item }) => {
       backgroundRepeat: 'no-repeat',
       borderRadius: '10px'
     }}>
+      <div className='date-container'>{item.date}</div>
       </div>
       <div className='card-desctiption-container'>
         <h3>{item.title}</h3>

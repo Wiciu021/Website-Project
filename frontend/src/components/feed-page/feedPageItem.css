@@ -16,6 +16,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.feed-page-section .feed-page-item .card-image-container  .date-container {
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  background-color: var(--green-5);
+  color: var(--green-6);
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-weight: 500;
+  top: 6px;
+  left: 6px;
+  font-size: 12px;
 }
 
 .feed-page-section .feed-page-item .card-desctiption-container {
