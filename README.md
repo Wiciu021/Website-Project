@@ -15,7 +15,7 @@ Aplikacja umożliwia wyświetlanie informacji na stronie głównej oraz komunika
 
 ## Technologie
 
-- Frontend: React, react-scripts, Vite (opcjonalnie)  
+- Frontend: React, react-scripts
 - Backend: Node.js, Express, CORS  
 - Baza danych: PostgreSQL (kontener Docker)  
 - Docker + Docker Compose do łatwego uruchomienia całego środowiska
