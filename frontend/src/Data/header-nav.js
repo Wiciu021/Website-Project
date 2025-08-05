@@ -1,35 +1,47 @@
 export const headerData = [
   {
-    label: 'Strona Główna',
+    label: 'Główna',
     href: '/'
   },
   {
     label: 'Dla Ucznia',
     children: [
-      { label: 'Plan Lekcji', href: '/plan-lekcji' },
+      { label: 'Samorząd Uczniowski', href: '/samorzad-uczniowski' },
+      { label: 'Plan Zajęć', href: '/plan-zajec' },
       { label: 'Zastępstwa', href: '/zastepstwa' },
-      { label: 'Samorząd Uczniowski', href: '/samorzad' },
-      { label: 'Projekty i Konkursy', href: '/projekty' },
+      { label: 'Dziennik', href: '/dziennik' },
     ]
   },
   {
     label: 'Dla Rodzica',
     children: [
-      { label: 'Informacje', href: '/dla-rodzica' },
-      { label: 'Terminarz Spotkań', href: '/terminarz' },
+      { label: 'Rada Rodziców', href: '/rada-rodzicow' },
+      { label: 'Dokumenty Szkolne', href: '/dokumenty-szkolne' },
+      { label: 'Kalendarz Pracy', href: '/kalendarz-pracy' },
+      { label: 'Ubezpieczenie', href: '/ubezpieczenie' },
     ]
   },
   {
     label: 'O Szkole',
     children: [
+      {
+        label: 'Projekty Unijne',
+        children: [
+          { label: 'Erasmus', href: '/projekty-unijne/erasmus' },
+        ]
+      },
+      { label: 'Osiągnięcia', href: '/osiagniecia' },
       { label: 'Historia', href: '/historia' },
-      { label: 'Dyrekcja i Nauczyciele', href: '/zespol' },
-      { label: 'Patron', href: '/patron' },
+      { label: 'Zespół Nauczycieli', href: '/zespol-nauczycieli' },
+      { label: 'Galeria', href: '/galeria' },
     ]
   },
   {
     label: 'Rekrutacja',
-    href: '/rekrutacja'
+    children: [
+      { label: 'Profile Klas', href: '/profile-klas' },
+      { label: 'Informacje dla Kandydatów', href: '/informacje-dla-kandydatow' },
+    ]
   },
   {
     label: 'Aktualności',
@@ -41,4 +53,4 @@ export const headerData = [
   }
 ];
 
-export default headerData
+export default headerData;

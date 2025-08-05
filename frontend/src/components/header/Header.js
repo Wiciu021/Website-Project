@@ -3,6 +3,7 @@ import ListItem from './ListItem'
 import './header.css'
 import headerData from '../../Data/header-nav'
 import { RiPlanetLine } from 'react-icons/ri'
+import NavList from './NavList'
 
 const Header = () => {
   return (
@@ -10,11 +11,7 @@ const Header = () => {
       <div className='header-inner'>
         <RiPlanetLine className='icons'/>
         <nav className='nav'>
-          <ul>
-            {
-              headerData && headerData.length ? headerData.map(headerItem => <ListItem item={headerItem}/>) : null
-            }
-          </ul>
+          <NavList headerData={headerData} />
         </nav>
       </div>
     </header>
