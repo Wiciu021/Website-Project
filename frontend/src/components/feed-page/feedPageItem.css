@@ -1,0 +1,54 @@
+.feed-page-section .feed-wrapper .feed-grid .feed-page-item {
+  background-color: var(--green-3);
+  border-radius: 15px;
+  display: flex;
+  justify-content: left;
+  gap: 1.5rem;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  height: 450px;
+} 
+
+.feed-page-section .feed-page-item .card-image-container {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feed-page-section .feed-page-item .card-desctiption-container {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  height: 30%;
+  gap: 0.25rem;
+}
+
+.feed-page-section .feed-page-item .card-desctiption-container h3 {
+  font-size: 1.25rem;
+}
+
+.feed-page-section .feed-page-item .card-footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.feed-page-section .feed-page-item .card-footer-container h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--green-6);
+}
+
+.feed-page-section .feed-page-item .card-footer-container .see-more-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px;
+  font-family: "Parkinsans", sans-serif;
+  color: var(--green-6);
+  background-color: var(--green-5);
+  font-weight: 500;
+}

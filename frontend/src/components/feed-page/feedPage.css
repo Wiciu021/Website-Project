@@ -1,0 +1,42 @@
+.page-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  padding-top: 1.5rem;
+}
+
+.feed-page-section {
+background-image: linear-gradient(to bottom right, var(--green-6), var(--green-5), var(--green-6), var(--green-5));
+  color: var(--green-6);
+  min-height: 100vh;
+}
+
+.feed-page-section .title-section {
+  /* height: 300px; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feed-page-section .title-section h1 {
+  color: var(--green-6);
+  font-size: 3.5rem;
+}
+
+.feed-page-section .feed-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  height: fit-content;
+}
+
+.feed-page-section .feed-wrapper .feed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+

@@ -5,6 +5,7 @@ import Feed from "./components/feed-section/Feed";
 import ForParents from "./components/for-parents-section/ForParents";
 import Footer from "./components/footer/Footer";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import FeedPage from "./components/feed-page/FeedPage";
 
 function HomePage() {
   return (
@@ -25,6 +26,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/feed" element={<FeedPage />} />
         </Routes>
 
         <Footer />
