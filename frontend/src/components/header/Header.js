@@ -11,7 +11,7 @@ const Header = () => {
       <div className='header-inner'>
         <RiPlanetLine className='icons'/>
         <nav className='nav'>
-          <NavList headerData={headerData} />
+          <NavList headerData={headerData} id={1}/>
         </nav>
       </div>
     </header>

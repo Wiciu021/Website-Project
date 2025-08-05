@@ -1,11 +1,15 @@
 import React from 'react'
 import ListItem from './ListItem'
+import { useState } from 'react';
 
-const NavList = ({ headerData }) => {
+const NavList = ({ headerData, id }) => {
+
+  const [showDropDown, setShowDropDown] = useState(false);
+  
   return (
-    <ul>
+    <ul className={`ul-${id}`}>
       {
-        headerData && headerData.length ? headerData.map(headerItem => <ListItem item={headerItem}/>) : null
+        headerData && headerData.length ? headerData.map(headerItem => <ListItem item={headerItem} id={id + 1} showDropDown={showDropDown} setShowDropDown={setShowDropDown}/>) : null
       }
     </ul>
   )
