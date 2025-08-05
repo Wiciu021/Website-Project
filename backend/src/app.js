@@ -1,17 +1,14 @@
-import express from 'express'
-import newsRoutes from './routes/news.js'
+import express from 'express';
+import cors from 'cors';
+const app = express();
 
-const app = express()
-const PORT = 8000
+app.use(cors());
+app.use(express.json());
 
-app.use(express.json())
+app.get('/api/hello', (req, res) => {
+  res.json({ message: 'Witaj ze strony backendu!' });
+});
 
-app.use(express.static('frontend'))
-
-app.use('/api/news', newsRoutes)
-
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`)
-}).on('error', (err) => {
-  console.error('Failed to start server:', err)
-}) 
+app.listen(8000, () => {
+  console.log('Backend działa na porcie 8000');
+});

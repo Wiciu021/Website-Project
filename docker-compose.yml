@@ -1,3 +1,4 @@
+version: "3.9"
 services:
   backend:
     build: ./backend
@@ -14,16 +15,17 @@ services:
     build: ./frontend
     ports:
       - "5173:5173"
-    volumes:
-      - ./frontend:/app
+    # UWAGA: NIE montuj lokalnego katalogu frontend, bo nadpisze build!
+    # volumes:
+    #   - ./frontend:/app
 
   db:
     image: postgres:15
     restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres
+      POSTGRES_USER: wiciu
+      POSTGRES_PASSWORD: qwerty
+      POSTGRES_DB: schooldb
     volumes:
       - postgres-data:/var/lib/postgresql/data
 
