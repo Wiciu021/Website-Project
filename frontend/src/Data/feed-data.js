@@ -7,7 +7,7 @@ export const feedData = [
   },
   {
     title: 'Zajęcia plastyczne w klasie 1A',
-    description: 'Dzieci rozwijały swoją kreatywność, tworząc prace plastyczne z kolorowego papieru i materiałów z recyklingu.',
+    description: 'Dzieci rozwijały swoją kreatywność, tworząc prace plastyczne z twoja matka.',
     img: 'kids2',
     date: '2025-07-18',
   },
