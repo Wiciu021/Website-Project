@@ -4,6 +4,8 @@ import feedData from '../../Data/feed-data'
 import FeedPageItem from './FeedPageItem'
 import './FeedPageItem'
 import './feedPageItem.css'
+import { IoChevronUpOutline } from 'react-icons/io5';
+
 const FeedPage = () => {
   return (
     <section className='feed-page-section page-section'>
@@ -19,6 +21,8 @@ const FeedPage = () => {
           }
         </div>
       </div>
+      {/* zrobic jeszcze zeby ten przycisk dzialal ale na razie nie robie bo zajmuje sie tylko designem cn */}
+      <button className='scroll-to-top-button'><IoChevronUpOutline/></button>
     </section>
   )
 }
