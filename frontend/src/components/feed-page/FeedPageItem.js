@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const FeedPageItem = ({ item }) => {
   return (
@@ -16,13 +17,13 @@ const FeedPageItem = ({ item }) => {
         <h3>{item.title}</h3>
         <div className='desctiption'>
           {
-            item.description.length > 100 ? item.description.slice(0, 100) + '...' : item.description 
+            item.description.length > 80 ? item.description.slice(0, 80) + '...' : item.description 
           }
         </div>
       </div>
       <div className='card-footer-container'>
         <h4>{item.author}</h4>
-        <button className='see-more-button'>więcej</button>
+        <Link to={`/post/${item.id}`} className='see-more-button'>więcej</Link>
       </div>
     </div>
   )

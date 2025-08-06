@@ -1,4 +1,5 @@
-.feed-page-section .feed-wrapper .feed-grid .feed-page-item {
+.feed-page-section .feed-wrapper .feed-grid .feed-page-item,
+.feed-page-post .wrapper .post-card {
   background-color: var(--green-3);
   border-radius: 15px;
   display: flex;
@@ -10,7 +11,8 @@
   height: 450px;
 } 
 
-.feed-page-section .feed-page-item .card-image-container {
+.feed-page-section .feed-page-item .card-image-container,
+.feed-page-post .post-card .card-image-container {
   width: 100%;
   height: 50%;
   display: flex;
@@ -19,7 +21,8 @@
   position: relative;
 }
 
-.feed-page-section .feed-page-item .card-image-container  .date-container {
+.feed-page-section .feed-page-item .card-image-container  .date-container,
+.feed-page-post .post-card .card-image-container  .date-container {
   position: absolute;
   width: fit-content;
   height: fit-content;
@@ -33,7 +36,8 @@
   font-size: 12px;
 }
 
-.feed-page-section .feed-page-item .card-desctiption-container {
+.feed-page-section .feed-page-item .card-desctiption-container,
+.feed-page-post .post-card .card-desctiption-container {
   display: flex;
   justify-content: left;
   flex-direction: column;
@@ -41,24 +45,28 @@
   gap: 0.25rem;
 }
 
-.feed-page-section .feed-page-item .card-desctiption-container h3 {
+.feed-page-section .feed-page-item .card-desctiption-container h3,
+.feed-page-post .post-card .card-desctiption-container h3 {
   font-size: 1.25rem;
 }
 
-.feed-page-section .feed-page-item .card-footer-container {
+.feed-page-section .feed-page-item .card-footer-container,
+.feed-page-post .post-card .card-footer-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
-.feed-page-section .feed-page-item .card-footer-container h4 {
+.feed-page-section .feed-page-item .card-footer-container h4,
+.feed-page-post .post-card .card-footer-container h4 {
   font-size: 1rem;
   font-weight: 500;
   color: var(--green-6);
 }
 
-.feed-page-section .feed-page-item .card-footer-container .see-more-button {
+.feed-page-section .feed-page-item .card-footer-container .see-more-button,
+.feed-page-post .post-card .card-footer-container .go-back-button {
   padding: 8px 16px;
   border: none;
   border-radius: 10px;

@@ -9,7 +9,7 @@ const NavList = ({ headerData, id }) => {
   return (
     <ul className={`ul-${id}`}>
       {
-        headerData && headerData.length ? headerData.map(headerItem => <ListItem item={headerItem} id={id + 1} showDropDown={showDropDown} setShowDropDown={setShowDropDown}/>) : null
+        headerData && headerData.length ? headerData.map(headerItem => <ListItem key={headerItem.id} item={headerItem} id={id + 1} showDropDown={showDropDown} setShowDropDown={setShowDropDown}/>) : null
       }
     </ul>
   )

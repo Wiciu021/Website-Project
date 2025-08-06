@@ -14,7 +14,7 @@ const FeedPage = () => {
         <div className='feed-grid'>
           {
             feedData && feedData.length ?
-            feedData.map(feedItem => <FeedPageItem item={feedItem}/>)
+            feedData.map(feedItem => <FeedPageItem key={feedItem.id} item={feedItem}/>)
             : <p>No data to display</p>
           }
         </div>

@@ -31,6 +31,7 @@ html {
 
 body {
   margin-top: 55px;
+  /* padding-top: 55px; */
   font-family: "Parkinsans", sans-serif;
   width: 100vw;
   height: fit-content;
