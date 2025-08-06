@@ -9,6 +9,6 @@ app.get('/api/hello', (req, res) => {
   res.json({ message: 'Witaj ze strony backendu!' });
 });
 
-app.listen(8000, () => {
+app.listen(8000, '0.0.0.0', () => {
   console.log('Backend działa na porcie 8000');
 });
