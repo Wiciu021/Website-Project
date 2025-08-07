@@ -7,6 +7,7 @@ import Footer from "./components/footer/Footer";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import FeedPage from "./components/feed-page/FeedPage";
 import FeedPagePost from "./components/feed-page-post/FeedPagePost";
+import LoginPopUp from "./components/login-popup/LoginPopUp";
 
 function HomePage() {
   return (
@@ -28,7 +29,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/aktualnosci" element={<FeedPage />} />
-          <Route path="/post/:id" element={<FeedPagePost />}/>
+          <Route path="/post/:id" element={<FeedPagePost />} />
+          <Route path="/login" element={<LoginPopUp />} />
         </Routes>
 
         <Footer />

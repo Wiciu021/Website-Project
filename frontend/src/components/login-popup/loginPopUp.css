@@ -1,0 +1,76 @@
+.login-section {
+  background-image: linear-gradient(
+  135deg,
+  var(--green-6) 0%,
+  var(--green-5) 50%,
+  var(--green-4) 100%
+);
+  height: calc(100vh - 55px);
+}
+
+.login-section .login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 500px;
+  min-width: 400px;
+  border: 1px var(--green-6) solid;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(20px); /* Safari support */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Soft, diffused shadow */
+  padding: 4rem 3rem;
+  gap: 4rem;
+}
+
+.login-section .login-wrapper h2 {
+  font-size: 2.5rem;
+  color: var(--green-3);
+
+}
+
+.login-section .login-wrapper form {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.login-section .login-wrapper form input {
+  border-style: none;
+  padding: 1rem;
+  border-radius: 40px;
+  width: 100%;
+  font-family: "Parkinsans", sans-serif;
+  color: var(--green-3);
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: var(--green-6);
+}
+
+.login-section .login-wrapper form input:focus {
+  outline: none;
+}
+
+.login-section .login-wrapper form input::placeholder {
+  color: var(--green-4);
+}
+
+.login-section .login-wrapper form .login-button {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  font-family: "Parkinsans", sans-serif;
+  background-color: var(--green-4);
+  color: var(--green-6);
+  font-size: 1rem;
+  font-weight: 500;
+}
