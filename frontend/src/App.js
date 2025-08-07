@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import FeedPage from "./components/feed-page/FeedPage";
 import FeedPagePost from "./components/feed-page-post/FeedPagePost";
 import LoginPopUp from "./components/login-popup/LoginPopUp";
+import DocumentsSection from "./components/documents-section/DocumentsSection";
 
 function HomePage() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/aktualnosci" element={<FeedPage />} />
           <Route path="/post/:id" element={<FeedPagePost />} />
           <Route path="/login" element={<LoginPopUp />} />
+          <Route path="/dokumenty-szkolne" element={<DocumentsSection />} />
         </Routes>
 
         <Footer />

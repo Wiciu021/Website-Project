@@ -1,0 +1,38 @@
+.documents-section li {
+  min-width: 700px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--green-4);
+  color: var(--green-6);
+  border-radius: 40px;
+  height: 50px;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.documents-section li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:  0.5rem;
+  background-color: var(--green-5);
+  border-radius: 50px;
+  color: var(--green-6);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.documents-section li .title {
+  flex: 1;
+}
+
+.documents-section li .date {
+  text-align: center;
+  width: 125px;
+  background-color: var(--green-5);
+  color: var(--green-6);
+  border-radius: 20px;
+  padding: 3px 6px;
+}

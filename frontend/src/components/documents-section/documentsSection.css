@@ -1,0 +1,41 @@
+.documents-section {
+  min-height: calc(100vh - 55px);
+  padding-block: 2rem;
+  width: 100%;
+  /* background-image: linear-gradient(
+  135deg,
+  var(--green-6) 0%,
+  var(--green-5) 50%,
+  var(--green-4) 100%
+);  */
+  /* do wyboru jak cos bo ja nie umiem sie zdecydowac elo */
+  background-image: linear-gradient(to bottom right, var(--green-6), var(--green-5), var(--green-6), var(--green-5));
+}
+
+.documents-section,
+.documents-section .docs-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.documents-section .docs-wrapper {
+  max-width: 1000px;
+}
+
+.documents-section .docs-wrapper h2 {
+  font-size: 2.5rem;
+  color: var(--green-6);
+}
+
+.documents-section .docs-wrapper ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  gap: 1.25rem;
+}
