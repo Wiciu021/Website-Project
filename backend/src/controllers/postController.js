@@ -1,0 +1,55 @@
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
+
+export const getAllPosts = async (req, res) => {
+  try {
+    const posts = await prisma.post.findMany({ orderBy: { date: 'desc' } });
+    res.json(posts);
+  } catch (err) {
+    res.status(500).json({ error: 'Błąd serwera przy pobieraniu postów' });
+  }
+};
+
+export const getPostById = async (req, res) => {
+  const id = parseInt(req.params.id);
+  if (isNaN(id)) {
+    return res.status(400).json({ error: 'Nieprawidłowy id posta' });
+  }
+
+  try {
+    const post = await prisma.post.findUnique({ where: { id } });
+    if (!post) {
+      return res.status(404).json({ error: 'Post nie znaleziony' });
+    }
+    res.json(post);
+  } catch (err) {
+    res.status(500).json({ error: 'Błąd serwera przy pobieraniu posta' });
+  }
+};
+
+export const createPost = async (req, res) => {
+  const { title, description, author, date, img } = req.body;
+  try {
+    const newPost = await prisma.post.create({
+      data: { title, description, author, date, img },
+    });
+    res.status(201).json(newPost);
+  } catch (err) {
+    res.status(500).json({ error: 'Nie udało się dodać posta' });
+  }
+};
+
+export const deletePost = async (req, res) => {
+  const id = parseInt(req.params.id);
+  if (isNaN(id)) {
+    return res.status(400).json({ error: 'Nieprawidłowy id posta' });
+  }
+
+  try {
+    await prisma.post.delete({ where: { id } });
+    res.json({ message: 'Post usunięty' });
+  } catch (err) {
+    res.status(500).json({ error: 'Błąd przy usuwaniu posta' });
+  }
+};
