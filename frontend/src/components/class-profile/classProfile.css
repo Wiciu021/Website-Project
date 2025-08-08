@@ -1,0 +1,23 @@
+.class-profile-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 55px);
+  background-image: linear-gradient(to bottom right, var(--green-6), var(--green-5), var(--green-6), var(--green-5));
+  color: var(--green-6);
+}
+
+.class-profile-section .class-profile-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-radius: 30px;
+  background-color: var(--green-6);
+}
+
+.class-profile-section .class-profile-wrapper img {
+  width: 390px;
+  border-radius: 20px;
+}

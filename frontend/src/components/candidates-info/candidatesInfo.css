@@ -1,0 +1,77 @@
+.candidates-info-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 55px);
+  padding: 2rem;
+  background-image: linear-gradient(to bottom right, var(--green-6), var(--green-5), var(--green-6), var(--green-5));
+  color: var(--green-6);
+}
+
+.candidates-info-section .candidates-info-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  max-width: 1200px;
+  height: calc(100vh - 55px - 4rem);
+  padding: 1rem;
+  background-color: var(--green-5);
+  border-radius: 20px;
+}
+
+.candidates-info-section .candidates-info-wrapper .left-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 1rem 2rem;
+  background-color: var(--green-4);
+  /* height: calc(100vh - 55px - 6rem); */
+  width: 65%;
+  border-radius: 10px;
+}
+
+.candidates-info-section .candidates-info-wrapper .left-section h3 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.candidates-info-section .candidates-info-wrapper .left-section .rules-container,
+.candidates-info-section .candidates-info-wrapper .left-section .english-test-container, 
+.candidates-info-section .candidates-info-wrapper .left-section p,
+.candidates-info-section .candidates-info-wrapper .left-section .survey-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+} 
+
+.candidates-info-section .candidates-info-wrapper .left-section button {
+  padding: 8px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  font-family: 'Parkinsans', sans-serif;
+  background-color: var(--green-5);
+  color: var(--green-6);
+  border: none;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.candidates-info-section .candidates-info-wrapper .left-section button a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--green-6);
+}
+
+.candidates-info-section img {
+  width: 360px;
+  border-radius: 12px;
+}
