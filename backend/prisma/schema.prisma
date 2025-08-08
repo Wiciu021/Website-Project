@@ -7,9 +7,11 @@ datasource db {
   url = env("DATABASE_URL")
 }
 
-model News {
+model Post {
   id Int @id @default(autoincrement())
   title String
-  content String
-  createdAt DateTime @default(now())
+  description String
+  author String
+  date DateTime
+  img String
 }
