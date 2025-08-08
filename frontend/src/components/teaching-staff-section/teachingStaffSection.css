@@ -1,0 +1,63 @@
+.teaching-staff-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(to bottom right, var(--green-6), var(--green-5), var(--green-6), var(--green-5));
+  color: var(--green-6);
+    /* background-image: linear-gradient(
+  135deg,
+  var(--green-6) 0%,
+  var(--green-5) 50%,
+  var(--green-4) 100%
+); */
+  gap: 5rem;
+  padding-block: 2rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.teaching-staff-section .teaching-staff-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+  max-width: 1000px;
+}
+
+.teaching-staff-section h2 {
+  font-size: 3rem;
+}
+
+.teaching-staff-section .teaching-staff-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+
+.teaching-staff-section .teaching-staff-wrapper h3 {
+  font-size: 2.5rem;
+}
+
+.teaching-staff-section .teaching-staff-wrapper .head-teachers-wrapper,
+.teaching-staff-section .teaching-staff-wrapper .teachers-wrapper {
+  max-width: 1000px;
+  display: grid;
+  column-gap: 2rem;
+}
+
+.teaching-staff-section .teaching-staff-wrapper .head-teachers-wrapper {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.teaching-staff-section .teaching-staff-wrapper .teachers-wrapper {
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 2rem;
+}
+
+

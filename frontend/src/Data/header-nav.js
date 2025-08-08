@@ -12,6 +12,7 @@ export const headerData = [
       { id: 22, label: 'Plan Zajęć', href: '/plan-zajec' },
       { id: 23, label: 'Zastępstwa', href: '/zastepstwa' },
       { id: 24, label: 'Dziennik', href: '/dziennik' },
+      { id: 25, label: 'Matura', href: '/matura' }
     ]
   },
   {

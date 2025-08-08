@@ -9,6 +9,8 @@ import FeedPage from "./components/feed-page/FeedPage";
 import FeedPagePost from "./components/feed-page-post/FeedPagePost";
 import LoginPopUp from "./components/login-popup/LoginPopUp";
 import DocumentsSection from "./components/documents-section/DocumentsSection";
+import TeachingStaffSection from "./components/teaching-staff-section/TeachingStaffSection";
+import TeachingStaffItem from "./components/teaching-staff-section/TeachingStaffItem";
 
 function HomePage() {
   return (
@@ -33,6 +35,7 @@ function App() {
           <Route path="/post/:id" element={<FeedPagePost />} />
           <Route path="/login" element={<LoginPopUp />} />
           <Route path="/dokumenty-szkolne" element={<DocumentsSection />} />
+          <Route path="/zespol-nauczycieli" element={<TeachingStaffSection />} />
         </Routes>
 
         <Footer />
