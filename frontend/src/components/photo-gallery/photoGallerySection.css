@@ -12,6 +12,14 @@
   gap: 3rem;
 }
 
+.photo-gallery-section .gallery-section-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+
 .photo-gallery-section h2 {
   font-size: 3rem;
 }

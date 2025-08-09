@@ -1,0 +1,67 @@
+.swiper-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 500px;
+  position: fixed;
+  top: calc(50% + 55px/2);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  border-radius: 15px;
+}
+
+.swiper-container .swiper-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.swiper-container .swiper-slide .content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 3rem 2rem;
+}
+
+.swiper-container .swiper-slide .content-container h3 {
+  font-size: 2rem;
+  color: var(--green-6);
+}
+
+.swiper-container .swiper-slide .content-container p {
+  font-size: 1rem;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--green-6);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--green-5);
+}
+
+.swiper-container .swiper-slide button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--green-5);
+  color: var(--green-6);
+  border: none;
+  font-family: 'Parkinsans', sans-serif;
+  font-weight: 600;
+  font-size: 2.125rem;
+  border-radius: 10px;
+  padding: 8px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
