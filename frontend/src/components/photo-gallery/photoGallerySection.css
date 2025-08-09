@@ -1,0 +1,40 @@
+.photo-gallery-section {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(to bottom right, var(--green-6), var(--green-5), var(--green-6), var(--green-5));
+  color: var(--green-6);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  gap: 3rem;
+}
+
+.photo-gallery-section h2 {
+  font-size: 3rem;
+}
+
+.photo-gallery-section .timeline-wrapper {
+  position: relative;
+  min-height: 100vh;
+  max-width: 1200px;
+  min-width: 1000px;
+  padding: 1.5rem 1rem;
+  background-color: var(--green-4);
+  border-radius: 30px;
+}
+
+.photo-gallery-section .timeline-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  background-color: var(--green-3);
+  border-radius: 30px;
+}
+

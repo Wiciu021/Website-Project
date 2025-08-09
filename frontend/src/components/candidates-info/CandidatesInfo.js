@@ -10,7 +10,7 @@ const CandidatesInfo = () => {
           <h3>Informacje Dla Kandydatów</h3>
           <div className='rules-container'>
             <button>
-              <a href="/recrutation-files/Zasady-rekrutacji-w-roku-szkolnym-2025-2026.pdf" target='_blank' rel='noopener noreferrer'>Zasady Rekrutacji <IoBookOutline  /></a>
+              <a href="/recrutation-files/Zasady-rekrutacji-w-roku-szkolnym-2025-2026.pdf" target='_blank' rel='noopener noreferrer'>Zasady Rekrutacji <IoBookOutline /></a>
             </button>
             <button>
               <a href="/recrutation-files/zalacznik1.pdf" target='_blank' rel='noopener noreferrer'>Załacznik <FaPaperclip /></a>
