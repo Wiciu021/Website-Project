@@ -1,0 +1,43 @@
+.school-history-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 55px);
+  width: 100%;
+  padding: 2rem 1rem;
+  background-image: linear-gradient(to bottom right, var(--green-6), var(--green-5), var(--green-6), var(--green-5));
+  color: var(--green-6);
+}
+
+.school-history-section .school-history-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.school-history-section .school-history-wrapper h2 {
+  font-size: 2.5rem;
+}
+
+.school-history-section .school-history-wrapper .school-timeline {
+  position: relative;
+  height: 100vh;
+  min-width: 850px;
+  max-width: 1000px;
+  background-color: var(--green-4);
+  border-radius: 10px;
+}
+
+.school-history-section .school-history-wrapper .school-timeline::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  border-radius: 30px;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--green-3);
+}

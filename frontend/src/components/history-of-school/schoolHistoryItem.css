@@ -1,0 +1,67 @@
+.school-history-section .timeline-item {
+  position: absolute;
+  width: 320px;
+  height: 80px;
+  background-color: var(--green-5);
+  border-radius: 8px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  /* gap: 2.25rem; */
+}
+
+.school-history-section .timeline-item.left {
+  left: 15px;
+}
+
+.school-history-section .timeline-item.right {
+  right: 15px;
+}
+
+.school-history-section .dot {
+  height: 30px;
+  width: 30px;
+  background-color: var(--green-5);
+  border-radius: 50px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.school-history-section .dot::before {
+  position: absolute;
+  content: '';
+  width: 150px;
+  z-index: 2;
+  height: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--green-5);
+}
+
+.school-history-section .dot.left::before {
+  right: 10%;
+}
+
+.school-history-section .dot.right::before {
+  left: 10%;
+}
+
+.school-history-section .timeline-item h4 {
+  font-size: 1.75rem;
+}
+
+.school-history-section .timeline-item a {
+  color: var(--green-6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--green-4);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+}
