@@ -4,9 +4,15 @@ const prisma = new PrismaClient();
 
 export const getAllPosts = async (req, res) => {
   try {
-    const posts = await prisma.post.findMany({ orderBy: { date: 'desc' } });
+    const posts = await prisma.post.findMany({ 
+      orderBy: { date: 'desc' } 
+    });
+    console.log('Posts fetched:', posts);
     res.json(posts);
   } catch (err) {
+    
+    console.error('Database error:', err);
+    
     res.status(500).json({ error: 'Błąd serwera przy pobieraniu postów' });
   }
 };
@@ -29,10 +35,16 @@ export const getPostById = async (req, res) => {
 };
 
 export const createPost = async (req, res) => {
-  const { title, description, author, date, img } = req.body;
+  const { title, description, author } = req.body;
   try {
     const newPost = await prisma.post.create({
-      data: { title, description, author, date, img },
+      data: {
+        title,
+        description,
+        author,
+        date: new Date(),
+        img: `/uploads/posts/example-image.jpg`
+      },
     });
     res.status(201).json(newPost);
   } catch (err) {

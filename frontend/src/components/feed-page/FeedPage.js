@@ -1,12 +1,35 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './feedPage.css'
-import feedData from '../../Data/feed-data'
 import FeedPageItem from './FeedPageItem'
 import './FeedPageItem'
 import './feedPageItem.css'
 import { IoChevronUpOutline } from 'react-icons/io5';
 
 const FeedPage = () => {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch('/api/aktualnosci');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setPosts(data);
+      } catch (err) {
+        console.error('Error fetching posts:', err);
+        setError('Failed to load posts');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, []);
+
   return (
     <section className='feed-page-section page-section'>
       <div className='title-section'>
@@ -15,8 +38,8 @@ const FeedPage = () => {
       <div className='feed-wrapper'>
         <div className='feed-grid'>
           {
-            feedData && feedData.length ?
-            feedData.map(feedItem => <FeedPageItem key={feedItem.id} item={feedItem}/>)
+            posts && posts.length ?
+            posts.map(post => <FeedPageItem key={post.id} item={post}/>)
             : <p>No data to display</p>
           }
         </div>

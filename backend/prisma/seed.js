@@ -3,16 +3,28 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main() {
-  const newPost = await prisma.post.create({
-    data: {
-      title: 'Nigga',
-      description: 'aojsfhgafgha;jgfh;ajhf',
-      author: 'Konrad Malichonrad',
-      date: new Date(),
-      img: 'https://example.com/image.jpg',
-    },
+  await prisma.post.deleteMany({});
+  
+  const posts = await prisma.post.createMany({
+    data: [
+      {
+        title: 'NIGAAAAA',
+        description: 'jhsdfjkdshfjkdshfksdfk;dshf;shiuhoheaofhgaofgau',
+        author: 'Your Mama',
+        date: new Date(),
+        img: '/static/images/posts/kids1.jpg',
+      },
+      {
+        title: 'white',
+        description: 'Class orgy',
+        author: 'Konrad Malichonrad',
+        date: new Date(),
+        img: '/static/images/posts/kids2.jpg',
+      }
+    ]
   });
-  console.log('Dodano post:', newPost);
+  
+  console.log('Dodano posty:', posts);
 }
 
 main()
