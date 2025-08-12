@@ -4,7 +4,7 @@ import './feedItem.css'
 const FeedItem = ({ item }) => {
   return (
     <div className='feed-item' style={{
-      backgroundImage: `url(/images/${item.img}.jpg)`,
+      backgroundImage: `url(/static/images/posts/${item.img}.jpg)`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',

@@ -23,7 +23,7 @@ const GalleryItem = ({ setShowSwiper, item, position, length, idx }) => {
           <h4>{item.title}</h4>
           <p>{item.description}</p>
         </div>
-        <img src={`/images/gallery/${item.folder}/${item.img}.jpg` } alt="tu mialo byc zdjecie pozdro" />
+        <img src={`/static/images/gallery/${item.folder}/${item.img}.jpg`} alt={item.title} />
       </div>
     </>
   )

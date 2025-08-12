@@ -1,17 +1,14 @@
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import prisma from '../lib/prisma.js';
 
 export const getAllPosts = async (req, res) => {
   try {
     const posts = await prisma.post.findMany({ 
       orderBy: { date: 'desc' } 
     });
-    console.log('Posts fetched:', posts);
+    //console.log('Posts fetched:', posts);
     res.json(posts);
   } catch (err) {
-    
-    console.error('Database error:', err);
+    //console.error('Database error:', err);
     
     res.status(500).json({ error: 'Błąd serwera przy pobieraniu postów' });
   }

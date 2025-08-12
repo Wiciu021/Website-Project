@@ -15,3 +15,45 @@ model Post {
   date        DateTime @default(now())
   img         String
 }
+
+model Teacher {
+  id                Int      @id @default(autoincrement())
+  name              String
+  surname           String
+  jobClassification String
+  roleType          String
+  img               String
+}
+
+model historyData {
+  id    Int @id @default(autoincrement())
+  title String
+  pdf   String
+}
+
+model Album {
+  id          Int      @id @default(autoincrement())
+  folder      String
+  title       String
+  description String
+  img         String
+  date        DateTime
+  photos      Photo[]
+}
+
+model Photo {
+  id          Int      @id @default(autoincrement())
+  img         String
+  title       String
+  description String
+  date        DateTime
+  albumId     Int
+  album       Album    @relation(fields: [albumId], references: [id])
+}
+
+model Docs {
+  id    Int       @id @default(autoincrement())
+  title String
+  date  String
+  file  String
+}

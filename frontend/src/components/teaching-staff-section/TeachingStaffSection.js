@@ -1,22 +1,42 @@
 import React, { useEffect, useState } from 'react'
 import './teachingStaffSection.css'
 import TeachingStaffItem from './TeachingStaffItem'
-import teachingStaffData from '../../Data/teaching-staff-data'
 import TeachingStaffPopUp from './TeachingStaffPopUp'
 
 const TeachingStaffSection = () => {
-
+  const [teachers, setTeachers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [showPopUp, setShowPopUp] = useState(false);
+
+  useEffect(() => {
+    const fetchTeachers = async () => {
+      try {
+        const response = await fetch('/api/zespol-nauczycieli');
+        if (!response.ok) throw new Error('Network response was not ok');
+        const data = await response.json();
+        setTeachers(data);
+      } catch (err) {
+        console.error('Error fetching teachers:', err);
+        setError('Failed to load teachers');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTeachers();
+  }, []);
 
   useEffect(() => {
     if (showPopUp) {
       document.body.style.overflowY = 'hidden';
-      document.documentElement.style.overflowY = 'hidden';
     } else {
-      document.body.style.overflowY = 'auto';      // or 'scroll' if you want scrollbars always visible
-      document.documentElement.style.overflowY = 'auto';
+      document.body.style.overflowY = 'auto';
     }
-  }, [showPopUp])
+  }, [showPopUp]);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
     <section className='teaching-staff-section page-section'>
@@ -28,21 +48,39 @@ const TeachingStaffSection = () => {
         <div className='teaching-staff-wrapper'>
           <h3>Dyrekcja</h3>
           <div className='head-teachers-wrapper'>
-            {
-              teachingStaffData && teachingStaffData.length ? teachingStaffData.map(item => item.roleType === 'headTeacher' ? <TeachingStaffItem key={item.id} item={item} showPopUp={showPopUp} setShowPopUp={setShowPopUp} /> : null) : null
-            }
+            {teachers
+              .filter(item => item.roleType === 'headTeacher')
+              .map(item => (
+                <TeachingStaffItem 
+                  key={item.id} 
+                  item={item} 
+                  showPopUp={showPopUp} 
+                  setShowPopUp={setShowPopUp} 
+                />
+              ))}
           </div>
           <h3>Nauczyciele</h3>
           <div className='teachers-wrapper'>
-            {
-              teachingStaffData && teachingStaffData.length ? teachingStaffData.map(item => item.roleType === 'teacher' ? <TeachingStaffItem key={item.id} item={item} showPopUp={showPopUp} setShowPopUp={setShowPopUp} /> : null) : null
-            }
+            {teachers
+              .filter(item => item.roleType === 'teacher')
+              .map(item => (
+                <TeachingStaffItem 
+                  key={item.id} 
+                  item={item} 
+                  showPopUp={showPopUp} 
+                  setShowPopUp={setShowPopUp} 
+                />
+              ))}
           </div>
         </div>
       </div>
-        {
-          showPopUp ? <TeachingStaffPopUp itemId={showPopUp} setShowPopUp={setShowPopUp} /> : null
-        }
+      {showPopUp && (
+        <TeachingStaffPopUp 
+          itemId={showPopUp} 
+          setShowPopUp={setShowPopUp}
+          teachers={teachers}
+        />
+      )}
     </section>
   )
 }

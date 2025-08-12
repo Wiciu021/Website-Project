@@ -1,17 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const FeedPageItem = ({ item }) => {
+const FeedPageItem = React.memo(({ item }) => {
   return (
     <div className='feed-page-item'>
       <div className='card-image-container' style={{
-        backgroundImage: `url(${item.img})`,
+        backgroundImage: `url(${item.img}?v=${Date.now()})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         borderRadius: '10px'
       }}>
-        <div className='date-container'>{item.date}</div>
+        <div className='date-container'>
+          {new Date(item.date).toLocaleDateString('pl-PL')}
+        </div>
       </div>
       <div className='card-desctiption-container'>
         <h3>{item.title}</h3>
@@ -27,6 +29,6 @@ const FeedPageItem = ({ item }) => {
       </div>
     </div>
   )
-}
+})
 
 export default FeedPageItem
