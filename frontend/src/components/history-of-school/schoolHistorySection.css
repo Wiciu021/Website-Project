@@ -5,8 +5,8 @@
   min-height: calc(100vh - 55px);
   width: 100%;
   padding: 2rem 1rem;
-  background-image: linear-gradient(to bottom right, var(--green-6), var(--green-5), var(--green-6), var(--green-5));
-  color: var(--green-6);
+  background-color: var(--bg-dark);
+  color: var(--text);
 }
 
 .school-history-section .school-history-wrapper {
@@ -26,7 +26,9 @@
   height: 100vh;
   min-width: 850px;
   max-width: 1000px;
-  background-color: var(--green-4);
+  background-color: var(--bg);
+  box-shadow: var(--shadow);
+  border: var(--border-card);
   border-radius: 10px;
 }
 
@@ -39,5 +41,6 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--green-3);
+  background-color: var(--bg-light);
+  box-shadow: var(--s);
 }

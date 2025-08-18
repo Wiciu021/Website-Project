@@ -1,10 +1,5 @@
 .login-section {
-  background-image: linear-gradient(
-  135deg,
-  var(--green-6) 0%,
-  var(--green-5) 50%,
-  var(--green-4) 100%
-);
+  background: var(--bg-dark);
   height: calc(100vh - 55px);
 }
 
@@ -15,19 +10,17 @@
   flex-direction: column;
   min-height: 500px;
   min-width: 400px;
-  border: 1px var(--green-6) solid;
+  background-color: var(--bg);
+  border: var(--border-card);
   border-radius: 10px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(20px); /* Safari support */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Soft, diffused shadow */
+  box-shadow: var(--shadow);
   padding: 4rem 3rem;
   gap: 4rem;
 }
 
 .login-section .login-wrapper h2 {
   font-size: 2.5rem;
-  color: var(--green-3);
-
+  color: var(--text);
 }
 
 .login-section .login-wrapper form {
@@ -46,10 +39,10 @@
   border-radius: 40px;
   width: 100%;
   font-family: "Parkinsans", sans-serif;
-  color: var(--green-3);
+  color: var(--text-muted);
   font-size: 1rem;
   font-weight: 400;
-  background-color: var(--green-6);
+  background-color: var(--bg-light);
 }
 
 .login-section .login-wrapper form input:focus {
@@ -57,7 +50,7 @@
 }
 
 .login-section .login-wrapper form input::placeholder {
-  color: var(--green-4);
+  color: var(--text-muted);
 }
 
 .login-section .login-wrapper form .login-button {
@@ -69,8 +62,8 @@
   align-items: center;
   border-radius: 40px;
   font-family: "Parkinsans", sans-serif;
-  background-color: var(--green-4);
-  color: var(--green-6);
+  background-color: var(--button-primary);
+  color: var(--button-color);
   font-size: 1rem;
   font-weight: 500;
 }

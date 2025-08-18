@@ -16,12 +16,66 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  --green-1: #051F20; /* Very dark teal */
-  --green-2: #0B2B26; /* Deep forest green */
-  --green-3: #163832; /* Dark muted green */
-  --green-4: #235347; /* Medium deep green */
-  --green-5: #8EB69B; /* Soft sage green */
-  --green-6: #DAF1DE; /* Pale mint */
+  /* Backgrounds */
+  --bg-dark: hsl(220, 20%, 9%);     /* najciemniejsze tło */
+  --bg: hsl(220, 20%, 14%);         /* karty */
+  --bg-light: hsl(220, 20%, 19%);   /* elementy wewnątrz kart */
+
+  /* Text */
+  --text: hsl(0, 0%, 93%);
+  --text-muted: hsl(0, 0%, 80%);
+
+  /* Border & shadow */
+  --border: hsl(220, 15%, 28%);
+  --shadow: 
+    0 2px 4px hsla(0, 0%, 0%, 0.15),   /* mały, bliski cień */
+    0 4px 8px hsla(0, 0%, 0%, 0.20);   /* trochę większy, ale jaśniejszy */
+
+  /* Buttons */
+  --button-primary: #9f496e;  /* główny akcent */
+  --button-color: #f1ece7;    /* kolor tekstu na buttonie */
+
+  /* Hover states */
+  --hover-bg: hsl(220, 20%, 22%);
+  --hover-button: #647393;   /* przyciemniony akcent przy hover */
+
+  /* Extra accent colors */
+  --accent-1: #2c272f; /* głęboki fiolet/granat */
+  --accent-2: #9f496e; /* bordo/wiśnia */
+  --accent-3: #f1ece7; /* jasny neutralny */
+  --accent-4: #647393; /* chłodny niebiesko-szary */
+
+}
+
+body.light-mode {
+  /* Backgrounds */
+    --bg-dark: hsl(0, 0%, 98%);     /* najjaśniejsze tło */
+    --bg: hsl(0, 0%, 95%);          /* karty */
+    --bg-light: hsl(0, 0%, 90%);    /* elementy wewnątrz kart */
+
+    /* Text */
+    --text: hsl(220, 20%, 12%);     /* ciemny tekst */
+    --text-muted: hsl(220, 10%, 40%);
+
+    /* Border & shadow */
+    --border: hsl(0, 0%, 80%);
+    --shadow: 
+      0 2px 4px hsla(0, 0%, 0%, 0.08),
+      0 4px 8px hsla(0, 0%, 0%, 0.10);
+
+    /* Buttons */
+    --button-primary: #9f496e;  /* akcent ten sam */
+    --button-color: #ffffff;   /* tekst na ciemnym przycisku */
+
+    /* Hover states */
+    --hover-bg: hsl(0, 0%, 85%);
+    --hover-button: #7a3756;
+
+    /* Extra accent colors */
+    --accent-1: #2c272f;
+    --accent-2: #9f496e;
+    --accent-3: #f1ece7;
+    --accent-4: #647393;
 }
 
 html {

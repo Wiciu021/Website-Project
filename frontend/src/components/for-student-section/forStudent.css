@@ -8,13 +8,13 @@
   height: 50vh;
   width: 100%;
   gap: 4rem;
-  background-color: var(--green-2);
+  background-color: var(--bg-dark);
 }
 
 .for-students-section h2,
 .for-parents-section h2 {
   font-size: 3rem;
-  color: var(--green-6);
+  color: var(--text);
   position: relative;
   text-align: center;
 }
@@ -36,9 +36,8 @@
   font-family: "Parkinsans", sans-serif;
   font-weight: 500;
   font-size: 1.25rem;
-  background-color: var(--green-4);
-  color: var(--green-6);
-  box-shadow: 0 0 15px var(--green-5);
+  background-color: var(--accent-4);
+  color: var(--button-color);
   cursor: pointer;
 }
 

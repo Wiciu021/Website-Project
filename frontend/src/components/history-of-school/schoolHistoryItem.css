@@ -2,7 +2,9 @@
   position: absolute;
   width: 320px;
   height: 80px;
-  background-color: var(--green-5);
+  background-color: var(--bg-light);
+  box-shadow: var(--shadow);
+  border: var(--border-card);
   border-radius: 8px;
   z-index: 100;
   display: flex;
@@ -23,22 +25,23 @@
 .school-history-section .dot {
   height: 30px;
   width: 30px;
-  background-color: var(--green-5);
+  background-color: var(--bg-light);
   border-radius: 50px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1;
 }
 
 .school-history-section .dot::before {
   position: absolute;
   content: '';
   width: 150px;
-  z-index: 2;
+  z-index: -2;
   height: 10px;
   top: 50%;
   transform: translateY(-50%);
-  background-color: var(--green-5);
+  background-color: var(--bg-light);
 }
 
 .school-history-section .dot.left::before {
@@ -51,16 +54,17 @@
 
 .school-history-section .timeline-item h4 {
   font-size: 1.75rem;
+  color: var(--text-muted);
 }
 
 .school-history-section .timeline-item a {
-  color: var(--green-6);
+  color: var(--text-muted);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   padding: 0.75rem 1rem;
-  background-color: var(--green-4);
+  background-color: var(--button-primary);
   border-radius: 8px;
   font-size: 1rem;
   font-weight: 500;

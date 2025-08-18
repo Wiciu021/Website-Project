@@ -6,13 +6,13 @@
   align-items: center;
   flex-direction: column;
   overflow: hidden;
-  background-color: var(--green-1);
+  background-color: var(--bg-dark);
   padding-block: 55px;
 }
 
 .feed-section h2 {
   font-size: 3rem;
-  color: var(--green-6);
+  color: var(--text);
   position: relative;
   text-align: center;
 }

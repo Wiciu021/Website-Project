@@ -1,6 +1,6 @@
 .feed-page-section .feed-wrapper .feed-grid .feed-page-item,
 .feed-page-post .wrapper .post-card {
-  background-color: var(--green-3);
+  background-color: var(--bg);
   border-radius: 15px;
   display: flex;
   justify-content: left;
@@ -26,8 +26,8 @@
   position: absolute;
   width: fit-content;
   height: fit-content;
-  background-color: var(--green-5);
-  color: var(--green-6);
+  background-color: var(--bg-light);
+  color: var(--text-muted);
   padding: 0.5rem;
   border-radius: 10px;
   font-weight: 500;
@@ -62,7 +62,7 @@
 .feed-page-post .post-card .card-footer-container h4 {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--green-6);
+  color: var(--text-muted);
 }
 
 .feed-page-section .feed-page-item .card-footer-container .see-more-button,
@@ -71,7 +71,7 @@
   border: none;
   border-radius: 10px;
   font-family: "Parkinsans", sans-serif;
-  color: var(--green-6);
-  background-color: var(--green-5);
+  color: var(--button-color);
+  background-color: var(--button-primary);
   font-weight: 500;
 }

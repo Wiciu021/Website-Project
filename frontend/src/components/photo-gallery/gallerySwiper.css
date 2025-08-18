@@ -33,7 +33,7 @@
 
 .swiper-container .swiper-slide .content-container h3 {
   font-size: 2rem;
-  color: var(--green-6);
+  color: var(--text);
 }
 
 .swiper-container .swiper-slide .content-container p {
@@ -41,20 +41,20 @@
 }
 
 .swiper-pagination-bullet {
-  background-color: var(--green-6);
+  background-color: var(--text-muted);
   opacity: 1;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: var(--green-5);
+  background-color: var(--accent-1);
 }
 
 .swiper-container .swiper-slide button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--green-5);
-  color: var(--green-6);
+  background-color: var(--button-primary);
+  color: var(--button-color);
   border: none;
   font-family: 'Parkinsans', sans-serif;
   font-weight: 600;
