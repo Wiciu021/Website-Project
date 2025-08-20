@@ -11,7 +11,7 @@
 }
 
 .feed-section h2 {
-  font-size: 3rem;
+  font-size: var(--font-headings);
   color: var(--text);
   position: relative;
   text-align: center;

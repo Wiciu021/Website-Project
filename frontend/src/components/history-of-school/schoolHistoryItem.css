@@ -5,7 +5,7 @@
   background-color: var(--bg-light);
   box-shadow: var(--shadow);
   border: var(--border-card);
-  border-radius: 8px;
+  border-radius: var(--radius-button);
   z-index: 100;
   display: flex;
   justify-content: space-between;
@@ -26,7 +26,7 @@
   height: 30px;
   width: 30px;
   background-color: var(--bg-light);
-  border-radius: 50px;
+  border-radius: var(--radius-full);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -53,7 +53,7 @@
 }
 
 .school-history-section .timeline-item h4 {
-  font-size: 1.75rem;
+  font-size: var(--font-medium-titles);
   color: var(--text-muted);
 }
 
@@ -65,7 +65,7 @@
   gap: 1rem;
   padding: 0.75rem 1rem;
   background-color: var(--button-primary);
-  border-radius: 8px;
+  border-radius: var(--radius-button);
   font-size: 1rem;
   font-weight: 500;
 }

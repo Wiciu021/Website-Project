@@ -12,14 +12,14 @@
   min-width: 400px;
   background-color: var(--bg);
   border: var(--border-card);
-  border-radius: 10px;
+  border-radius: var(--radius-card);
   box-shadow: var(--shadow);
   padding: 4rem 3rem;
   gap: 4rem;
 }
 
 .login-section .login-wrapper h2 {
-  font-size: 2.5rem;
+  font-size: var(--font-headings);
   color: var(--text);
 }
 
@@ -36,11 +36,11 @@
 .login-section .login-wrapper form input {
   border-style: none;
   padding: 1rem;
-  border-radius: 40px;
+  border-radius: var(--radius-button);
   width: 100%;
   font-family: "Parkinsans", sans-serif;
   color: var(--text-muted);
-  font-size: 1rem;
+  font-size: var(--font-regular);
   font-weight: 400;
   background-color: var(--bg-light);
 }
@@ -55,15 +55,15 @@
 
 .login-section .login-wrapper form .login-button {
   width: 100%;
-  padding: 1rem;
+  padding: .875rem;
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 40px;
+  border-radius: var(--radius-button);
   font-family: "Parkinsans", sans-serif;
   background-color: var(--button-primary);
   color: var(--button-color);
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: var(--font-button);
+  font-weight: 400;
 }

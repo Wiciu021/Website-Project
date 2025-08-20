@@ -6,7 +6,7 @@
   align-items: center;
   flex-direction: column;
   background-color: var(--bg);
-  border-radius: 30px;
+  border-radius: var(--radius-button);
   padding: 1rem;
   gap: 1rem;
 }
@@ -14,16 +14,17 @@
 .teaching-staff-section .grid-item img {
   width: 150px;
   height: 150px;
-  border-radius: 100px;
+  border-radius: var(--radius-full);
 }
 
 .teaching-staff-section .grid-item h4 {
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: var(--font-button);
   color: var(--text-muted);
 }
 
 .teaching-staff-section .grid-item p {
   text-align: center;
   color: var(--text-muted);
+  font-size: var(--font-text);
 }

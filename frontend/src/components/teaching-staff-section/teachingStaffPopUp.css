@@ -10,7 +10,7 @@
   align-items: center;
   flex-direction: column;
   background-color: var(--bg);
-  border-radius: 30px;
+  border-radius: var(--radius-card);
   padding: 2.75rem 3rem;
   gap: 1.5rem;
   overflow: hidden;
@@ -34,9 +34,9 @@
   border: none;
   font-family: 'Parkinsans', sans-serif;
   font-weight: 600;
-  font-size: 2.125rem;
-  border-radius: 20px;
-  padding: 8px;
+  font-size: var(--font-big-title);
+  border-radius: var(--radius-button);
+  padding: 5px;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -45,15 +45,15 @@
 .teaching-staff-pop-up img {
   width: 180px;
   height: 180px;
-  border-radius: 100px;
+  border-radius: var(--radius-full);
 }
 
 .teaching-staff-pop-up h4 {
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: var(--font-titles);
 }
 
 .teaching-staff-pop-up p {
   text-align: center;
-  font-size: 1.125rem;
+  font-size: var(--font-small-title);
 }

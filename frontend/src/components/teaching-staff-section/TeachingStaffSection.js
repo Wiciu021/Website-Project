@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import './teachingStaffSection.css'
 import TeachingStaffItem from './TeachingStaffItem'
 import TeachingStaffPopUp from './TeachingStaffPopUp'
+import teachingStaffData from '../../Data/teaching-staff-data'
 
 const TeachingStaffSection = () => {
-  const [teachers, setTeachers] = useState([]);
+  const [teachers, setTeachers] = useState(teachingStaffData);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [showPopUp, setShowPopUp] = useState(false);
@@ -35,8 +36,8 @@ const TeachingStaffSection = () => {
     }
   }, [showPopUp]);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  // if (loading) return <div>Loading...</div>;
+  // if (error) return <div>Error: {error}</div>;
 
   return (
     <section className='teaching-staff-section page-section'>

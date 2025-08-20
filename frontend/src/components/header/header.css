@@ -25,7 +25,7 @@
 
 .header .icons {
   color: var(--text-muted);
-  font-size: 1.5rem;
+  font-size: var(--font-titles);
   font-weight: 500;
 }
 
@@ -50,15 +50,16 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1rem;
+  font-size: var(--font-regular);
   height: 100%;
+  font-weight: 500;
 }
 
 .header .nav ul li .drop-down-button {
   position: relative;
   border: none;
   background-color: transparent;
-  font-size: 1.25rem;
+  font-size: var(--font-button);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,6 +80,8 @@
   align-items: flex-start;
   background-color: var(--bg);
   min-width: 150px;
+  /* border-bottom-left-radius: var(--radius-button);
+  border-bottom-right-radius: var(--radius-button); */
 }
 
 .header .nav .list-dropdown li {

@@ -12,13 +12,13 @@
 .feed-page-post {
   background-color: var(--bg-dark);
   color: var(--text);
-  min-height: 100vh;
+  min-height: calc(100vh - 55px);
   position: relative;
 }
 
 .feed-page-section .title-section,
 .feed-page-post .title-section {
-  /* height: 300px; */
+  height: 100px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -28,7 +28,7 @@
 .feed-page-section .title-section h1,
 .feed-page-post .title-section h1 {
   color: var(--text);
-  font-size: 3.5rem;
+  font-size: var(--font-headings);
 }
 
 .feed-page-section .feed-wrapper {
@@ -37,12 +37,15 @@
   align-items: center;
   max-width: 1200px;
   height: fit-content;
+  min-height: calc(60vh);
 }
 
 .feed-page-section .feed-wrapper .feed-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  /* place-items: center;
+  justify-items: center; */
 }
 
 .feed-page-section .scroll-to-top-button {
@@ -58,8 +61,8 @@
   color: var(--button-color);
   background-color: var(--button-primary);
   padding: 0.5rem;
-  border-radius: 50px;
-  font-size: 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: var(--font-button);
   font-weight: 600;
 }
 

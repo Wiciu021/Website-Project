@@ -14,11 +14,11 @@
   justify-content: center;
   align-items: center;
   padding: 1rem 1.25rem;
-  border-radius: 30px;
+  border-radius: var(--radius-button);
   background-color: var(--bg);
 }
 
 .class-profile-section .class-profile-wrapper img {
   width: 390px;
-  border-radius: 20px;
+  border-radius: var(--radius-small);
 }

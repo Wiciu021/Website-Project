@@ -19,17 +19,17 @@ const FeedPagePost = () => {
 
   return (
     <section className='feed-page-post page-section'>
-      <div className='title-section'>
+      {/* <div className='title-section'>
         <h1>Aktualności</h1>
-      </div>
+      </div> */}
       <div className='wrapper'>
         <div className='post-card'>
           <div className='card-image-container' style={{
-            backgroundImage: `url(/images/${post.img}.jpg)`,
+            // backgroundImage: `url(/images/${post.img}.jpg)`,
+            backgroundImage: 'url(/kids1.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            borderRadius: '10px'
           }}>
             <div className='date-container'>{post.date}</div>
           </div>

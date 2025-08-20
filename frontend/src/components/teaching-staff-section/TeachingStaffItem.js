@@ -12,7 +12,7 @@ const TeachingStaffItem = ({ item, showPopUp, setShowPopUp }) => {
     <div className='grid-item' onClick={handleClick}>
       <img 
         src={`/static/images/teaching-staff/${!imageError ? item.img : 'default.jpg'}`}
-        alt={`${item.name} ${item.surname}`} 
+        alt={`tu mialo byc zdjecie pozdro`} 
         onError={() => setImageError(true)}
       />
       <h4>{item.name} {item.surname}</h4>

@@ -5,11 +5,12 @@ const FeedPageItem = React.memo(({ item }) => {
   return (
     <div className='feed-page-item'>
       <div className='card-image-container' style={{
-        backgroundImage: `url(${item.img}?v=${Date.now()})`,
+        // backgroundImage: `url(${item.img}?v=${Date.now()})`,
+        // znowu sobie odkomentuj
+        backgroundImage: 'url(/kids1.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        borderRadius: '10px'
       }}>
         <div className='date-container'>
           {new Date(item.date).toLocaleDateString('pl-PL')}
@@ -17,7 +18,7 @@ const FeedPageItem = React.memo(({ item }) => {
       </div>
       <div className='card-desctiption-container'>
         <h3>{item.title}</h3>
-        <div className='desctiption'>
+        <div className='description'>
           {
             item.description.length > 80 ? item.description.slice(0, 80) + '...' : item.description 
           }

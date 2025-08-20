@@ -4,8 +4,8 @@
   align-items: center;
   min-height: calc(100vh - 55px);
   padding: 2rem;
-  background-image: linear-gradient(to bottom right, var(--green-6), var(--green-5), var(--green-6), var(--green-5));
-  color: var(--green-6);
+  background-color: var(--bg-dark);
+  color: var(--text);
 }
 
 .candidates-info-section .candidates-info-wrapper {
@@ -16,8 +16,8 @@
   max-width: 1200px;
   height: calc(100vh - 55px - 4rem);
   padding: 1rem;
-  background-color: var(--green-5);
-  border-radius: 20px;
+  background-color: var(--bg);
+  border-radius: var(--radius-button);
 }
 
 .candidates-info-section .candidates-info-wrapper .left-section {
@@ -26,16 +26,16 @@
   align-items: center;
   flex: 1;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2.75rem;
   padding: 1rem 2rem;
-  background-color: var(--green-4);
+  background-color: var(--bg-light);
   /* height: calc(100vh - 55px - 6rem); */
   width: 65%;
-  border-radius: 10px;
+  border-radius: var(--radius-small);
 }
 
 .candidates-info-section .candidates-info-wrapper .left-section h3 {
-  font-size: 2rem;
+  font-size: var(--font-big-title);
   font-weight: 700;
 }
 
@@ -47,6 +47,8 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  color: var(--text-muted);
+  font-size: var(--font-regular);
 } 
 
 .candidates-info-section .candidates-info-wrapper .left-section button {
@@ -54,12 +56,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 14px;
+  border-radius: var(--radius-button);
   font-family: 'Parkinsans', sans-serif;
-  background-color: var(--green-5);
-  color: var(--green-6);
+  background-color: var(--button-primary);
+  color: var(--button-color);
   border: none;
-  font-size: 1rem;
+  font-size: var(--font-regular);
   white-space: nowrap;
 }
 
@@ -68,10 +70,10 @@
   justify-content: center;
   align-items: center;
   gap: 0.75rem;
-  color: var(--green-6);
+  color: var(--button-color);
 }
 
 .candidates-info-section img {
   width: 360px;
-  border-radius: 12px;
+  border-radius: var(--radius-small);
 }

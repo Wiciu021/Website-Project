@@ -18,7 +18,7 @@
 }
 
 .school-history-section .school-history-wrapper h2 {
-  font-size: 2.5rem;
+  font-size: var(--font-small-headings);
 }
 
 .school-history-section .school-history-wrapper .school-timeline {
@@ -29,14 +29,13 @@
   background-color: var(--bg);
   box-shadow: var(--shadow);
   border: var(--border-card);
-  border-radius: 10px;
+  border-radius: var(--radius-button);
 }
 
 .school-history-section .school-history-wrapper .school-timeline::before {
   content: '';
   position: absolute;
   width: 10px;
-  border-radius: 30px;
   top: 0;
   bottom: 0;
   left: 50%;

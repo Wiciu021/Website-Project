@@ -4,9 +4,10 @@ import FeedPageItem from './FeedPageItem'
 import './FeedPageItem'
 import './feedPageItem.css'
 import { IoChevronUpOutline } from 'react-icons/io5';
+import feedData from '../../Data/feed-data'
 
 const FeedPage = () => {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState(feedData);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -36,7 +37,9 @@ const FeedPage = () => {
         <h1>Aktualności</h1>
       </div>
       <div className='feed-wrapper'>
-        <div className='feed-grid'>
+        <div className='feed-grid' style={{
+          gridTemplateColumns: posts.length === 0 ? '1fr' : null
+        }}>
           {
             posts && posts.length ?
             posts.map(post => <FeedPageItem key={post.id} item={post}/>)

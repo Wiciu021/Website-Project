@@ -22,7 +22,7 @@
 }
 
 .teaching-staff-section h2 {
-  font-size: 3rem;
+  font-size: var(--font-headings);
 }
 
 .teaching-staff-section .teaching-staff-wrapper {
@@ -36,7 +36,7 @@
 
 .teaching-staff-section .teaching-staff-wrapper h3 {
   color: var(--text);
-  font-size: 2.5rem;
+  font-size: var(--font-small-headings);
 }
 
 .teaching-staff-section .teaching-staff-wrapper .head-teachers-wrapper,
