@@ -18,6 +18,7 @@
   padding: 1rem;
   background-color: var(--bg);
   border-radius: var(--radius-button);
+  border: var(--border);
 }
 
 .candidates-info-section .candidates-info-wrapper .left-section {

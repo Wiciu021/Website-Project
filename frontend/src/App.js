@@ -15,6 +15,7 @@ import NotFoundSection from "./components/not-found-section/NotFoundSection";
 import ClassProfile from "./components/class-profile/ClassProfile";
 import PhotoGallerySection from "./components/photo-gallery/PhotoGallerySection";
 import SchoolHistorySection from "./components/history-of-school/SchoolHistorySection";
+import InsuranceSection from "./components/insurance-section/InsuranceSection";
 
 function HomePage() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/profile-klas" element={<ClassProfile />} />
           <Route path="/galeria" element={<PhotoGallerySection />} />
           <Route path="/historia" element={<SchoolHistorySection />} />
+          <Route path="/ubezpieczenie" element={<InsuranceSection />} />
           <Route path="*" element={<NotFoundSection />} />
         </Routes>
 

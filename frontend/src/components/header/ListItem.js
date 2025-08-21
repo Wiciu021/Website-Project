@@ -30,8 +30,6 @@ const ListItem = ({ item, id, showDropDown, setShowDropDown }) => {
   return (
     <li key={item.label}>
       <SmartLink item={item} />
-      {/* {item.children && item.children.length > 0 ? item.label : <Link className='nav-link' to={`${item.href}`}>{item.label}</Link>} */}
-      {/* <Link className='nav-link' to={`${item.href}`}>{item.label}</Link> */}
       {item.children && item.children.length ? <button onClick={() => handleDropDowns(item.label)} className='drop-down-button'><IoChevronDownOutline/></button> : null}
       {item.children && showDropDown === item.label && item.children.length ? <div className={`list-dropdown list-${id}`}><NavList headerData={item.children} id={id}/></div> : null}
     </li>
