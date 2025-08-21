@@ -1,5 +1,6 @@
 import React from 'react'
 import './notFoundSection.css'
+import { Link } from 'react-router-dom'
 
 const NotFoundSection = () => {
   return (
@@ -11,7 +12,7 @@ const NotFoundSection = () => {
       backgroundPosition: 'center',
     }}>
       <p>Not Found Section</p>
-      <button className='return-button'>wróć</button>
+      <Link to="/" className='return-button'>wróć</Link>
     </div>
   )
 }
