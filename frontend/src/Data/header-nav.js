@@ -9,9 +9,9 @@ export const headerData = [
     label: 'Dla Ucznia',
     children: [
       { id: 21, label: 'Samorząd Uczniowski', href: '/samorzad-uczniowski' },
-      { id: 22, label: 'Plan Zajęć', href: '/plan-zajec' },
-      { id: 23, label: 'Zastępstwa', href: '/zastepstwa' },
-      { id: 24, label: 'Dziennik', href: '/dziennik' },
+      { id: 22, label: 'Plan Zajęć', href: '/plan-zajec.pdf' },
+      { id: 23, label: 'Zastępstwa', href: '/zastepstwa1.pdf' },
+      { id: 24, label: 'Dziennik', href: 'https://www.edu.gdansk.pl/' },
       { id: 25, label: 'Matura', href: '/matura' }
     ]
   },
@@ -21,7 +21,7 @@ export const headerData = [
     children: [
       { id: 31, label: 'Rada Rodziców', href: '/rada-rodzicow' },
       { id: 32, label: 'Dokumenty Szkolne', href: '/dokumenty-szkolne' },
-      { id: 33, label: 'Kalendarz Pracy', href: '/kalendarz-pracy' },
+      { id: 33, label: 'Kalendarz Pracy', href: '/docs-files/Plan-pracy-2024-2025.pdf' },
       { id: 34, label: 'Ubezpieczenie', href: '/ubezpieczenie' },
     ]
   },
