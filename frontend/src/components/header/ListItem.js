@@ -25,18 +25,32 @@ const ListItem = ({ item, level, openDropdowns, setOpenDropdowns }) => {
 
       return newState;
     });
-  };
+  }; 
+  
+  const handleClick = () => {
+    setOpenDropdowns(prev => {
+      const newState = { ...prev };
+
+      Object.keys(newState).forEach(lvl => {
+        newState[lvl] = null;
+      });
+
+      return newState;
+    });
+  }
 
   const SmartLink = ({ item }) => {
-    if (item.children && item.children.length > 0) return item.label;
+    if (item.children && item.children.length > 0) {
+      return item.label;
+    }
 
     const isExternal = item.href.startsWith('http');
     const isFile = item.href.match(/\.(pdf|docx?|xlsx?|jpg|png)$/i);
 
     if (isFile || isExternal) {
-      return <a href={item.href} target='_blank' rel='noopener noreferrer' className='nav-link'>{item.label}</a>
+      return <a onClick={handleClick} href={item.href} target='_blank' rel='noopener noreferrer' className='nav-link'>{item.label}</a>
     } else {
-      return <Link to={item.href} className='nav-link'>{item.label}</Link>
+      return <Link to={item.href} onClick={handleClick} className='nav-link'>{item.label}</Link>
     }
   }
 
