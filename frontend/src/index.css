@@ -48,7 +48,7 @@ html, body {
   /* Border radius scale */
   --radius-small: 2px;
   --radius-button: 4px;
-  --radius-card: 6px;
+  --radius-card: 5px;
   --radius-page: 12px;
   --radius-lg: 16px;
   --radius-xl: 24px;

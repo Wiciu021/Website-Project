@@ -1,83 +1,54 @@
-.photo-gallery-section .timeline-wrapper .timeline-dot {
-  position: absolute;
-  left: 50%;                   
-  transform: translateX(-50%);
-  width: 30px;
-  height: 30px;
+.gallery-grid .flip-card {
+  height: 300px;
   background-color: var(--bg-light);
-  border-radius: 50%;
-  z-index: 2;
+  border-radius: var(--radius-button);
+  min-width: 300px;
+  perspective: 1000px; 
 }
 
-.photo-gallery-section .timeline-wrapper .timeline-dot::before {
-  content: '';
-  height: 10px;
-  width: 100px;
-  position: absolute;
-  background-color: var(--bg-light);
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: -100;
-}
-
-.photo-gallery-section .timeline-wrapper .timeline-dot.left::before {
-  right: 50%;
-}
-
-.photo-gallery-section .timeline-wrapper .timeline-dot.right::before {
-  left: 50%;
-}
-
-.photo-gallery-section .timeline-wrapper .timeline-item {
+.gallery-grid .flip-card .card-inner {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.75rem;
-  background-color: var(--bg-light);
-  box-shadow: var(--shadow);
-  border-radius: 10px;
+  position: relative;
+  transition: transform 0.8s; 
+  transform-style: preserve-3d;
+}
+
+.gallery-grid .flip-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.gallery-grid .flip-card .front-side,
+.gallery-grid .flip-card .back-side {
   position: absolute;
-  width: 400px;
-  height: 200px;
-  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--radius-button);
   overflow: hidden;
-  z-index: 700;
-} 
-
-.photo-gallery-section .timeline-wrapper .timeline-item.right {
-  right: 20px;
 }
 
-.photo-gallery-section .timeline-wrapper .timeline-item.left {
-  left: 20px;
-}
 
-.photo-gallery-section .timeline-wrapper .timeline-item .text-container {
+.gallery-grid .flip-card .card-inner .back-side {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
   flex-direction: column;
-  width: 250px;
+  padding: 1rem;
+  transform: rotateY(180deg); 
   gap: 0.5rem;
 }
 
-.photo-gallery-section .timeline-wrapper .timeline-item .text-container h4 {
-  font-size: 1.125rem;
+.gallery-grid .flip-card .card-inner .back-side h4 {
+  font-size: var(--font-titles);
+  text-align: center;
 }
 
-.photo-gallery-section .timeline-wrapper .timeline-item .text-container p {
-  font-size: 0.875rem;
-}
-
-.photo-gallery-section .timeline-wrapper .timeline-item img {
-  width: 150px;
-  height: 170px;
-  object-position: center;
-  object-fit: cover;
-  border-radius: 5px;
-  transition: .3s;
-}
-
-.photo-gallery-section .timeline-wrapper .timeline-item img:hover {
-  scale: 1.1;
+.gallery-grid .flip-card .card-inner .back-side p {
+  text-align: center;
+  font-size: var(--font-regular);
+  color: var(--text-muted);
 }

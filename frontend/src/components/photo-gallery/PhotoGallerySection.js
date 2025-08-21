@@ -6,7 +6,7 @@ import GallerySwiper from './GallerySwiper'
 
 const PhotoGallerySection = () => {
 
-  const height = galleryData.length * 291;
+  //const height = galleryData.length * 291;
 
   const [showSwiper, setShowSwiper] = useState(null);
   const [swiperArray, setSwiperArray] = useState([]);
@@ -37,11 +37,9 @@ const PhotoGallerySection = () => {
         pointerEvents: showSwiper ? 'none' : 'all'
       }}>
         <h2>Galeria</h2>
-        <div className="timeline-wrapper" style={{
-          height: height
-        }}>
+        <div className="gallery-grid">
           {
-            galleryData && galleryData.length ? galleryData.map((galleryItem, idx) => <GalleryItem setShowSwiper={setShowSwiper} item={galleryItem} idx={idx} key={galleryItem.id} position={galleryItem.id % 2} length={galleryData.length} />) : null
+            galleryData && galleryData.length ? galleryData.map((galleryItem, idx) => <GalleryItem setShowSwiper={setShowSwiper} item={galleryItem} idx={idx} key={galleryItem.id} length={galleryData.length} />) : null
           }
         </div>
       </div>

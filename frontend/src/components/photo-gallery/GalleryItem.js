@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './photoGalleryItem.css'
 
-const GalleryItem = ({ setShowSwiper, item, position, length, idx }) => {
+const GalleryItem = ({ setShowSwiper, item, length, idx }) => {
 
   const height = length * 330;
 
@@ -9,21 +9,30 @@ const GalleryItem = ({ setShowSwiper, item, position, length, idx }) => {
     setShowSwiper(item.folder);
   }
 
+  const [showDescritption, setShowDescription] = useState(false);
+
   return (
     <>
-      <div
-          key={`dot-${item.id}`}
-          className={`timeline-dot ${position === 0 ? 'left' : 'right'}`}
-          style={{ top: `${((item.id - 1) * 300) + 100}px` }}
-        />
-      <div className={`timeline-item ${position === 0 ? 'left' : 'right'}`} style={{
-        top: `${((item.id - 1) * 300) + 30}px` 
-      }} onClick={handleClick}>
-        <div className='text-container'>
-          <h4>{item.title}</h4>
-          <p>{item.description}</p>
+      <div className='flip-card' onClick={handleClick}>
+
+        <div className='card-inner'>
+
+          <div className='front-side' style={{
+            // backgroundImage: `url(/static/images/gallery/${item.folder}/${item.img}.jpg)`,
+            backgroundImage: 'url(/kids1.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            width: '100%',
+            height: '100%'
+          }}>
+          </div>
+  
+          <div className='back-side'>
+            <h4>{item.title}</h4>
+            <p>{item.description}</p>
+          </div>
+  
         </div>
-        <img src={`/static/images/gallery/${item.folder}/${item.img}.jpg`} alt={item.title} />
       </div>
     </>
   )

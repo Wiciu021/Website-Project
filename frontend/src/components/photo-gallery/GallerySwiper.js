@@ -22,7 +22,8 @@ const GallerySwiper = ({ photosArray, folder, setShowSwiper }) => {
     >
       {photosArray.map((item) => (
         <SwiperSlide key={item.id} className='swiper-slide' style={{
-            backgroundImage: `url(/images/gallery/${folder}/${item.img}.jpg)`,
+            // backgroundImage: `url(/images/gallery/${folder}/${item.img}.jpg)`,
+            backgroundImage: 'url(/kids1.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',

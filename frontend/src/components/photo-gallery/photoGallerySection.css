@@ -8,40 +8,37 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 2rem 1rem;
-  gap: 3rem;
-}
-
-.photo-gallery-section .gallery-section-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  padding: 1rem;
   gap: 3rem;
 }
 
 .photo-gallery-section h2 {
   font-size: var(--font-headings);
+  color: var(--text);
+  text-align: center;
 }
 
-.photo-gallery-section .timeline-wrapper {
-  position: relative;
+.photo-gallery-section .gallery-section-wrapper {
+  width: 100%;
   min-height: 100vh;
-  max-width: 1200px;
-  min-width: 1000px;
-  padding: 1.5rem 1rem;
-  background-color: var(--bg);
-  border-radius: var(--radius-card);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
 }
 
-.photo-gallery-section .timeline-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 10px;
-  background-color: var(--bg-light);
+.photo-gallery-section .gallery-section-wrapper .gallery-grid {
+  display: grid;
+  width: 1000px;
+  height: 100%;
+  min-height: 70vh;
+  background-color: var(--bg);
+  padding: 1rem;
+  border-radius: var(--radius-card);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
+
 
