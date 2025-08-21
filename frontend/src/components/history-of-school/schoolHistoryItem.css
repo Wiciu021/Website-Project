@@ -1,4 +1,5 @@
-.school-history-section .timeline-item {
+.school-history-section .timeline-item,
+.achievements-section .timeline-item {
   position: absolute;
   width: 320px;
   height: 80px;
@@ -14,15 +15,18 @@
   /* gap: 2.25rem; */
 }
 
-.school-history-section .timeline-item.left {
+.school-history-section .timeline-item.left,
+.achievements-section .timeline-item.left {
   left: 15px;
 }
 
-.school-history-section .timeline-item.right {
+.school-history-section .timeline-item.right,
+.achievements-section .timeline-item.right {
   right: 15px;
 }
 
-.school-history-section .dot {
+.school-history-section .dot,
+.achievements-section .dot {
   height: 30px;
   width: 30px;
   background-color: var(--bg-light);
@@ -33,7 +37,8 @@
   z-index: 1;
 }
 
-.school-history-section .dot::before {
+.school-history-section .dot::before,
+.achievements-section .dot::before {
   position: absolute;
   content: '';
   width: 150px;
@@ -44,20 +49,24 @@
   background-color: var(--bg-light);
 }
 
-.school-history-section .dot.left::before {
+.school-history-section .dot.left::before,
+.achievements-section .dot.left::before {
   right: 10%;
 }
 
-.school-history-section .dot.right::before {
+.school-history-section .dot.right::before,
+.achievements-section .dot.right::before {
   left: 10%;
 }
 
-.school-history-section .timeline-item h4 {
+.school-history-section .timeline-item h4,
+.achievements-section .timeline-item h4 {
   font-size: var(--font-medium-titles);
   color: var(--text-muted);
 }
 
-.school-history-section .timeline-item a {
+.school-history-section .timeline-item a,
+.achievements-section .timeline-item .link-button {
   color: var(--text-muted);
   display: flex;
   justify-content: center;

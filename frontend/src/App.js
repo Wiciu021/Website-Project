@@ -2,7 +2,6 @@ import Header from "./components/header/Header";
 import HeroSection from "./components/hero-section/HeroSection"; 
 import ForStudent from "./components/for-student-section/ForStudent";
 import Feed from "./components/feed-section/Feed";
-import ForParents from "./components/for-parents-section/ForParents";
 import Footer from "./components/footer/Footer";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import FeedPage from "./components/feed-page/FeedPage";
@@ -16,6 +15,8 @@ import ClassProfile from "./components/class-profile/ClassProfile";
 import PhotoGallerySection from "./components/photo-gallery/PhotoGallerySection";
 import SchoolHistorySection from "./components/history-of-school/SchoolHistorySection";
 import InsuranceSection from "./components/insurance-section/InsuranceSection";
+import AchievementsSection from "./components/students-achievements/AchievementsSection";
+import AnnualAchievements from "./components/students-achievements/AnnualAchievements";
 
 function HomePage() {
   return (
@@ -23,7 +24,6 @@ function HomePage() {
       <HeroSection />
       <ForStudent />
       <Feed />
-      <ForParents />
     </>
   )
 }
@@ -46,6 +46,8 @@ function App() {
           <Route path="/galeria" element={<PhotoGallerySection />} />
           <Route path="/historia" element={<SchoolHistorySection />} />
           <Route path="/ubezpieczenie" element={<InsuranceSection />} />
+          <Route path="/osiagniecia" element={<AchievementsSection />} />
+          <Route path="/osiagniecia/:id" element={<AnnualAchievements />} />
           <Route path="*" element={<NotFoundSection />} />
         </Routes>
 

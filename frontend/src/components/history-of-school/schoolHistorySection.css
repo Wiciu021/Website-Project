@@ -1,4 +1,5 @@
-.school-history-section {
+.school-history-section,
+.achievements-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,7 +10,8 @@
   color: var(--text);
 }
 
-.school-history-section .school-history-wrapper {
+.school-history-section .school-history-wrapper,
+.achievements-section .achievements-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,22 +19,24 @@
   gap: 3rem;
 }
 
-.school-history-section .school-history-wrapper h2 {
+.school-history-section .school-history-wrapper h2,
+.achievements-section .achievements-wrapper h2  {
   font-size: var(--font-small-headings);
 }
 
-.school-history-section .school-history-wrapper .school-timeline {
+.school-history-section .school-history-wrapper .school-timeline, 
+.achievements-section .achievements-wrapper .achievements-timeline {
   position: relative;
   height: 100vh;
   min-width: 850px;
   max-width: 1000px;
   background-color: var(--bg);
   box-shadow: var(--shadow);
-  border: var(--border-card);
+  border: var(--border);
   border-radius: var(--radius-button);
 }
 
-.school-history-section .school-history-wrapper .school-timeline::before {
+.school-history-section .school-history-wrapper .school-timeline::before, .achievements-section .achievements-wrapper .achievements-timeline::before {
   content: '';
   position: absolute;
   width: 10px;
