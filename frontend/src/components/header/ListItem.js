@@ -1,48 +1,69 @@
-import React, { useState } from 'react'
-import NavList from './NavList'
-import { IoChevronDownOutline } from 'react-icons/io5';
+import React from 'react';
+import NavList from './NavList';
+import { IoChevronDownOutline, IoAddOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
-import { IoAddOutline } from "react-icons/io5";
 
-const ListItem = ({ item, id, showDropDown, setShowDropDown }) => {
+const ListItem = ({ item, level, openDropdowns, setOpenDropdowns }) => {
 
-  const handleDropDowns = (currentLabel) => {
-    if (currentLabel === showDropDown) {
-      setShowDropDown(null);
-    } else {
-      setShowDropDown(currentLabel);
-    }
-  }
+  const isOpen = openDropdowns[level] === item.id;
+
+  const toggleDropdown = () => {
+    setOpenDropdowns(prev => {
+      const newState = { ...prev };
+
+      if (isOpen) {
+        newState[level] = null;
+      } else {
+        newState[level] = item.id;
+      }
+
+      Object.keys(newState).forEach(lvl => {
+        if (Number(lvl) > level) {
+          newState[lvl] = null;
+        }
+      });
+
+      return newState;
+    });
+  };
 
   const SmartLink = ({ item }) => {
-    if (item.children && item.children.length > 0) {
-      return item.label;
-    }
+    if (item.children && item.children.length > 0) return item.label;
+
     const isExternal = item.href.startsWith('http');
     const isFile = item.href.match(/\.(pdf|docx?|xlsx?|jpg|png)$/i);
 
     if (isFile || isExternal) {
-      return <a href={`${item.href}`} target='_blank' rel='noopener noreferrer' className='nav-link'>{item.label}</a>
+      return <a href={item.href} target='_blank' rel='noopener noreferrer' className='nav-link'>{item.label}</a>
     } else {
-      return <Link to={`${item.href}`} className='nav-link'>{item.label}</Link>
+      return <Link to={item.href} className='nav-link'>{item.label}</Link>
     }
   }
 
   return (
-    <li key={item.label}>
+    <li key={item.id}>
       <SmartLink item={item} />
-      {item.children && item.children.length ? <button onClick={() => handleDropDowns(item.label)} className='drop-down-button' style={{
-        transform: showDropDown === item.label ? 'rotate(180deg)' : null
-      }}>{String(item.id).length > 1 ? <IoAddOutline/> : <IoChevronDownOutline/>}</button> : null}
-      {item.children && item.children.length ? (
-        <div 
-          className={`list-dropdown list-${id} ${showDropDown === item.label ? "show" : ""}`}
+      {item.children && item.children.length > 0 && (
+        <button 
+          onClick={toggleDropdown} 
+          className='drop-down-button'
+          style={{ transform: isOpen ? 'rotate(180deg)' : null }}
         >
-          <NavList headerData={item.children} id={id}/>
+          {String(item.id).length > 1 ? <IoAddOutline/> : <IoChevronDownOutline/>}
+        </button>
+      )}
+      {item.children && item.children.length > 0 && (
+        <div className={`list-dropdown list-${level} ${isOpen ? 'show' : null}`}>
+          <NavList 
+            headerData={item.children} 
+            level={level + 1} 
+            openDropdowns={openDropdowns} 
+            setOpenDropdowns={setOpenDropdowns} 
+          />
         </div>
-      ) : null}
+      )}
     </li>
   )
 }
 
-export default ListItem
+export default ListItem;

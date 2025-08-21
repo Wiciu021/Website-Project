@@ -1,18 +1,20 @@
-import React from 'react'
-import ListItem from './ListItem'
-import { useState } from 'react';
+import React from 'react';
+import ListItem from './ListItem';
 
-const NavList = ({ headerData, id }) => {
-
-  const [showDropDown, setShowDropDown] = useState(false);
-  
+const NavList = ({ headerData, level, openDropdowns, setOpenDropdowns }) => {
   return (
-    <ul className={`ul-${id}`}>
-      {
-        headerData && headerData.length ? headerData.map(headerItem => <ListItem key={headerItem.id} item={headerItem} id={id + 1} showDropDown={showDropDown} setShowDropDown={setShowDropDown}/>) : null
-      }
+    <ul className={`ul-${level}`}>
+      {headerData && headerData.map(item => (
+        <ListItem 
+          key={item.id} 
+          item={item} 
+          level={level} 
+          openDropdowns={openDropdowns} 
+          setOpenDropdowns={setOpenDropdowns} 
+        />
+      ))}
     </ul>
   )
 }
 
-export default NavList
+export default NavList;

@@ -120,6 +120,11 @@
   background-color: var(--accent-4);
 }
 
+.header .nav .list-2 {
+  top: 0;
+  left: 100%;
+}
+
 .header .nav .list-3 {
   top: 0;
   left: 100%;
