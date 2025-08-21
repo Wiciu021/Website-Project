@@ -19,6 +19,7 @@
   background-color: var(--bg);
   border-radius: var(--radius-button);
   border: var(--border);
+  box-shadow: var(--shadow);
 }
 
 .candidates-info-section .candidates-info-wrapper .left-section {
@@ -33,6 +34,7 @@
   /* height: calc(100vh - 55px - 6rem); */
   width: 65%;
   border-radius: var(--radius-small);
+  box-shadow: var(--shadow);
 }
 
 .candidates-info-section .candidates-info-wrapper .left-section h3 {
