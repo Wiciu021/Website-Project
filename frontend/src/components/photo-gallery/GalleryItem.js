@@ -9,7 +9,6 @@ const GalleryItem = ({ setShowSwiper, item, length, idx }) => {
     setShowSwiper(item.folder);
   }
 
-  const [showDescritption, setShowDescription] = useState(false);
 
   return (
     <>
