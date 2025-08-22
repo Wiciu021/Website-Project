@@ -30,6 +30,15 @@
   gap: 1rem;
 }
 
+.hero-section .text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  position: fixed;
+}
+
 .hero-section h1 {
   color: var(--text);
   font-size: var(--font-main-heading);
@@ -37,6 +46,7 @@
 
 .hero-section p {
   color: var(--text-muted);
+  font-size: var(--font-small-title);
   text-align: center;
   font-style: italic;
 }

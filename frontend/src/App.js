@@ -17,6 +17,7 @@ import SchoolHistorySection from "./components/history-of-school/SchoolHistorySe
 import InsuranceSection from "./components/insurance-section/InsuranceSection";
 import AchievementsSection from "./components/students-achievements/AchievementsSection";
 import AnnualAchievements from "./components/students-achievements/AnnualAchievements";
+import MaturaSection from "./components/matura-section/MaturaSection";
 
 function HomePage() {
   return (
@@ -48,6 +49,7 @@ function App() {
           <Route path="/ubezpieczenie" element={<InsuranceSection />} />
           <Route path="/osiagniecia" element={<AchievementsSection />} />
           <Route path="/osiagniecia/:id" element={<AnnualAchievements />} />
+          <Route path="/matura" element={<MaturaSection />} />
           <Route path="*" element={<NotFoundSection />} />
         </Routes>
 
