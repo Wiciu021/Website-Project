@@ -19,6 +19,7 @@ import AchievementsSection from "./components/students-achievements/Achievements
 import AnnualAchievements from "./components/students-achievements/AnnualAchievements";
 import MaturaSection from "./components/matura-section/MaturaSection";
 import SchoolCouncilSection from "./components/school-council-section/SchoolCouncilSection";
+import ContactSection from "./components/contact-section/ContactSection";
 
 function HomePage() {
   return (
@@ -52,6 +53,7 @@ function App() {
           <Route path="/osiagniecia/:id" element={<AnnualAchievements />} />
           <Route path="/matura" element={<MaturaSection />} />
           <Route path="/samorzad-uczniowski" element={<SchoolCouncilSection />} />
+          <Route path="/kontakt" element={<ContactSection />} />
           <Route path="*" element={<NotFoundSection />} />
         </Routes>
 

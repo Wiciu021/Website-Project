@@ -27,7 +27,7 @@
 }
 
 .documents-section li .title {
-  font-size: 1.125rem;
+  font-size: var(--font-small-title);
   flex: 1;
   color: var(--text-muted);
 }
