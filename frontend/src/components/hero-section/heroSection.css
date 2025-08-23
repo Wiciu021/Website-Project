@@ -12,6 +12,7 @@
   position: relative;
   z-index: -10;
   overflow: hidden;
+  color: var(--text);
 }
 
 .hero-section::after {
@@ -42,6 +43,7 @@
 .hero-section h1 {
   color: var(--text);
   font-size: var(--font-main-heading);
+  text-align: center;
 }
 
 .hero-section p {

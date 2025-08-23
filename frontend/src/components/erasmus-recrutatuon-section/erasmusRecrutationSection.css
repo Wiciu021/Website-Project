@@ -1,0 +1,32 @@
+.erasmus-recrutation-section {
+  min-height: calc(100vh - 55px);
+  width: 100vw;
+  background-color: var(--bg-dark);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem;
+}
+
+.erasmus-recrutation-section .recrutation-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  height: 100%;
+  width: 1000px;
+}
+
+.erasmus-recrutation-section .recrutation-wrapper h3 {
+  color: var(--text);
+  font-size: var(--font-small-headings);
+}
+
+.erasmus-recrutation-section .recrutation-wrapper ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}

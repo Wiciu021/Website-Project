@@ -20,6 +20,7 @@ import AnnualAchievements from "./components/students-achievements/AnnualAchieve
 import MaturaSection from "./components/matura-section/MaturaSection";
 import SchoolCouncilSection from "./components/school-council-section/SchoolCouncilSection";
 import ContactSection from "./components/contact-section/ContactSection";
+import ErasmusRecrutationSeciton from "./components/erasmus-recrutatuon-section/ErasmusRecrutationSeciton";
 
 function HomePage() {
   return (
@@ -54,6 +55,7 @@ function App() {
           <Route path="/matura" element={<MaturaSection />} />
           <Route path="/samorzad-uczniowski" element={<SchoolCouncilSection />} />
           <Route path="/kontakt" element={<ContactSection />} />
+          <Route path="/projekty-unijne/erasmus/rekrutacja" element={<ErasmusRecrutationSeciton />} />
           <Route path="*" element={<NotFoundSection />} />
         </Routes>
 

@@ -34,6 +34,7 @@ export const headerData = [
         label: 'Projekty Unijne',
         children: [
           { id: 411, label: 'Erasmus', href: '/projekty-unijne/erasmus' },
+          { id: 412, label: 'Rekrutacja Erasmus', href: '/projekty-unijne/erasmus/rekrutacja' }
         ]
       },
       { id: 42, label: 'Osiągnięcia', href: '/osiagniecia' },
