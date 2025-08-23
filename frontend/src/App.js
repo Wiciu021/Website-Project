@@ -21,6 +21,7 @@ import MaturaSection from "./components/matura-section/MaturaSection";
 import SchoolCouncilSection from "./components/school-council-section/SchoolCouncilSection";
 import ContactSection from "./components/contact-section/ContactSection";
 import ErasmusRecrutationSeciton from "./components/erasmus-recrutatuon-section/ErasmusRecrutationSeciton";
+import ErasmusSection from "./components/erasmus-section/ErasmusSection";
 
 function HomePage() {
   return (
@@ -56,6 +57,7 @@ function App() {
           <Route path="/samorzad-uczniowski" element={<SchoolCouncilSection />} />
           <Route path="/kontakt" element={<ContactSection />} />
           <Route path="/projekty-unijne/erasmus/rekrutacja" element={<ErasmusRecrutationSeciton />} />
+          <Route path="/projekty-unijne/erasmus" element={<ErasmusSection />} />
           <Route path="*" element={<NotFoundSection />} />
         </Routes>
 

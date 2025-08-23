@@ -1,0 +1,12 @@
+.erasmus-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  padding-block: 1.5rem;
+  background-color: var(--bg-dark);
+  color: var(--text);
+  min-height: calc(100vh - 55px);
+  position: relative;
+}

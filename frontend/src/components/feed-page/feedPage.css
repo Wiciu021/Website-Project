@@ -17,7 +17,8 @@
 }
 
 .feed-page-section .title-section,
-.feed-page-post .title-section {
+.feed-page-post .title-section,
+.erasmus-section .title-section {
   height: 100px;
   width: 100%;
   display: flex;
@@ -26,12 +27,14 @@
 }
 
 .feed-page-section .title-section h1,
-.feed-page-post .title-section h1 {
+.feed-page-post .title-section h1,
+.erasmus-section .title-section h1 {
   color: var(--text);
   font-size: var(--font-headings);
 }
 
-.feed-page-section .feed-wrapper {
+.feed-page-section .feed-wrapper,
+.erasmus-section .erasmus-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,7 +43,8 @@
   min-height: calc(60vh);
 }
 
-.feed-page-section .feed-wrapper .feed-grid {
+.feed-page-section .feed-wrapper .feed-grid,
+.erasmus-section .erasmus-wrapper .erasmus-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
@@ -48,7 +52,8 @@
   justify-items: center; */
 }
 
-.feed-page-section .scroll-to-top-button {
+.feed-page-section .scroll-to-top-button,
+.erasmus-section .scroll-to-top-button {
   position: fixed;
   bottom: 1.5rem;
   right: 50%;
