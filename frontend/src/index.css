@@ -78,7 +78,7 @@ html, body {
 @media (prefers-color-scheme: light) {
   :root {
     --bg-dark: hsl(0, 0%, 98%);     /* najjaśniejsze tło */
-    --bg: hsl(0, 0%, 95%);          /* karty */
+    --bg: hsl(0, 0%, 85%);          /* karty */
     --bg-light: hsl(0, 0%, 90%);    /* elementy wewnątrz kart */
 
     /* Text */

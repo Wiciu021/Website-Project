@@ -1,0 +1,50 @@
+.footer li {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer li h4,
+.footer .contact-container h4 {
+  font-weight: 600;
+  font-size: var(--font-regular);
+  position: relative;
+  width: 150px;
+}
+
+.footer li h4::before,
+.footer .contact-container h4::before {
+  position: absolute;
+  content: '';
+  width: 40%;
+  height: 3px;
+  background-color: var(--accent-2);
+  border-radius: var(--radius-button);
+  bottom: -5px;
+}
+
+
+.footer .children-list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: var(--font-regular);
+  color: var(--text-muted);
+}
+
+.footer .children-list li .item-list {
+  color: var(--text-muted);
+  font-size: var(--font-text);
+  transition: .3s;
+}
+
+.footer .children-list li .item-list:hover {
+  color: var(--accent-2);
+  transform: translateX(10px);
+} 
+
+.footer .item-list {
+  color: var(--text-muted);
+}
