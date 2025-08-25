@@ -22,6 +22,7 @@ import SchoolCouncilSection from "./components/school-council-section/SchoolCoun
 import ContactSection from "./components/contact-section/ContactSection";
 import ErasmusRecrutationSeciton from "./components/erasmus-recrutatuon-section/ErasmusRecrutationSeciton";
 import ErasmusSection from "./components/erasmus-section/ErasmusSection";
+import ParentsCouncilSection from "./components/parents-council-section/ParentsCouncilSection";
 
 function HomePage() {
   return (
@@ -58,6 +59,7 @@ function App() {
           <Route path="/kontakt" element={<ContactSection />} />
           <Route path="/projekty-unijne/erasmus/rekrutacja" element={<ErasmusRecrutationSeciton />} />
           <Route path="/projekty-unijne/erasmus" element={<ErasmusSection />} />
+          <Route path="/rada-rodzicow" element={<ParentsCouncilSection />} />
           <Route path="*" element={<NotFoundSection />} />
         </Routes>
 

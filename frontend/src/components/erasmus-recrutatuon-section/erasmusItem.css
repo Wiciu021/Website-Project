@@ -29,4 +29,5 @@
 .erasmus-recrutation-section li p {
   flex: 1;
   color: var(--text-muted);
+  font-size: var(--font-small-title);
 }
