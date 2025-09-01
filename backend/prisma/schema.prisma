@@ -59,3 +59,8 @@ model Docs {
   date  String
   file  String
 }
+
+model User {
+  email    String
+  password String
+}
