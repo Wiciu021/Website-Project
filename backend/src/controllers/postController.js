@@ -40,6 +40,7 @@ export const createPost = async (req, res) => {
         description,
         author,
         date: new Date(),
+        category: 'School', // Default
         img: `/uploads/posts/example-image.jpg`
       },
     });

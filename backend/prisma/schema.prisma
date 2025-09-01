@@ -16,6 +16,7 @@ model Post {
   author      String
   date        DateTime @default(now())
   img         String
+  category    String
 }
 
 model Teacher {
@@ -58,9 +59,4 @@ model Docs {
   title String
   date  String
   file  String
-}
-
-model User {
-  email    String
-  password String
 }
