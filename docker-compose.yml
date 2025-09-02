@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   frontend:
     build: ./frontend
@@ -11,11 +9,13 @@ services:
 
   backend:
     build: ./backend
+    env_file:
+      - ./.env
     ports:
-      - "8000:8000"
+      - "${PORT}:${PORT}" 
     environment:
-      - NODE_ENV=development
-      - DATABASE_URL=postgresql://wiciu:qwerty@db:5432/schooldb?schema=public
+      - NODE_ENV=${NODE_ENV}
+      - DATABASE_URL=${DATABASE_URL}
     volumes:
       - ./backend:/app
     depends_on:
