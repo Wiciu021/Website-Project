@@ -1,0 +1,10 @@
+body.remove-margin {
+  margin-top: 0;
+}
+
+.admin-panel-section {
+  height: 100vh;
+  position: relative;
+  width: 100vw;
+  background-color: var(--bg-dark);
+}

@@ -24,6 +24,7 @@ import ErasmusRecrutationSeciton from "./components/erasmus-recrutatuon-section/
 import ErasmusSection from "./components/erasmus-section/ErasmusSection";
 import ParentsCouncilSection from "./components/parents-council-section/ParentsCouncilSection";
 import { AnimatePresence, motion } from "framer-motion";
+import AdminPanelSection from "./components/admin-panel/AdminPanelSection";
 
 function HomePage() {
   return (
@@ -35,45 +36,256 @@ function HomePage() {
   )
 }
 
+function DefaultLayout({ children }) {
+  return (
+    <>
+      <Header />
+        {children}
+      <Footer />
+    </>
+  )
+} 
+
+function AdminLayout({ children }) {
+  return (  
+    <>
+      {children}
+    </>
+  )
+} 
 
 function AnimatedRoutes() {
   const location = useLocation();
 
+  const pageTransition = {
+    initial: { opacity: 0, y: 10 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -10 },
+    transition: { duration: 0.3 },
+  };
+
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><HomePage /></motion.div>} />
-        <Route path="/aktualnosci" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><FeedPage /></motion.div>} />
-        <Route path="/post/:id" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><FeedPagePost /></motion.div>} />
-        <Route path="/login" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><LoginPopUp /></motion.div>} />
-        <Route path="/dokumenty-szkolne" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><DocumentsSection /></motion.div>} />
-        <Route path="/zespol-nauczycieli" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><TeachingStaffSection /></motion.div>} />
-        <Route path="/informacje-dla-kandydatow" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><CandidatesInfo /></motion.div>} />
-        <Route path="/profile-klas" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><ClassProfile /></motion.div>} />
-        <Route path="/galeria" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><PhotoGallerySection /></motion.div>} />
-        <Route path="/historia" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><SchoolHistorySection /></motion.div>} />
-        <Route path="/ubezpieczenie" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><InsuranceSection /></motion.div>} />
-        <Route path="/osiagniecia" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><AchievementsSection /></motion.div>} />
-        <Route path="/osiagniecia/:id" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><AnnualAchievements /></motion.div>} />
-        <Route path="/matura" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><MaturaSection /></motion.div>} />
-        <Route path="/samorzad-uczniowski" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><SchoolCouncilSection /></motion.div>} />
-        <Route path="/kontakt" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><ContactSection /></motion.div>} />
-        <Route path="/projekty-unijne/erasmus/rekrutacja" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><ErasmusRecrutationSeciton /></motion.div>} />
-        <Route path="/projekty-unijne/erasmus" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><ErasmusSection /></motion.div>} />
-        <Route path="/rada-rodzicow" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><ParentsCouncilSection /></motion.div>} />
-        <Route path="*" element={<motion.div initial={{ opacity: 0, y: 10}}  animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}><NotFoundSection /></motion.div>} />
+        <Route
+          path="/"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <HomePage />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/aktualnosci"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <FeedPage />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/post/:id"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <FeedPagePost />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <LoginPopUp />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/dokumenty-szkolne"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <DocumentsSection />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/zespol-nauczycieli"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <TeachingStaffSection />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/informacje-dla-kandydatow"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <CandidatesInfo />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/profile-klas"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <ClassProfile />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/galeria"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <PhotoGallerySection />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/historia"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <SchoolHistorySection />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/ubezpieczenie"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <InsuranceSection />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/osiagniecia"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <AchievementsSection />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/osiagniecia/:id"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <AnnualAchievements />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/matura"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <MaturaSection />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/samorzad-uczniowski"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <SchoolCouncilSection />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/kontakt"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <ContactSection />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/projekty-unijne/erasmus/rekrutacja"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <ErasmusRecrutationSeciton />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/projekty-unijne/erasmus"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <ErasmusSection />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/rada-rodzicow"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <ParentsCouncilSection />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/admin-panel"
+          element={
+            <AdminLayout>
+              <AdminPanelSection />
+            </AdminLayout>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <DefaultLayout>
+              <motion.div {...pageTransition}>
+                <NotFoundSection />
+              </motion.div>
+            </DefaultLayout>
+          }
+        />
       </Routes>
     </AnimatePresence>
-  )
+  );
 }
+
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
-          <AnimatedRoutes />
-        <Footer />
+        <AnimatedRoutes />
       </div>
     </BrowserRouter>
   );
