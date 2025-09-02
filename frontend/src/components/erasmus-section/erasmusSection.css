@@ -5,6 +5,7 @@
   flex-direction: column;
   gap: 3rem;
   padding-block: 1.5rem;
+  padding-bottom: 3rem;
   background-color: var(--bg-dark);
   color: var(--text);
   min-height: calc(100vh - 55px);
