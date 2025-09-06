@@ -4,10 +4,11 @@ import adminSidebarData from '../../Data/admin-sidebar-data'
 import AdminSideBar from './AdminSideBar';
 // import feedData from '../../Data/feed-data';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import AdminPanelFeed from './AdminPanelFeed';
+import AdminPanelFeed from './admin-components/admin-feed/AdminPanelFeed';
 import { AnimatePresence, motion } from "framer-motion";
+import AdminGallery from './admin-components/admin-gallery/AdminGallery';
 
-const AdminPanelSection = ({ feedData, setFeedData }) => {
+const AdminPanelSection = ({ feedData, setFeedData, galleryData, setGalleryData }) => {
 
   const location = useLocation();
 
@@ -23,7 +24,8 @@ const AdminPanelSection = ({ feedData, setFeedData }) => {
       <AdminSideBar />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
-          <Route path="aktualnosci" element={<motion.div {...pageTransition} style={{ width: '100vw', height: '100vh' }} ><AdminPanelFeed setFeedData={setFeedData} feedData={feedData}/></motion.div> } />
+          <Route path="aktualnosci" element={<motion.div {...pageTransition} style={{ width: '100vw', height: '100vh', flex: 1, display: 'flex', flexDirection: 'column' }} ><AdminPanelFeed setFeedData={setFeedData} feedData={feedData}/></motion.div> } />
+          <Route path="galeria" element={<motion.div {...pageTransition} style={{ width: '100vw', height: '100vh', flex: 1, display: 'flex', flexDirection: 'column' }} ><AdminGallery galleryData={galleryData} setGalleryData={setGalleryData} /></motion.div> } />
         </Routes>
       </AnimatePresence>
     </section>

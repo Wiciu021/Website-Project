@@ -36,7 +36,9 @@ const AdminSideBar = () => {
         </div>
         <ul>
           {
-            adminSidebarData && adminSidebarData.length ? adminSidebarData.map(dataItem => <li key={dataItem.id}><Link className='link' to={dataItem.href}>{dataItem.icon} <p className={`list-label ${expand ? 'expanded' : ''}`}>{dataItem.label}</p></Link></li>) : null
+            adminSidebarData && adminSidebarData.length ? adminSidebarData.map(dataItem => <li key={dataItem.id}><Link className='link' to={dataItem.href}>{dataItem.icon} <p style={{
+              marginLeft: expand ? '1rem' : '0rem'
+            }} className={`list-label ${expand ? 'expanded' : ''}`}>{dataItem.label}</p></Link></li>) : null
           }
         </ul>
       </nav>

@@ -26,6 +26,7 @@ import ParentsCouncilSection from "./components/parents-council-section/ParentsC
 import { AnimatePresence, motion } from "framer-motion";
 import AdminPanelSection from "./components/admin-panel/AdminPanelSection";
 import feedData from "./Data/feed-data";
+import galleryData from "./Data/gallery-data";
 import { useState } from "react";
 
 function HomePage() {
@@ -59,7 +60,8 @@ function AdminLayout({ children }) {
 function AnimatedRoutes() {
   // feed data 
   const [feedContentData, setFeedContentData] = useState(feedData);
-
+  // gallery data
+  const [galleryContentData, setGalleryContentData] = useState(galleryData);
 
   const location = useLocation();
 
@@ -267,7 +269,7 @@ function AnimatedRoutes() {
           path="/admin-panel/*"
           element={
             <AdminLayout>
-              <AdminPanelSection feedData={feedContentData} setFeedData={setFeedContentData} />
+              <AdminPanelSection feedData={feedContentData} setFeedData={setFeedContentData} galleryData={galleryContentData} setGalleryData={setFeedContentData} />
             </AdminLayout>
           }
         />
