@@ -25,6 +25,8 @@ import ErasmusSection from "./components/erasmus-section/ErasmusSection";
 import ParentsCouncilSection from "./components/parents-council-section/ParentsCouncilSection";
 import { AnimatePresence, motion } from "framer-motion";
 import AdminPanelSection from "./components/admin-panel/AdminPanelSection";
+import feedData from "./Data/feed-data";
+import { useState } from "react";
 
 function HomePage() {
   return (
@@ -55,6 +57,10 @@ function AdminLayout({ children }) {
 } 
 
 function AnimatedRoutes() {
+  // feed data 
+  const [feedContentData, setFeedContentData] = useState(feedData);
+
+
   const location = useLocation();
 
   const pageTransition = {
@@ -82,7 +88,7 @@ function AnimatedRoutes() {
           element={
             <DefaultLayout>
               <motion.div {...pageTransition}>
-                <FeedPage />
+                <FeedPage feedData={feedContentData} />
               </motion.div>
             </DefaultLayout>
           }
@@ -258,10 +264,10 @@ function AnimatedRoutes() {
           }
         />
         <Route
-          path="/admin-panel"
+          path="/admin-panel/*"
           element={
             <AdminLayout>
-              <AdminPanelSection />
+              <AdminPanelSection feedData={feedContentData} setFeedData={setFeedContentData} />
             </AdminLayout>
           }
         />

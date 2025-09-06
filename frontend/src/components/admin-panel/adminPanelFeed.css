@@ -1,0 +1,149 @@
+.admin-panel-section .main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: none;
+  color: var(--text);
+  padding: 2rem;
+}
+
+.admin-panel-section .main .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--bg);
+  border-radius: var(--radius-small);
+  min-width: 800px;
+  min-height: 90%;
+  box-shadow: var(--shadow);
+}
+
+.admin-panel-section .main h3 {
+  font-size: var(--font-small-headings);
+}
+
+.admin-panel-section .main form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  width: 400px;
+}
+
+.admin-panel-section .main form .input-container,
+.admin-panel-section .main form .area-container {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-light);
+  height: 40px;
+  top: 0;
+  left: 0;
+  transition: .3s;
+}
+
+.admin-panel-section .main form .input-container input,
+.admin-panel-section .main form .area-container textarea {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: inherit;
+  width: 100%;
+  position: absolute;
+  padding: .5rem 0.75rem 0.75rem 0.75rem;
+  font-size: var(--font-regular);
+}
+
+.admin-panel-section .main form .area-container {
+  height: 210px;
+}
+
+.admin-panel-section .main form .area-container textarea {
+  resize: none;
+  width: 400px;
+  height: 200px;
+  overflow-y: auto;
+}
+
+.admin-panel-section .main form .input-container label,
+.admin-panel-section .main form .area-container label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.75rem;
+  color: var(--text-muted);
+  transition: .3s;
+}
+
+.admin-panel-section .main form .area-container label {
+  top: 20px;
+}
+
+.admin-panel-section .main form .input-container input:focus + label,
+.admin-panel-section .main form .area-container textarea:focus + label,
+.admin-panel-section .main form .input-container input:not(:placeholder-shown) + label,
+.admin-panel-section .main form .area-container textarea:not(:placeholder-shown) + label {
+  font-size: 0.875rem;
+  top: -15px;
+  left: 4px;
+}
+
+.admin-panel-section .main .file-input {
+  display: none;
+}
+
+.admin-panel-section .main .input-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  width: 100%;
+}
+
+.admin-panel-section .main .file-label {
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: var(--accent-4);
+  color: var(--button-color);
+  border-radius: var(--radius-button);
+  cursor: pointer;
+  font-size: var(--font-regular);
+}
+
+.admin-panel-section .main .select {
+  padding: 10px 16px; 
+  font-size: var(--font-regular);
+  color: var(--button-color);
+  background-color: var(--accent-4);
+  border-radius: var(--radius-button);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-family: inherit;
+}
+
+.admin-panel-section .main .select option {
+  border: none;
+  outline: none;
+}
+
+.admin-panel-section .main button {
+  padding: 8px 16px;
+  font-family: inherit;
+  background-color: var(--button-primary);
+  color: var(--button-color);
+  border: none;
+  border-radius: var(--radius-button);
+  font-size: var(--font-regular);
+}

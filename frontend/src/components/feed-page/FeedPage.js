@@ -4,9 +4,9 @@ import FeedPageItem from './FeedPageItem'
 import './FeedPageItem'
 import './feedPageItem.css'
 import { IoChevronUpOutline } from 'react-icons/io5';
-import feedData from '../../Data/feed-data'
+// import feedData from '../../Data/feed-data'
 
-const FeedPage = () => {
+const FeedPage = ({ feedData }) => {
   const [posts, setPosts] = useState(feedData);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

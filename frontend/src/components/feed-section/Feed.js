@@ -1,9 +1,9 @@
 import React from 'react'
 import FeedItem from './FeedItem'
-import feedData from '../../Data/feed-data'
+// import feedData from '../../Data/feed-data'
 import './feed.css'
 
-const Feed = () => {
+const Feed = ({ feedData }) => {
   return (
     <section className='feed-section'>
       <h2>Aktualności</h2>

@@ -54,37 +54,37 @@ const ContactSection = () => {
           <h3>Napisz do nas</h3>
           <div className='input-container'>
             <input 
-            type="text" 
-            name='name' 
-            id='name' 
-            placeholder=" " 
-            required 
-            value={formData.name} 
-            onChange={handleChange}
+              type="text" 
+              name='name' 
+              id='name' 
+              placeholder=" " 
+              required 
+              value={formData.name} 
+              onChange={handleChange}
             />
             <label htmlFor="name">Imię</label>
           </div>
           <div className='input-container'>
             <input 
-            type="text" 
-            name='surname' 
-            id='surname' 
-            placeholder=" " 
-            required 
-            value={formData.surname} 
-            onChange={handleChange}
+              type="text" 
+              name='surname' 
+              id='surname' 
+              placeholder=" " 
+              required 
+              value={formData.surname} 
+              onChange={handleChange}
             />
             <label htmlFor="surname">Nazwisko</label>
           </div>
           <div className='input-container'>
             <input 
-            type="email" 
-            name='email' 
-            id='email' 
-            placeholder=" " 
-            required 
-            value={formData.email} 
-            onChange={handleChange}
+              type="email" 
+              name='email' 
+              id='email' 
+              placeholder=" " 
+              required 
+              value={formData.email} 
+              onChange={handleChange}
             />
             <label htmlFor="email">Email</label>
           </div>
