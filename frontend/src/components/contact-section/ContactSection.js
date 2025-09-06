@@ -11,14 +11,12 @@ const ContactSection = () => {
     message: ''
   });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value }); //dynamically update the specific field based on input's name (chciałem robić useState dla każdego ale to podpowiadanie zamieniło to w to wierze ze dziala)
+  const handleFileChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); //żeby nie odswiezylo strone
-    
-    console.log('Form submitted:', formData);
+    e.preventDefault();
 
     try {
       const res = await fetch('/api/kontakt', {
@@ -30,7 +28,6 @@ const ContactSection = () => {
       });
 
       if (res.ok) {
-        //console.log('sent corectly');
         alert('Wiadomość wysłana');
         setFormData({
           name: '',
@@ -39,7 +36,6 @@ const ContactSection = () => {
           message: ''
         });
       } else {
-        //console.error('beka z cb');
         alert('Błąd przy wysyłaniu wiadomości');
       }
     } catch (error) {
@@ -60,7 +56,7 @@ const ContactSection = () => {
               placeholder=" " 
               required 
               value={formData.name} 
-              onChange={handleChange}
+              onChange={handleFileChange}
             />
             <label htmlFor="name">Imię</label>
           </div>
@@ -72,7 +68,7 @@ const ContactSection = () => {
               placeholder=" " 
               required 
               value={formData.surname} 
-              onChange={handleChange}
+              onChange={handleFileChange}
             />
             <label htmlFor="surname">Nazwisko</label>
           </div>
@@ -84,7 +80,7 @@ const ContactSection = () => {
               placeholder=" " 
               required 
               value={formData.email} 
-              onChange={handleChange}
+              onChange={handleFileChange}
             />
             <label htmlFor="email">Email</label>
           </div>
@@ -95,7 +91,7 @@ const ContactSection = () => {
               placeholder=" " 
               required 
               value={formData.message} 
-              onChange={handleChange}
+              onChange={handleFileChange}
             />
             <label htmlFor="message">Wiadomość</label>
           </div>

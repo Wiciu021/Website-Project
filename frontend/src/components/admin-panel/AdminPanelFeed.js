@@ -16,25 +16,43 @@ const AdminPanelFeed = ({ setFeedData, feedData }) => {
     }
   };
 
-  const handleClick = (e) => {
-    
-    const newId = feedData[feedData.length - 1].id + 1;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
+    const newId = feedData[feedData.length - 1].id + 1;
+    
     const newFeedItem = {
       id: newId,
       title: titleInput,
       description: descriptionInput,
-      img: imageFile,
+      //img: imageFile,                                         DODAĆ POTEM 
       date: new Date().getFullYear() + '-' + 
-        String(new Date().getMonth() + 1).padStart(2, '0') + '-' + 
-        String(new Date().getDate()).padStart(2, '0'),
+      String(new Date().getMonth() + 1).padStart(2, '0') + '-' + 
+      String(new Date().getDate()).padStart(2, '0'),
       author: 'Twoja Stara',
       category: category
     }
 
-    setFeedData([...feedData, newFeedItem]);
+    try {
+      const res = await fetch('/api/admin/posts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newFeedItem)
+      });
 
-    e.preventDefault();
+      if (res.ok) {
+        alert('Dodano post');
+        const data = await res.json();
+        setFeedData([...feedData, data]);
+      } else {
+        alert('Błąd przy dodawaniu postu');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
+
     setTitleInput('');
     setCategory('');
     setDescriptionInput('');
@@ -92,7 +110,7 @@ const AdminPanelFeed = ({ setFeedData, feedData }) => {
               <option value="erasmus">erasmus</option>
             </select>
           </div>
-          <button type='submit' onClick={handleClick}>dodaj</button>
+          <button type='submit' onClick={handleSubmit}>dodaj</button>
         </form>
       </div>
     </main>
