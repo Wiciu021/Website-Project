@@ -7,7 +7,7 @@ dotenv.config();
 //}
 
 export default {
-  port: process.env.PORT, //usunąć || jak bedziesz miał skonfigurowany .env
+  port: process.env.PORT,
   dbUrl: process.env.DATABASE_URL,
   jwtSecret: process.env.JWT_SECRET,
   mailUser: process.env.MAIL_USER,

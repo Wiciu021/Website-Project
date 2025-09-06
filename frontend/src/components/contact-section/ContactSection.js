@@ -12,7 +12,7 @@ const ContactSection = () => {
     message: ''
   });
 
-  const handleFileChange = (e) => {
+  const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -57,7 +57,7 @@ const ContactSection = () => {
               placeholder=" " 
               required 
               value={formData.name} 
-              onChange={handleFileChange}
+              onChange={handleChange}
             />
             <label htmlFor="name">Imię</label>
           </div>
@@ -69,7 +69,7 @@ const ContactSection = () => {
               placeholder=" " 
               required 
               value={formData.surname} 
-              onChange={handleFileChange}
+              onChange={handleChange}
             />
             <label htmlFor="surname">Nazwisko</label>
           </div>
@@ -81,7 +81,7 @@ const ContactSection = () => {
               placeholder=" " 
               required 
               value={formData.email} 
-              onChange={handleFileChange}
+              onChange={handleChange}
             />
             <label htmlFor="email">Email</label>
           </div>
@@ -92,7 +92,7 @@ const ContactSection = () => {
               placeholder=" " 
               required 
               value={formData.message} 
-              onChange={handleFileChange}
+              onChange={handleChange}
             />
             <label htmlFor="message">Wiadomość</label>
           </div>

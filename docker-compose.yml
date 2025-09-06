@@ -18,6 +18,7 @@ services:
       - DATABASE_URL=${DATABASE_URL}
     volumes:
       - ./backend:/app
+      - static_data:/app/static/images/posts
     depends_on:
       - db
 
@@ -43,5 +44,6 @@ services:
       - postgres-data:/var/lib/postgresql/data
 
 volumes:
+  static_data:
   postgres-data:
   build_files:

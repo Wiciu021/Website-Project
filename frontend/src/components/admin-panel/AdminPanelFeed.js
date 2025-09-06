@@ -10,7 +10,7 @@ const AdminPanelFeed = ({ setFeedData, feedData }) => {
 
   const handleFileChange = (e) => {
     if (e.target.files.length > 0) {
-      setImageFile(e.target.files[0].name);
+      setImageFile(e.target.files[0]);
     } else {
       setImageFile(null);
     }
@@ -19,27 +19,22 @@ const AdminPanelFeed = ({ setFeedData, feedData }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newId = feedData[feedData.length - 1].id + 1;
+    /*const today = new Date().getFullYear() + '-' + 
+    String(new Date().getMonth() + 1).padStart(2, '0') + '-' + 
+    String(new Date().getDate()).padStart(2, '0');*/
     
-    const newFeedItem = {
-      id: newId,
-      title: titleInput,
-      description: descriptionInput,
-      //img: imageFile,                                         DODAĆ POTEM 
-      date: new Date().getFullYear() + '-' + 
-      String(new Date().getMonth() + 1).padStart(2, '0') + '-' + 
-      String(new Date().getDate()).padStart(2, '0'),
-      author: 'Twoja Stara',
-      category: category
-    }
+    const formData = new FormData();
+    formData.append("title", titleInput);
+    formData.append("description", descriptionInput);
+    formData.append("category", category);
+    formData.append("author", "Twoja Stara");
+    formData.append("image", imageFile);
+    formData.append("date", new Date().toISOString());
 
     try {
       const res = await fetch('/api/admin/posts', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newFeedItem)
+        body: formData
       });
 
       if (res.ok) {

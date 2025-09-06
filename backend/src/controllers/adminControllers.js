@@ -6,12 +6,12 @@ export const createPost = async (req, res) => {
   try {
     const newPost = await prisma.post.create({
       data: {
-        //id,  dodać potem
+        //id, id jest samo generowane
         title,
         description,
         author,
         date,
-        img: "dasf", //tymczasowe
+        img: req.file ? req.file.filename : "default.png",
         category
       }
     });

@@ -31,25 +31,6 @@ export const getPostById = async (req, res) => {
   }
 };
 
-export const createPost = async (req, res) => {
-  const { title, description, author } = req.body;
-  try {
-    const newPost = await prisma.post.create({
-      data: {
-        title,
-        description,
-        author,
-        date: new Date(),
-        category: 'School', // Default
-        img: `/uploads/posts/example-image.jpg`
-      },
-    });
-    res.status(201).json(newPost);
-  } catch (err) {
-    res.status(500).json({ error: 'Nie udało się dodać posta' });
-  }
-};
-
 export const deletePost = async (req, res) => {
   const id = parseInt(req.params.id);
   if (isNaN(id)) {
