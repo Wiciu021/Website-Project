@@ -13,13 +13,11 @@ const ContactSection = () => {
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value }); //dynamically update the specific field based on input's name (chciałem robić useState dla każdego ale to podpowiadanie zamieniło to w to wierze ze dziala)
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); //żeby nie odswiezylo strone
-    
-    console.log('Form submitted:', formData);
+    e.preventDefault();
 
     try {
       const res = await fetch('/api/kontakt', {
@@ -31,7 +29,6 @@ const ContactSection = () => {
       });
 
       if (res.ok) {
-        //console.log('sent corectly');
         alert('Wiadomość wysłana');
         setFormData({
           name: '',
@@ -40,7 +37,6 @@ const ContactSection = () => {
           message: ''
         });
       } else {
-        //console.error('beka z cb');
         alert('Błąd przy wysyłaniu wiadomości');
       }
     } catch (error) {

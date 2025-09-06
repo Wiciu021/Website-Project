@@ -10,31 +10,44 @@ const AdminPanelFeed = ({ setFeedData, feedData }) => {
 
   const handleFileChange = (e) => {
     if (e.target.files.length > 0) {
-      setImageFile(e.target.files[0].name);
+      setImageFile(e.target.files[0]);
     } else {
       setImageFile(null);
     }
   };
 
-  const handleClick = (e) => {
-    
-    const newId = feedData[feedData.length - 1].id + 1;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    const newFeedItem = {
-      id: newId,
-      title: titleInput,
-      description: descriptionInput,
-      img: imageFile,
-      date: new Date().getFullYear() + '-' + 
-        String(new Date().getMonth() + 1).padStart(2, '0') + '-' + 
-        String(new Date().getDate()).padStart(2, '0'),
-      author: 'Twoja Stara',
-      category: category
+    /*const today = new Date().getFullYear() + '-' + 
+    String(new Date().getMonth() + 1).padStart(2, '0') + '-' + 
+    String(new Date().getDate()).padStart(2, '0');*/
+    
+    const formData = new FormData();
+    formData.append("title", titleInput);
+    formData.append("description", descriptionInput);
+    formData.append("category", category);
+    formData.append("author", "Twoja Stara");
+    formData.append("image", imageFile);
+    formData.append("date", new Date().toISOString());
+
+    try {
+      const res = await fetch('/api/admin/posts', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (res.ok) {
+        alert('Dodano post');
+        const data = await res.json();
+        setFeedData([...feedData, data]);
+      } else {
+        alert('Błąd przy dodawaniu postu');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
     }
 
-    setFeedData([...feedData, newFeedItem]);
-    
-    e.preventDefault();
     setTitleInput('');
     setCategory('');
     setDescriptionInput('');
@@ -92,7 +105,7 @@ const AdminPanelFeed = ({ setFeedData, feedData }) => {
               <option value="erasmus">erasmus</option>
             </select>
           </div>
-          <button type='submit' onClick={handleClick}>dodaj</button>
+          <button type='submit' onClick={handleSubmit}>dodaj</button>
         </form>
       </div>
     </main>

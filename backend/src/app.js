@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import path from 'path'
+import path from 'path';
 import { fileURLToPath } from 'url';
 import config from './config/config.js';
 import postRoutes from './routes/postRoutes.js';
@@ -9,6 +9,7 @@ import docsRoutes from './routes/docsRoutes.js';
 import galleryRoutes from './routes/galleryRoutes.js';
 import loginRoutes from './routes/loginRoutes.js';
 import contactRoutes from './routes/contactRoutes.js';
+import adminRoutes from './routes/adminRoutes.js';
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use('/api/dokumenty-szkolne', docsRoutes);
 app.use('/api/galeria', galleryRoutes);
 app.use('/api/login', loginRoutes);
 app.use('/api/kontakt', contactRoutes);
+app.use('/api/admin', adminRoutes);
 
 app.listen(config.port, '0.0.0.0', () => {
   console.log(`Backend działa na porcie ${config.port}`);
