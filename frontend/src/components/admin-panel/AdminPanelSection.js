@@ -12,7 +12,7 @@ const AdminPanelSection = ({ feedData, setFeedData }) => {
     <section className='admin-panel-section'>
       <AdminSideBar />
       <Routes>
-        <Route path="aktualnosci" element={<AdminPanelFeed />} />
+        <Route path="aktualnosci" element={<AdminPanelFeed setFeedData={setFeedData} feedData={feedData}/>} />
       </Routes>
     </section>
   )

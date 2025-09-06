@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './adminPanelFeed.css';
 
-const AdminPanelFeed = () => {
+const AdminPanelFeed = ({ setFeedData, feedData }) => {
+
   const [titleInput, setTitleInput] = useState('');
   const [descriptionInput, setDescriptionInput] = useState('');
   const [imageFile, setImageFile] = useState(null);
@@ -9,13 +10,30 @@ const AdminPanelFeed = () => {
 
   const handleFileChange = (e) => {
     if (e.target.files.length > 0) {
-      setImageFile(e.target.files[0]);
+      setImageFile(e.target.files[0].name);
     } else {
       setImageFile(null);
     }
   };
 
   const handleClick = (e) => {
+    
+    const newId = feedData[feedData.length - 1].id + 1;
+
+    const newFeedItem = {
+      id: newId,
+      title: titleInput,
+      description: descriptionInput,
+      img: imageFile,
+      date: new Date().getFullYear() + '-' + 
+        String(new Date().getMonth() + 1).padStart(2, '0') + '-' + 
+        String(new Date().getDate()).padStart(2, '0'),
+      author: 'Twoja Stara',
+      category: category
+    }
+
+    setFeedData([...feedData, newFeedItem]);
+
     e.preventDefault();
     setTitleInput('');
     setCategory('');
