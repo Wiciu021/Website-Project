@@ -2,9 +2,10 @@ import React from 'react'
 import './contactSection.css'
 import contactData from '../../Data/contact-data'
 import socialMediaData from '../../Data/social-media-data'
+import { useState } from 'react'
 
 const ContactSection = () => {
-  const [formData, setFormData] = React.useState({
+  const [formData, setFormData] = useState({
     name: '',
     surname: '',
     email: '',

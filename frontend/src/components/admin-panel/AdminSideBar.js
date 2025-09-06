@@ -3,6 +3,7 @@ import './adminSideBar.css'
 import { FaUserShield } from "react-icons/fa";
 import adminSidebarData from '../../Data/admin-sidebar-data';
 import { styleEffect } from 'framer-motion';
+import { data, Link } from 'react-router-dom';
 
 const AdminSideBar = () => {
 
@@ -35,10 +36,11 @@ const AdminSideBar = () => {
         </div>
         <ul>
           {
-            adminSidebarData && adminSidebarData.length ? adminSidebarData.map(dataItem => <li key={dataItem.id}>{dataItem.icon} <p className={`list-label ${expand ? 'expanded' : ''}`}>{dataItem.label}</p></li>) : null
+            adminSidebarData && adminSidebarData.length ? adminSidebarData.map(dataItem => <li key={dataItem.id}><Link className='link' to={dataItem.href}>{dataItem.icon} <p className={`list-label ${expand ? 'expanded' : ''}`}>{dataItem.label}</p></Link></li>) : null
           }
         </ul>
       </nav>
+      <div className='button-wrapper'> <Link to="/" className='return-link'>wroc</Link></div>
     </aside>
   )
 }
