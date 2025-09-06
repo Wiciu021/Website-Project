@@ -33,7 +33,7 @@ const AdminPanelFeed = ({ setFeedData, feedData }) => {
     }
 
     setFeedData([...feedData, newFeedItem]);
-
+    
     e.preventDefault();
     setTitleInput('');
     setCategory('');

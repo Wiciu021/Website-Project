@@ -8,10 +8,29 @@
   color: var(--text);
   padding-block: 2rem;
   display: flex;
+  flex-direction: column;
   justify-content: top;
   transition: .5s;
 }
 
+.admin-panel-section .side-bar .button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  width: 100%;
+}
+
+.admin-panel-section .side-bar .return-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--button-primary);
+  padding: 8px 14px;
+  border-radius: var(--radius-button);
+  color: var(--button-color);
+  font-family: inherit;
+  font-size: var(--font-regular);
+}
 
 .list-label {
   white-space: nowrap;
@@ -85,6 +104,15 @@
   padding: 1rem 1.25rem;
   border-radius: var(--radius-small);
 }
+
+.admin-panel-section .side-bar nav ul li .link {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--text);
+  width: 100%;
+}
+
 
 .admin-panel-section .side-bar nav ul li:hover {
   background-color: var(--accent-4);
