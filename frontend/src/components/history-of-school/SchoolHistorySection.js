@@ -1,11 +1,11 @@
 import React from 'react'
 import './schoolHistorySection.css'
-import historyData from '../../Data/school-history-data'
+// import historyData from '../../Data/school-history-data'
 import SchoolHistoryItem from './SchoolHistoryItem'
 
-const SchoolHistorySection = () => {
+const SchoolHistorySection = ({ documentsData }) => {
 
-  const length = historyData.length;
+  const length = documentsData.length;
 
   return (
     <section className='school-history-section'>
@@ -15,7 +15,7 @@ const SchoolHistorySection = () => {
           height: `${length * 105}px`
         }}>
           {
-            historyData && historyData.length ? historyData.map(dataItem => <SchoolHistoryItem item={dataItem} key={dataItem.id} />) : null
+            documentsData && documentsData.length ? documentsData.map((dataItem, index) => <SchoolHistoryItem item={dataItem} key={index} uniqueId={index} />) : null
           }
         </div>
       </div>

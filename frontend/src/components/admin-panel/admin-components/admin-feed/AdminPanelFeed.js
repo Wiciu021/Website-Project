@@ -83,15 +83,17 @@ const AdminPanelFeed = ({ setFeedData, feedData }) => {
             <label htmlFor="message">Wiadomość</label>
           </div>
           <div className='input-wrapper'>
-            <input
-              type="file"
-              accept='image/*'
-              required
-              className='file-input'
-              id='file-input'
-              onChange={handleFileChange}
-            />
-            <label htmlFor="file-input" className='file-label'>wybierz plik</label>
+            <div className='file-wrapper'>
+              <input
+                type="file"
+                accept='image/*'
+                required
+                className='file-input'
+                id='file-input'
+                onChange={handleFileChange}
+              />
+              <label htmlFor="file-input" className='file-label'>wybierz plik</label>
+            </div>
             <select
               name="category"
               id="category"

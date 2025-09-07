@@ -1,4 +1,4 @@
-import { FaRegNewspaper, FaImages } from "react-icons/fa";
+import { FaRegNewspaper, FaImages, FaFileAlt } from "react-icons/fa";
 
 export const adminSidebarData = [
   {
@@ -12,6 +12,12 @@ export const adminSidebarData = [
     href: "/admin-panel/galeria",
     label: "Galeria",
     icon: <FaImages size={20} />
+  },
+  {
+    id: "dokumenty",
+    href: "/admin-panel/dokumenty",
+    label: "Dokumenty",
+    icon: <FaFileAlt size={20} />
   }
 ];
 

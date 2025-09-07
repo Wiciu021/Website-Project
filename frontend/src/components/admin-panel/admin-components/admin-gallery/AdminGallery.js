@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import './adminGallery.css'
-import { data } from 'react-router-dom';
+// import './adminGallery.css'
 
 const AdminGallery = ({ galleryData, setGalleryData }) => {
 

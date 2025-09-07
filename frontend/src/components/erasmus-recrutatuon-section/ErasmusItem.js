@@ -6,7 +6,7 @@ const ErasmusItem = ({ item }) => {
   return (
     <li key={item.id}>
         <a href={`/erasmus-files/${item.href}`} target="_blank" rel="noopener noreferrer"><IoDocumentOutline /></a>
-        <p className='title'>{item.name}</p>
+        <p className='title'>{item.title}</p>
     </li>
   )
 }

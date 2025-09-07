@@ -27,7 +27,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import AdminPanelSection from "./components/admin-panel/AdminPanelSection";
 import feedData from "./Data/feed-data";
 import galleryData from "./Data/gallery-data";
-import { useState } from "react";
+// import docsData from "./Data/docs-data";
+import documentsData from "./Data/documents-data";
+import { use, useState } from "react";
 
 function HomePage() {
   return (
@@ -62,7 +64,10 @@ function AnimatedRoutes() {
   const [feedContentData, setFeedContentData] = useState(feedData);
   // gallery data
   const [galleryContentData, setGalleryContentData] = useState(galleryData);
-
+  // documents data
+  // const [documentsData, setDocumentsData] = useState(docsData);
+  // all documents data
+  const [documentsDataContent, setDocumentsDataContent] = useState(documentsData);
   const location = useLocation();
 
   const pageTransition = {
@@ -120,7 +125,7 @@ function AnimatedRoutes() {
           element={
             <DefaultLayout>
               <motion.div {...pageTransition}>
-                <DocumentsSection />
+                <DocumentsSection documentsData={documentsDataContent.filter(dataItem => dataItem.category === 'school')}/>
               </motion.div>
             </DefaultLayout>
           }
@@ -170,7 +175,7 @@ function AnimatedRoutes() {
           element={
             <DefaultLayout>
               <motion.div {...pageTransition}>
-                <SchoolHistorySection />
+                <SchoolHistorySection documentsData={documentsDataContent.filter(dataItem => dataItem.category === 'history')}/>
               </motion.div>
             </DefaultLayout>
           }
@@ -210,7 +215,7 @@ function AnimatedRoutes() {
           element={
             <DefaultLayout>
               <motion.div {...pageTransition}>
-                <MaturaSection />
+                <MaturaSection documentsData={documentsDataContent.filter(dataItem => dataItem.category === 'matura')}/>
               </motion.div>
             </DefaultLayout>
           }
@@ -240,7 +245,7 @@ function AnimatedRoutes() {
           element={
             <DefaultLayout>
               <motion.div {...pageTransition}>
-                <ErasmusRecrutationSeciton />
+                <ErasmusRecrutationSeciton documentsData={documentsDataContent.filter(dataItem => dataItem.category === 'erasmus')} />
               </motion.div>
             </DefaultLayout>
           }
@@ -269,7 +274,7 @@ function AnimatedRoutes() {
           path="/admin-panel/*"
           element={
             <AdminLayout>
-              <AdminPanelSection feedData={feedContentData} setFeedData={setFeedContentData} galleryData={galleryContentData} setGalleryData={setFeedContentData} />
+              <AdminPanelSection feedData={feedContentData} setFeedData={setFeedContentData} galleryData={galleryContentData} setGalleryData={setFeedContentData} documentsData={documentsDataContent} setDocumentsData={setDocumentsDataContent}/>
             </AdminLayout>
           }
         />
