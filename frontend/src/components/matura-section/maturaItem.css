@@ -8,22 +8,27 @@
   color: var(--text-muted);
   border-radius: var(--radius-button);
   height: fit-content;
-  padding: 1rem 0.75rem;
+  padding: 0.75rem 1rem;
   gap: 1rem;
   box-shadow: var(--shadow);
   border: var(--border);
+  transition: .3s;
+  cursor: pointer;
 }
 
 .matura-section li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
-  background-color: var(--accent-4);
-  border-radius: var(--radius-button);
+  gap: 1rem;
+  padding: 0.25rem;
+  /* background-color: var(--accent-4); */
+  /* border-radius: var(--radius-button); */
+  width: 100%;
   color: var(--accent-3);
-  font-weight: 600;
-  font-size: var(--font-button);
+  font-weight: 400;
+  font-size: var(--font-regular);
+  transition: .3s;
 }
 
 .matura-section p {
@@ -32,3 +37,21 @@
   font-size: var(--font-small-title);
   flex: 1;
 }
+
+.matura-section .icon-wrapper {
+  background-color: var(--accent-4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-button);
+  font-size: var(--font-button);
+  font-weight: 600;
+  height: 40px;
+  width: 40px;
+} 
+
+.matura-section li:hover {
+  background-color: var(--bg-light);
+  transform: scale(1.05);
+}
+

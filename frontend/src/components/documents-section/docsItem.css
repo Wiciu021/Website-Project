@@ -8,23 +8,39 @@
   color: var(--text-muted);
   border-radius: var(--radius-button);
   height: 50px;
-  padding: 1rem 0.75rem;
+  padding: 0.75rem;
   gap: 1rem;
   box-shadow: var(--shadow);
   border: var(--border);
+  cursor: pointer;
+  transition: .3s;
 }
 
 .documents-section li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding:  0.5rem;
+  gap: 1rem;
+  /* background-color: var(--accent-4); */
+  /* border-radius: var(--radius-button); */
+  /* color: var(--accent-3); */
+  font-weight: 400;
+  font-size: var(--font-small-title);
+  width: 100%;
+}
+
+.documents-section li .icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 35px;
   background-color: var(--accent-4);
   border-radius: var(--radius-button);
-  color: var(--accent-3);
+  color: var(--button-color);
   font-weight: 600;
-  font-size: var(--font-small-title);
 }
+
 
 .documents-section li .title {
   font-size: var(--font-small-title);
@@ -39,4 +55,9 @@
   color: var(--text-muted);
   border-radius: var(--radius-small);
   padding: 3px 6px;
+}
+
+.documents-section li:hover {
+  transform: scale(1.05);
+  background-color: var(--bg-light);
 }

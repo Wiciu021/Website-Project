@@ -84,15 +84,15 @@
   .list-wrapper 
   ul li div {
   flex-shrink: 0;
-  display: flex;                 /* allow centering */
-  justify-content: center;       /* center icon horizontally */
-  align-items: center;           /* center icon vertically */
+  display: flex;                 
+  justify-content: center;       
+  align-items: center;          
   width: 35px;
   height: 35px;
   background-color: var(--button-primary);
   color: var(--button-color);
-  border-radius: var(--radius-small);            /* optional: makes it round */
-  font-size: 16px;               /* controls icon size */
+  border-radius: var(--radius-small);            
+  font-size: 16px;               
 }
 
 .parents-council-section .parents-council-wrapper .content-container .left-section .action-container {
@@ -128,6 +128,7 @@
   justify-content: center;
   align-items: center;
   gap: .5rem;
+  cursor: pointer;
 }
 
 /* right seciton */

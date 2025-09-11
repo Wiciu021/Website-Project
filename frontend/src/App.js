@@ -65,9 +65,8 @@ function AnimatedRoutes() {
   // gallery data
   const [galleryContentData, setGalleryContentData] = useState(galleryData);
   // documents data
-  // const [documentsData, setDocumentsData] = useState(docsData);
-  // all documents data
   const [documentsDataContent, setDocumentsDataContent] = useState(documentsData);
+  
   const location = useLocation();
 
   const pageTransition = {

@@ -54,6 +54,7 @@
   font-size: var(--font-regular);
   height: 100%;
   font-weight: 500;
+  transition: .3s;
 }
 
 .header .nav .nav-link {
@@ -119,6 +120,10 @@
   align-items: center;
   padding: 0.75rem;
   
+}
+
+.header .nav .list-dropdown li a {
+  /* padding: .75rem; */
 }
 
 .header .nav .list-dropdown li:hover {
