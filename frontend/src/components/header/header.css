@@ -109,7 +109,7 @@
   border-bottom-right-radius: var(--radius-button); */
 }
 
-.header .nav .list-dropdown li {
+.header .nav .list-dropdown li  {
   font-weight: 500;
   white-space: nowrap;
   color: var(--text);
@@ -118,12 +118,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem;
-  
+  gap: 0;
+  /* padding: 0.75rem; */
 }
 
-.header .nav .list-dropdown li a {
-  /* padding: .75rem; */
+.header .nav p.nav-link {
+  font-weight: 500;
+  font-family: 'Parkinsans', sans-serif;
+  font-size: var(--font-regular);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header .nav .list-dropdown li a, 
+.header .nav .list-dropdown li p {
+  padding: .75rem;
+  width: 100%;
 }
 
 .header .nav .list-dropdown li:hover {

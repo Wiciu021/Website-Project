@@ -41,7 +41,7 @@ const ListItem = ({ item, level, openDropdowns, setOpenDropdowns }) => {
 
   const SmartLink = ({ item }) => {
     if (item.children && item.children.length > 0) {
-      return item.label;
+      return;
     }
 
     const isExternal = item.href.startsWith('http');
@@ -61,9 +61,25 @@ const ListItem = ({ item, level, openDropdowns, setOpenDropdowns }) => {
         <button 
           onClick={toggleDropdown} 
           className='drop-down-button'
-          style={{ transform: isOpen ? 'rotate(180deg)' : null }}
         >
-          {String(item.id).length > 1 ? <IoAddOutline/> : <IoChevronDownOutline/>}
+          
+          {String(item.id).length > 1 ?  
+            <p className='nav-link'>
+              {item.label} <IoAddOutline 
+                style={{ 
+                  transform: isOpen ? 'rotate(180deg)' : null, 
+                  transition: '.4s',
+                  fontSize: '20px'
+                  }}/>
+            </p> : 
+            <p className='nav-link'>
+              {item.label} <IoChevronDownOutline
+                style={{ 
+                  transform: isOpen ? 'rotate(180deg)' : null, 
+                  transition: '.4s',
+                  fontSize: '20px'
+                  }}/>
+            </p>}
         </button>
       )}
       {item.children && item.children.length > 0 && (
