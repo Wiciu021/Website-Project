@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './parentsCouncilSection.css'
 import schoolSupportData from '../../Data/parents-council-data'
 import { IoDocumentOutline } from 'react-icons/io5';
@@ -7,6 +7,26 @@ import parentsCouncilPrezydium from '../../Data/prezydium-data';
 import bankAccounts from '../../Data/bank-account-data';
 
 const ParentsCouncilSection = () => {
+
+  const handleCopy = (text) => {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text);
+    }
+    setTextToDisplay('skopiowano')
+    setTimeout(() => setTextToDisplay('skopiuj'), 2000)
+  }
+
+  const [spanVisible, setSpanVisible] = useState(false);
+  const [textToDisplay, setTextToDisplay] = useState('skopiuj');
+
+  const handleMouseOver = () => {
+    setSpanVisible(true);
+  }
+
+  const handleMouseDown = () => {
+    setSpanVisible(false);
+  }
+
   return (
     <section className='parents-council-section'>
       <div className='parents-council-wrapper'>
@@ -28,7 +48,14 @@ const ParentsCouncilSection = () => {
             <p>Dlatego zwracamy się do Państwa z prośbą o dalsze wspieranie naszej działalności i przekazywanie dobrowolnych składek na Radę Rodziców </p>
             <p>W roku szkolnym 2023/24   dobrowolna składka wynosi 250 zł rocznie ( + 125 zł na drugie i kolejne dziecko). Oczywiście jeżeli chcą Państwo wesprzeć nas wyższa kwotą to będziemy mogli zrealizować więcej działań. Bardzo nam zależy, na wpłatach do końca listopada 2022 roku, co pozwoli nam zaplanować wszystkie wydatki. </p>
             <div className='action-container'>
-              <p><FaEnvelope /> rrxxlo@vp.pl</p>
+              <div style={{
+                position: 'relative'
+              }} className='wrapper-mail'>
+                <p onMouseLeave={() => handleMouseDown()} onMouseOver={() => handleMouseOver()} onClick={() => handleCopy("rrxxlo@vp.pl")}><FaEnvelope /> rrxxlo@vp.pl</p>
+                <span style={{
+                  display: spanVisible ? 'block' : 'none'
+                }} className='copy-span' >{textToDisplay}</span>
+              </div>
               <a href="/docs-files/Regulamin-RR-XXLO-Gdansk-11.2024-final-2.pdf" rel='noopener noreferrer' target='_blank'><IoDocumentOutline style={{
                 color: 'var(--button-color)'
               }}/> Regulamin Rady Rodziców</a>
