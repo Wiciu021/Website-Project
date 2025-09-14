@@ -1,13 +1,34 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import NavList from './NavList';
 import { IoChevronDownOutline, IoAddOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 
-const ListItem = ({ item, level, openDropdowns, setOpenDropdowns }) => {
+const ListItem = ({ item, level, openDropdowns, setOpenDropdowns, pathname  }) => {
 
   const isOpen = openDropdowns[level] === item.id;
 
+  const collectHrefs = (node) => {
+    if (!node.children) {
+      return [node.href].filter(Boolean);
+    }
+    return node.children.flatMap(collectHrefs);
+  };
+
+  let isActive = false;
+  if (level === 1) {
+    if (item.href) {
+      isActive = pathname === item.href;
+    } else if (item.children) {
+      const childHrefs = collectHrefs(item);
+      isActive = childHrefs.some(href => pathname.startsWith(href));
+    }
+  }
+
   const toggleDropdown = () => {
+    // const newId = Number(item.id.toString()[0]);
+    // setOpenedTab(newId);
+    // console.log(newId) 
+
     setOpenDropdowns(prev => {
       const newState = { ...prev };
 
@@ -28,6 +49,10 @@ const ListItem = ({ item, level, openDropdowns, setOpenDropdowns }) => {
   }; 
   
   const handleClick = () => {
+    // const newId = Number(item.id.toString()[0]);
+    // setOpenedTab(newId);
+    // console.log(newId);
+
     setOpenDropdowns(prev => {
       const newState = { ...prev };
 
@@ -55,7 +80,7 @@ const ListItem = ({ item, level, openDropdowns, setOpenDropdowns }) => {
   }
 
   return (
-    <li key={item.id}>
+    <li key={item.id} className={isActive ? 'opened-tab' : null}>
       <SmartLink item={item} />
       {item.children && item.children.length > 0 && (
         <button 
@@ -89,6 +114,8 @@ const ListItem = ({ item, level, openDropdowns, setOpenDropdowns }) => {
             level={level + 1} 
             openDropdowns={openDropdowns} 
             setOpenDropdowns={setOpenDropdowns} 
+            // openedTab={openedTab}
+            // setOpenedTab={setOpenedTab}
           />
         </div>
       )}

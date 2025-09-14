@@ -29,7 +29,17 @@ import feedData from "./Data/feed-data";
 import galleryData from "./Data/gallery-data";
 // import docsData from "./Data/docs-data";
 import documentsData from "./Data/documents-data";
-import { use, useState } from "react";
+import { use, useEffect, useState } from "react";
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, [pathname]);
+
+  return null;
+}
 
 function HomePage() {
   return (
@@ -296,6 +306,7 @@ function AnimatedRoutes() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="App">
         <AnimatedRoutes />
       </div>
