@@ -5,9 +5,7 @@ const FeedPageItem = React.memo(({ item }) => {
   return (
     <div className='feed-page-item'>
       <div className='card-image-container' style={{
-        // backgroundImage: `url(${item.img}?v=${Date.now()})`,
-        // znowu sobie odkomentuj
-        backgroundImage: 'url(/kids1.jpg)',
+        backgroundImage: `url(/posts/${item.img})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
