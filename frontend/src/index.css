@@ -103,22 +103,22 @@ html, body {
     --hover-button: #7a3756;
 
     /* Extra accent colors */
-    --accent-1: #2c272f;
-    --accent-2: #9f496e;
+    --accent-1: #847a9f;
+    --accent-2: #a178a4;
     --accent-3: #f1ece7;
-    --accent-4: #647393;
+    --accent-4: #b172a5;
   }
 }
 
 body.light-mode {
   /* Backgrounds */
-    --bg-dark: hsl(0, 0%, 98%);     /* najjaśniejsze tło */
-    --bg: hsl(0, 0%, 95%);          /* karty */
-    --bg-light: hsl(0, 0%, 90%);    /* elementy wewnątrz kart */
+    --bg-dark: hsl(0, 0%, 94%);     /* najjaśniejsze tło */
+    --bg: hsl(0, 0%, 90%);          /* karty */
+    --bg-light: hsl(0, 0%, 87%);    /* elementy wewnątrz kart */
 
     /* Text */
-    --text: hsl(220, 20%, 12%);     /* ciemny tekst */
-    --text-muted: hsl(220, 10%, 40%);
+    --text: hsl(220, 20%, 25%);     /* ciemny tekst */
+    --text-muted: hsl(220, 10%, 35%);
 
     /* Border & shadow */
     --border: hsl(0, 0%, 80%);
@@ -127,18 +127,18 @@ body.light-mode {
       0 4px 8px hsla(0, 0%, 0%, 0.10);
 
     /* Buttons */
-    --button-primary: #9f496e;  /* akcent ten sam */
-    --button-color: #ffffff;   /* tekst na ciemnym przycisku */
+    --button-primary: #6688cc;  /* akcent ten sam */
+    --button-color: #f1ece7;   /* tekst na ciemnym przycisku */
 
     /* Hover states */
     --hover-bg: hsl(0, 0%, 85%);
-    --hover-button: #7a3756;
+    --hover-button: #acbfe6;
 
     /* Extra accent colors */
-    --accent-1: #2c272f;
-    --accent-2: #9f496e;
+    --accent-1: #3b5d8f;
+    --accent-2: #6688cc;
     --accent-3: #f1ece7;
-    --accent-4: #647393;
+    --accent-4: #acbfe6;
 }
 
 html {
