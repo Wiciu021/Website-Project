@@ -32,17 +32,19 @@ const FeedPagePost = () => {
           }}>
             <div className='date-container'>{post.date}</div>
           </div>
-          <div className='card-desctiption-container'>
-            <h3>{post.title}</h3>
-            <div className='desctiption'>
-              {
-                post.description
-              }
+          <div className='card-wrapper'>
+            <div className='card-desctiption-container'>
+              <h3>{post.title}</h3>
+              <div className='desctiption'>
+                {
+                  post.description
+                }
+              </div>
             </div>
-          </div>
-          <div className='card-footer-container'>
-            <h4>{post.author}</h4>
-            <button className='go-back-button' onClick={() => navigate(-1)}>cofnij</button>
+            <div className='card-footer-container'>
+              <h4>{post.author}</h4>
+              <button className='go-back-button' onClick={() => navigate(-1)}>cofnij</button>
+            </div>
           </div>
         </div>
       </div>

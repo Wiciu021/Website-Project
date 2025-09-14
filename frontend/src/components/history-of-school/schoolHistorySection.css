@@ -34,7 +34,7 @@
   background-color: var(--bg);
   box-shadow: var(--shadow);
   border: var(--border);
-  border-radius: var(--radius-button);
+  border-radius: var(--radius-small);
 }
 
 .school-history-section .school-history-wrapper .school-timeline::before, .achievements-section .achievements-wrapper .achievements-timeline::before {
@@ -46,5 +46,5 @@
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--bg-light);
-  box-shadow: var(--s);
+  box-shadow: var(--shadow);
 }

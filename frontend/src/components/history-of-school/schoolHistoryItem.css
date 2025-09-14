@@ -6,7 +6,7 @@
   background-color: var(--bg-light);
   box-shadow: var(--shadow);
   border: var(--border-card);
-  border-radius: var(--radius-button);
+  border-radius: var(--radius-small);
   z-index: 100;
   display: flex;
   justify-content: space-between;
@@ -67,14 +67,14 @@
 
 .school-history-section .timeline-item a,
 .achievements-section .timeline-item .link-button {
-  color: var(--text-muted);
+  color: var(--accent-3);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   padding: 0.75rem 1rem;
   background-color: var(--button-primary);
-  border-radius: var(--radius-button);
+  border-radius: var(--radius-small);
   font-size: 1rem;
   font-weight: 500;
 }

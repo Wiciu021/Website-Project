@@ -24,7 +24,7 @@
   flex-direction: column;
   justify-content: left;
   gap: 1.25rem;
-  border-radius: var(--radius-card);
+  border-radius: var(--radius-small);
   box-shadow: var(--shadow);
   border: var(--border);
 }

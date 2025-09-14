@@ -6,7 +6,7 @@
   align-items: center;
   background-color: var(--bg);
   color: var(--text-muted);
-  border-radius: var(--radius-button);
+  border-radius: var(--radius-small);
   height: 50px;
   padding: 0.75rem;
   gap: 1rem;
@@ -36,7 +36,7 @@
   height: 35px;
   width: 35px;
   background-color: var(--accent-4);
-  border-radius: var(--radius-button);
+  border-radius: var(--radius-small);
   color: var(--button-color);
   font-weight: 600;
 }
@@ -52,7 +52,7 @@
   text-align: center;
   width: 125px;
   background-color: var(--accent-2);
-  color: var(--text-muted);
+  color: var(--accent-3);
   border-radius: var(--radius-small);
   padding: 3px 6px;
 }

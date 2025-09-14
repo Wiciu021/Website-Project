@@ -112,9 +112,9 @@ html, body {
 
 body.light-mode {
   /* Backgrounds */
-    --bg-dark: hsl(0, 0%, 94%);     /* najjaśniejsze tło */
-    --bg: hsl(0, 0%, 90%);          /* karty */
-    --bg-light: hsl(0, 0%, 87%);    /* elementy wewnątrz kart */
+    --bg-dark: hsl(0, 0%, 91%);     /* najjaśniejsze tło */
+    --bg: hsl(0, 0%, 88%);          /* karty */
+    --bg-light: hsl(0, 0%, 85%);    /* elementy wewnątrz kart */
 
     /* Text */
     --text: hsl(220, 20%, 25%);     /* ciemny tekst */

@@ -27,7 +27,7 @@
   position: relative;
   background-color: var(--bg);
   padding: 1.5rem;
-  border-radius: var(--radius-button);
+  border-radius: var(--radius-small);
   box-shadow: var(--shadow);
   border: var(--border);
   width: 1200px;
@@ -124,9 +124,9 @@
 .parents-council-section .parents-council-wrapper .content-container .left-section .action-container .copy-span {
   background-color: var(--accent-4);
   padding: 0.5rem 0.75rem;
-  border-radius: var(--radius-button);
+  border-radius: var(--radius-small);
   font-size: var(--font-small-text);
-  color: var(--text-muted);
+  color: var(--accent-3);
   position: absolute;
   left: 50%;
   bottom: -40px;
@@ -200,6 +200,8 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  color: var(--accent-3);
+  font-weight: 600;
   background-color: var(--accent-2);
   padding: 4px 8px;
   border-radius: var(--radius-small);

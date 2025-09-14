@@ -6,7 +6,7 @@
   align-items: center;
   background-color: var(--bg);
   color: var(--text-muted);
-  border-radius: var(--radius-button);
+  border-radius: var(--radius-small);
   height: fit-content;
   padding: 0.75rem 1rem;
   gap: 1rem;
@@ -43,7 +43,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: var(--radius-button);
+  border-radius: var(--radius-small);
   font-size: var(--font-button);
   font-weight: 600;
   height: 40px;

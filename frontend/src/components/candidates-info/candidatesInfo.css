@@ -17,7 +17,7 @@
   height: calc(100vh - 55px - 4rem);
   padding: 1rem;
   background-color: var(--bg);
-  border-radius: var(--radius-button);
+  border-radius: var(--radius-small);
   border: var(--border);
   box-shadow: var(--shadow);
 }
@@ -59,9 +59,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: var(--radius-button);
+  border-radius: var(--radius-small);
   font-family: 'Parkinsans', sans-serif;
-  background-color: var(--button-primary);
+  background-color: var(--accent-2);
   color: var(--button-color);
   border: none;
   font-size: var(--font-regular);

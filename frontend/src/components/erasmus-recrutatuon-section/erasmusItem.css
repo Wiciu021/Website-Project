@@ -6,7 +6,7 @@
   align-items: center;
   background-color: var(--bg);
   color: var(--text-muted);
-  border-radius: var(--radius-button);
+  border-radius: var(--radius-small);
   height: 50px;
   padding: 0.75rem;
   gap: 1rem;
@@ -36,9 +36,9 @@
   align-items: center;
   width: 35px;
   height: 35px;
-  background-color: var(--accent-4);
+  background-color: var(--accent-2);
   color: var(--button-color);
-  border-radius: var(--radius-button);
+  border-radius: var(--radius-small);
 }
 
 .erasmus-recrutation-section li p {
