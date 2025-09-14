@@ -14,19 +14,16 @@ const GalleryItem = ({ setShowSwiper, item, length, idx }) => {
     <>
       <div className='flip-card' onClick={handleClick}>
 
-        <div className='card-inner'>
-
-          <div className='front-side' style={{
+        <div className='card-inner' style={{
             // backgroundImage: `url(/static/images/gallery/${item.folder}/${item.img}.jpg)`,
-            backgroundImage: 'url(/kids1.jpg)',
+            backgroundImage: 'url(/paweldobry.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             width: '100%',
             height: '100%'
           }}>
-          </div>
   
-          <div className='back-side'>
+          <div className='description'>
             <h4>{item.title}</h4>
             <p>{item.description}</p>
           </div>

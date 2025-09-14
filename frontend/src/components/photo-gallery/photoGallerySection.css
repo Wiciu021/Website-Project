@@ -31,14 +31,15 @@
 
 .photo-gallery-section .gallery-section-wrapper .gallery-grid {
   display: grid;
-  width: 1000px;
-  height: 100%;
+  width: 100%;                
+  max-width: 1200px;          
   min-height: 70vh;
-  background-color: var(--bg);
   padding: 1rem;
-  border-radius: var(--radius-card);
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;      
+  row-gap: 3rem;         
+  box-sizing: border-box;     
+  margin: 0 auto;             
 }
 
 

@@ -9,7 +9,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
-  border-radius: var(--radius-card);
+  border-radius: var(--radius-small);
 }
 
 .swiper-container .swiper-slide {
@@ -41,12 +41,12 @@
 }
 
 .swiper-pagination-bullet {
-  background-color: var(--text-muted);
+  background-color: var(--accent-4);
   opacity: 1;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: var(--accent-2);
+  background-color: var(--accent-1);
 }
 
 .swiper-container .swiper-slide button {
@@ -59,7 +59,7 @@
   font-family: 'Parkinsans', sans-serif;
   font-weight: 600;
   font-size: var(--font-big-title);
-  border-radius: var(--radius-button);
+  border-radius: var(--radius-smalll);
   padding: 5px;
   position: absolute;
   top: 10px;

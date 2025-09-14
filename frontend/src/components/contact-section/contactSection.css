@@ -167,6 +167,11 @@ input:-moz-autofill {
   align-items: center;
   gap: .5rem;
   color: var(--text-muted);
+  transition: .4s;
+}
+
+.contact-section .contact-wrapper .right-section .info-container li:hover {
+  color: var(--accent-3);
 }
 
 .contact-section .contact-wrapper .right-section .social-media-container {

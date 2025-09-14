@@ -39,6 +39,7 @@
 .annual-achievements-section .annual-achievements-wrapper .month-wrapper h5 {
   font-size: var(--font-regular);
   background-color: var(--button-primary);
+  color: var(--accent-3);
   width: fit-content;
   padding: 4px 8px;
   display: flex;

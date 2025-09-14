@@ -1,9 +1,7 @@
 .gallery-grid .flip-card {
-  height: 300px;
+  height: 350px;
   background-color: var(--bg-light);
-  border-radius: var(--radius-button);
-  min-width: 300px;
-  perspective: 1000px; 
+  border-radius: var(--radius-small);
 }
 
 .gallery-grid .flip-card .card-inner {
@@ -13,42 +11,36 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  transition: transform 0.8s; 
-  transform-style: preserve-3d;
 }
 
-.gallery-grid .flip-card:hover .card-inner {
-  transform: rotateY(180deg);
-}
-
-.gallery-grid .flip-card .front-side,
-.gallery-grid .flip-card .back-side {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: var(--radius-button);
-  overflow: hidden;
-}
-
-
-.gallery-grid .flip-card .card-inner .back-side {
+.gallery-grid .flip-card .card-inner .description {
+  background-color: var(--bg-light);
+  width: 90%;
+  padding: 1rem 0.75rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  padding: 1rem;
-  transform: rotateY(180deg); 
-  gap: 0.5rem;
+  gap: .5rem;
+  border-radius: var(--radius-small);
+  height: 150px;
+  align-items: center;
+  position: absolute;
+  bottom: -25px;
+  z-index: 1000;
+  opacity: 0;
+  transition: .4s ease;
+  box-shadow: var(--shadow);
 }
 
-.gallery-grid .flip-card .card-inner .back-side h4 {
+.gallery-grid .flip-card .card-inner:hover .description {
+  opacity: 1;
+  transform: translateY(-10px);
+}
+
+.gallery-grid .flip-card .card-inner .description h4 {
   font-size: var(--font-titles);
-  text-align: center;
 }
 
-.gallery-grid .flip-card .card-inner .back-side p {
-  text-align: center;
+.gallery-grid .flip-card .card-inner .description p {
   font-size: var(--font-regular);
-  color: var(--text-muted);
+  text-align: center;
 }
