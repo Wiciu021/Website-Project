@@ -2,10 +2,11 @@
   height: 100vh;
   width: 100vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: top;
   align-items: center;
   flex-direction: column;
   overflow: hidden;
+  gap: 3rem;
   background-color: var(--bg-dark);
   padding-block: 55px;
 }
@@ -18,9 +19,8 @@
 }
 
 .feed-section .feed-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 3rem;
-  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 1300px;
 }

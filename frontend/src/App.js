@@ -41,12 +41,12 @@ const ScrollToTop = () => {
   return null;
 }
 
-function HomePage() {
+function HomePage({ feedData }) {
   return (
     <>
       <HeroSection />
       <ForStudent />
-      <Feed />
+      <Feed feedData={feedData} />
     </>
   )
 }
@@ -94,7 +94,7 @@ function AnimatedRoutes() {
           element={
             <DefaultLayout>
               <motion.div {...pageTransition}>
-                <HomePage />
+                <HomePage feedData={feedContentData} />
               </motion.div>
             </DefaultLayout>
           }

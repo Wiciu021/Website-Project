@@ -1,15 +1,29 @@
 import React from 'react'
 import './feedItem.css'
+import { Link } from 'react-router-dom'
+import useInView from '../../hooks/useInView'
 
-const FeedItem = ({ item }) => {
+const FeedItem = ({ item, index }) => {
+
+  const [ref, isVisible] = useInView({ threshold: 0.1 });
+
   return (
-    <div className='feed-item' style={{
-      backgroundImage: `url(/posts/${item.img})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center'
+    <div ref={ref} className={`feed-item ${isVisible ? 'visible' : ''}`} style={{
+      transitionDelay: `${index * 0.3}s`
     }}>
+      <div className='date-container'>
+          {new Date(item.date).toLocaleDateString('pl-PL')}
+        </div>
+      <div className='wrapper'>
+        <div className="image-wrapper" style={{
+          // backgroundImage: `url(/posts/${item.img})`,
+          backgroundImage: `url(/paweldobry.jpg)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}></div>
+      </div>
       <div className='description-container'>
-        <h3>{item.title}</h3>
+        <Link to={`/post/${item.id}`} className='link'><h3>{item.title}</h3></Link>
       </div>
     </div>
   )

@@ -95,12 +95,12 @@ html, body {
       0 4px 8px hsla(0, 0%, 0%, 0.10);
 
     /* Buttons */
-    --button-primary: #9f496e;  /* akcent ten sam */
-    --button-color: #ffffff;   /* tekst na ciemnym przycisku */
+    --button-primary: #847a9f;  
+    --button-color: #ffffff;   
 
     /* Hover states */
     --hover-bg: hsl(0, 0%, 85%);
-    --hover-button: #7a3756;
+    --hover-button: #a178a4;
 
     /* Extra accent colors */
     --accent-1: #847a9f;
@@ -112,12 +112,12 @@ html, body {
 
 body.light-mode {
   /* Backgrounds */
-    --bg-dark: hsl(0, 0%, 91%);     /* najjaśniejsze tło */
-    --bg: hsl(0, 0%, 88%);          /* karty */
-    --bg-light: hsl(0, 0%, 85%);    /* elementy wewnątrz kart */
+    --bg-dark: hsl(190, 10%, 91%);     
+    --bg: hsl(190, 10%, 88%);          
+    --bg-light: hsl(190, 10%, 85%);    
 
     /* Text */
-    --text: hsl(220, 20%, 25%);     /* ciemny tekst */
+    --text: hsl(220, 20%, 25%);     
     --text-muted: hsl(220, 10%, 35%);
 
     /* Border & shadow */
@@ -127,8 +127,8 @@ body.light-mode {
       0 4px 8px hsla(0, 0%, 0%, 0.10);
 
     /* Buttons */
-    --button-primary: #6688cc;  /* akcent ten sam */
-    --button-color: #f1ece7;   /* tekst na ciemnym przycisku */
+    --button-primary: #6688cc; 
+    --button-color: #f1ece7;   
 
     /* Hover states */
     --hover-bg: hsl(0, 0%, 85%);
@@ -144,7 +144,7 @@ body.light-mode {
 html {
   margin: 0;
   padding: 0;
-  overflow-y: scroll; /* always reserve scrollbar space */
+  overflow-y: scroll; 
 }
 
 body {
