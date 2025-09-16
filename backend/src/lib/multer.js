@@ -1,57 +1,61 @@
 import multer from 'multer';
-import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
+import { S3Client, PutObjectCommand, GetObjectCommand } from "@aws-sdk/client-s3";
 import dotenv from 'dotenv';
 
 dotenv.config();
 
 const storage = multer.memoryStorage();
-const upload = multer({ storage });
+const upload = multer({ 
+  storage,
+  limits: { fileSize: 10 * 1024 * 1024 } // 10 MB limit
+});
 
 const s3 = new S3Client({
-  endpoint: process.env.MINIO_ENDPOINT,
+  endpoint: "http://minio:9000",
   region: "us-east-1",
   credentials: {
-    accessKeyId: process.env.MINIO_ACCESS_KEY,
-    secretAccessKey: process.env.MINIO_SECRET_KEY,
+    accessKeyId: "minioadmin",
+    secretAccessKey: "minioadmin"
   },
-  forcePathStyle: true,
-  tls: false
+  forcePathStyle: true
+  // tls: false 
 });
 
 const BUCKETS = {
-  POSTS: process.env.MINIO_POSTS_BUCKET,
-  TEACHERS: process.env.MINIO_TEACHERS_BUCKET,
-  GALLERY: process.env.MINIO_GALLERY_BUCKET,
-  DOCS: process.env.MINIO_DOCS_BUCKET
+  POSTS: 'posts',
+  TEACHERS: 'teachers',
+  GALLERY: 'gallery',
+  DOCS: 'docs'
 };
 
 async function uploadToMinio(file, bucketName) {
   try {
     if (!file) {
-      throw new Error('Failed to upload file');
+      throw new Error('No file provided');
     }
-    
-    if (!BUCKETS[bucketName]) {
-      throw new Error('Invalid bucket specified');
+
+    const bucket = BUCKETS[bucketName];
+    if (!bucket) {
+      throw new Error(`Invalid bucket name: ${bucketName}`);
     }
 
     const key = `${Date.now()}-${file.originalname.replace(/\s+/g, '-')}`;
     
     const command = new PutObjectCommand({
-      //Bucket: BUCKETS[bucketName],
-      Bucket: 'posts',
+      Bucket: bucket,
       Key: key,
       Body: file.buffer,
-      ContentType: file.mimetype,
-      ACL: 'public-read'
+      ContentType: file.mimetype
     });
 
     await s3.send(command);
+    console.log(`Upload successful to ${bucket}, key:`, key);
     
     return key;
+
   } catch (error) {
-    console.error('Error uploading to MinIO:', error);
-    throw new Error(`Upload failed: ${error.message}`);
+    console.error('Upload error:', error);
+    throw error;
   }
 }
 

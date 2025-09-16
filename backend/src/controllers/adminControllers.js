@@ -1,11 +1,11 @@
 import prisma from "../lib/prisma.js";
-import upload from '../lib/multer.js';
-import { uploadToMinio, BUCKETS } from '../lib/multer.js';
+// import upload from '../lib/multer.js';
+import { uploadToMinio } from '../lib/multer.js';
 
 export const createPost = async (req, res) => {
-  const { title, description, date, author, category } = req.body;
-
   try {
+    const { title, description, date, author, category } = req.body;
+    
     let imageKey = 'default.png';
     if (req.file) {
       imageKey = await uploadToMinio(req.file, 'POSTS');

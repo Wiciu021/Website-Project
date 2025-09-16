@@ -7,6 +7,9 @@ const FeedItem = ({ item, index }) => {
 
   const [ref, isVisible] = useInView({ threshold: 0.1 });
 
+  console.log('Image URL:', `/posts/${item.img}`);
+  console.log('Post item:', item);
+  
   return (
     <div ref={ref} className={`feed-item ${isVisible ? 'visible' : ''}`} style={{
       transitionDelay: `${index * 0.3}s`
@@ -16,8 +19,8 @@ const FeedItem = ({ item, index }) => {
         </div>
       <div className='wrapper'>
         <div className="image-wrapper" style={{
-          // backgroundImage: `url(/posts/${item.img})`,
-          backgroundImage: `url(/paweldobry.jpg)`,
+          backgroundImage: `url(/posts/${item.img})`,
+          // backgroundImage: `url(/paweldobry.jpg)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}></div>

@@ -17,6 +17,9 @@ const FeedPagePost = () => {
     return <div>not found</div>
   }
 
+  console.log('Image URL:', `/posts/${post.img}`);
+  console.log('Post item:', post);
+
   return (
     <section className='feed-page-post page-section'>
       {/* <div className='title-section'>
