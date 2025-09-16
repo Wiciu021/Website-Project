@@ -60,6 +60,7 @@
   justify-content: top;
   gap: 5.5rem;
   padding: 0rem 1rem;
+  width: 100%;
 }
 
 .feed-page-section .feed-page-item .card-image-container  .date-container,

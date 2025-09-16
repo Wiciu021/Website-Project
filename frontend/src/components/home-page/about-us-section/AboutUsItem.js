@@ -20,7 +20,7 @@ const AboutUsItem = ({ item }) => {
           backgroundImage: 'url(/paweldobry.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          width: '50%',
+          width: '625px',
           height: '320px'
       }}></div>
     </li>
