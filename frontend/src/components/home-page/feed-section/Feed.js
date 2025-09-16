@@ -6,7 +6,7 @@ import { delay } from 'framer-motion';
 
 const Feed = ({ feedData }) => {
 
-  let delayValue = 0;
+  let delayValue = -1;
 
   return (
     <section className='feed-section'>

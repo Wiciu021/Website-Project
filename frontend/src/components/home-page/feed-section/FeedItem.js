@@ -1,11 +1,11 @@
 import React from 'react'
 import './feedItem.css'
 import { Link } from 'react-router-dom'
-import useInView from '../../hooks/useInView'
+import useInView from '../../../hooks/useInView'
 
 const FeedItem = ({ item, index }) => {
 
-  const [ref, isVisible] = useInView({ threshold: 0.1 });
+  const [ref, isVisible] = useInView({ threshold: 0.2 });
 
   return (
     <div ref={ref} className={`feed-item ${isVisible ? 'visible' : ''}`} style={{

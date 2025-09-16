@@ -24,16 +24,30 @@
   height: 150px;
   align-items: center;
   position: absolute;
-  bottom: -25px;
+  bottom: -50px;
   z-index: 1000;
   opacity: 0;
   transition: .4s ease;
   box-shadow: var(--shadow);
 }
 
+.gallery-grid .flip-card .card-inner .description::after {
+  position: absolute;
+  content: "";
+  height: 5px;
+  width: 0;
+  bottom: 15px;
+  background-color: var(--accent-2);
+  transition: .4s ease-in-out;
+}
+
 .gallery-grid .flip-card .card-inner:hover .description {
   opacity: 1;
-  transform: translateY(-10px);
+  transform: translateY(-30px);
+}
+
+.gallery-grid .flip-card .card-inner:hover .description::after {
+  width: 95%;
 }
 
 .gallery-grid .flip-card .card-inner .description h4 {
