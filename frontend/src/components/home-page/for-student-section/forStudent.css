@@ -1,10 +1,9 @@
 .for-students-section {
-  padding-block: 55px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 50vh;
+  height: 300px;
   width: 100%;
   gap: 4rem;
   background-color: var(--bg-dark);
@@ -29,11 +28,12 @@
 .for-students-section .button-container .button {
   padding: 15px 35px;
   border: none;
-  border-radius: var(--radius-button);
+  width: 200px;
+  border-radius: var(--radius-small);
   font-family: "Parkinsans", sans-serif;
   font-weight: 500;
   font-size: var(--font-button);
-  background-color: var(--accent-4);
+  background-color: var(--accent-2);
   color: var(--button-color);
   cursor: pointer;
 }

@@ -1,7 +1,7 @@
 import Header from "./components/header/Header";
 import HeroSection from "./components/hero-section/HeroSection"; 
-import ForStudent from "./components/for-student-section/ForStudent";
-import Feed from "./components/feed-section/Feed";
+import ForStudent from "./components/home-page/for-student-section/ForStudent";
+import Feed from "./components/home-page/feed-section/Feed";
 import Footer from "./components/footer/Footer";
 import { BrowserRouter, Routes, Route, useLocation  } from 'react-router-dom'
 import FeedPage from "./components/feed-page/FeedPage";
@@ -25,11 +25,13 @@ import ErasmusSection from "./components/erasmus-section/ErasmusSection";
 import ParentsCouncilSection from "./components/parents-council-section/ParentsCouncilSection";
 import { AnimatePresence, motion } from "framer-motion";
 import AdminPanelSection from "./components/admin-panel/AdminPanelSection";
+import AboutUs from "./components/home-page/about-us-section/AboutUs";
 import feedData from "./Data/feed-data";
 import galleryData from "./Data/gallery-data";
 // import docsData from "./Data/docs-data";
 import documentsData from "./Data/documents-data";
 import { use, useEffect, useState } from "react";
+import aboutUsData from "./Data/about-us-data";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -41,12 +43,13 @@ const ScrollToTop = () => {
   return null;
 }
 
-function HomePage({ feedData }) {
+function HomePage({ feedData, aboutUsData }) {
   return (
     <>
       <HeroSection />
       <ForStudent />
       <Feed feedData={feedData} />
+      <AboutUs aboutUsData={aboutUsData} />
     </>
   )
 }
@@ -76,7 +79,9 @@ function AnimatedRoutes() {
   const [galleryContentData, setGalleryContentData] = useState(galleryData);
   // documents data
   const [documentsDataContent, setDocumentsDataContent] = useState(documentsData);
-  
+  // aboutUs data
+  const [aboutUsDataContent, setAboutUsDataContent] = useState(aboutUsData);
+
   const location = useLocation();
 
   const pageTransition = {
@@ -94,7 +99,7 @@ function AnimatedRoutes() {
           element={
             <DefaultLayout>
               <motion.div {...pageTransition}>
-                <HomePage feedData={feedContentData} />
+                <HomePage feedData={feedContentData} aboutUsData={aboutUsDataContent} />
               </motion.div>
             </DefaultLayout>
           }

@@ -1,0 +1,106 @@
+.about-us-section li {
+  height: 70vh;
+  width: 1250px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  position: relative;
+  transition: .4s;
+  opacity: 0;
+}
+
+.about-us-section li.right {
+  transform: translateX(150px);
+}
+
+.about-us-section li.left {
+  transform: translateX(-150px);
+}
+
+.about-us-section li.visible {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.about-us-section li .description-container {
+  width: 60%;
+  height: 380px;
+  padding-right: 9.5rem;
+  padding-left: 2rem;
+  padding-block: 2rem;
+  background-color: var(--bg-light);
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.about-us-section li.left .description-container {
+  padding: 2rem 2rem 2rem 9.5rem;
+}
+
+.about-us-section li .description-container h3 {
+  font-size: var(--font-medium-titles);
+  color: var(--text);
+}
+
+.about-us-section li .description-container p {
+  color: var(--text-muted);
+  font-size: var(--font-regular);
+}
+
+.about-us-section li .description-container .button-wrapper {
+  display: flex;
+}
+
+.about-us-section li .description-container .learn-more-button {
+  padding: 12px 25px;
+  font-size: var(--font-regular);
+  border: none;
+  background-color: var(--button-primary);
+  color: var(--button-color);
+  font-family: inherit;
+  border-radius: var(--radius-small);
+}
+
+.about-us-section li.right .image-container {
+  position: absolute;
+  right: 25%;
+  top: 35%;
+  transform: translate(50%, -50%);
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow);
+}
+
+.about-us-section li.left .image-container {
+  position: absolute;
+  left: 25%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow);
+}
+
+.about-us-section li.right .image-container::after {
+  position: absolute;
+  content: "";
+  height: 30px;
+  background-color: var(--accent-4);
+  width: 85%;
+  opacity: .7;
+  bottom: 0;
+}
+
+
+.about-us-section li.left .image-container::after {
+  position: absolute;
+  content: "";
+  height: 30px;
+  background-color: var(--accent-4);
+  width: 85%;
+  opacity: .7;
+  bottom: 0;
+  right: 0;
+}
