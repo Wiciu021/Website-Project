@@ -1,7 +1,7 @@
 .hero-section {
   height: calc(100vh - 55px);
   width: 100vw;
-  background-image: url('../../photos/hero-section.jpg');
+  background-image: url('../../../photos/hero-section.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

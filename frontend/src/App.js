@@ -1,5 +1,5 @@
 import Header from "./components/header/Header";
-import HeroSection from "./components/hero-section/HeroSection"; 
+import HeroSection from "./components/home-page/hero-section/HeroSection"; 
 import ForStudent from "./components/home-page/for-student-section/ForStudent";
 import Feed from "./components/home-page/feed-section/Feed";
 import Footer from "./components/footer/Footer";
@@ -32,6 +32,7 @@ import galleryData from "./Data/gallery-data";
 import documentsData from "./Data/documents-data";
 import { use, useEffect, useState } from "react";
 import aboutUsData from "./Data/about-us-data";
+import achievementsData from "./Data/achievements-data";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -81,7 +82,8 @@ function AnimatedRoutes() {
   const [documentsDataContent, setDocumentsDataContent] = useState(documentsData);
   // aboutUs data
   const [aboutUsDataContent, setAboutUsDataContent] = useState(aboutUsData);
-
+  // achievements data
+  const [achievementsDataContent, setAchievementsDataContent] = useState(achievementsData);
   const location = useLocation();
 
   const pageTransition = {
@@ -209,7 +211,7 @@ function AnimatedRoutes() {
           element={
             <DefaultLayout>
               <motion.div {...pageTransition}>
-                <AchievementsSection />
+                <AchievementsSection achievementsData={achievementsDataContent} />
               </motion.div>
             </DefaultLayout>
           }

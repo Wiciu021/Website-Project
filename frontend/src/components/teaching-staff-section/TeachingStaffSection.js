@@ -30,11 +30,14 @@ const TeachingStaffSection = () => {
 
   useEffect(() => {
     if (showPopUp) {
+      document.documentElement.style.overflowY = 'hidden';
       document.body.style.overflowY = 'hidden';
     } else {
+      document.documentElement.style.overflowY = 'auto';  
       document.body.style.overflowY = 'auto';
     }
   }, [showPopUp]);
+
 
   // if (loading) return <div>Loading...</div>;
   // if (error) return <div>Error: {error}</div>;

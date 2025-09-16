@@ -4,14 +4,13 @@ import achievementsData from '../../Data/achievements-data';
 import { FaMedal, FaCalendarAlt } from "react-icons/fa"
 import './annualAchievements.css'
 
-const AnnualAchievements = () => {
+const AnnualAchievements = ({ item }) => {
   
-  const { id } = useParams();
-  const item = achievementsData.find(dataItem => String(dataItem.id) === id);
+  // const { id } = useParams();
+  // const item = achievementsData.find(dataItem => String(dataItem.id) === id);
 
   return (
     <section className='annual-achievements-section'>
-      <h3>Osiagniecia {item.year}</h3>
       <div className='annual-achievements-wrapper'>
         {
           item.achievements.map(dataItem => 

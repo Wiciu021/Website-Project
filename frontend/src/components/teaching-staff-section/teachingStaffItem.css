@@ -9,18 +9,44 @@
   border-radius: var(--radius-small);
   padding: 1rem;
   gap: 1rem;
+  position: relative;
 }
+
+.teaching-staff-section .grid-item::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 5px;
+  background-color: var(--accent-2);
+  bottom: 20px;
+  border-radius: var(--radius-small);
+  transition: .4s ease-in-out;
+}
+
+.teaching-staff-section .grid-item:hover::after  {
+  width: 90%;
+} 
 
 .teaching-staff-section .grid-item img {
   width: 150px;
   height: 150px;
   border-radius: var(--radius-full);
+  transition: .4s;
+}
+
+.teaching-staff-section .grid-item:hover img {
+  transform: scale(1.05);
 }
 
 .teaching-staff-section .grid-item h4 {
   font-weight: 600;
   font-size: var(--font-button);
   color: var(--text-muted);
+  transition: .4s;
+}
+
+.teaching-staff-section .grid-item:hover h4 {
+  text-decoration: underline;
 }
 
 .teaching-staff-section .grid-item p {
