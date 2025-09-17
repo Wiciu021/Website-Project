@@ -3,38 +3,50 @@ import React, { useState } from 'react'
 const AdminDocuments = ({ documentsData, setDocumentsData }) => {
 
   const [titleInput, setTitleInput] = useState('');
-  const [fileInput, setFileInput] = useState('');
+  const [documentFile, setDocumentFile] = useState(null);
   const [category, setCategory] = useState('');
+  // const [descriptionInput, setDescriptionInput] = useState('');
 
   const handleFileChange = (e) => {
     if (e.target.files.length > 0) {
-      setFileInput(e.target.files[0].name);
+      setDocumentFile(e.target.files[0]);
     } else {
-      setFileInput('');
+      setDocumentFile(null);
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    
+      const formData = new FormData();
+      formData.append('title', titleInput);
+      formData.append('category', category);
+      // formData.append('description', descriptionInput);
+      formData.append('date', new Date().toISOString());
+      formData.append('document', documentFile);
+    
+      try {
+        const res = await fetch('/api/admin/docs', {
+          method: 'POST',
+          body: formData
+        });
 
-    const newId = documentsData[documentsData.length - 1] + 1;
-
-    const newItem = {
-      id: newId,
-      title: titleInput,
-      date: new Date().getFullYear() + '-' + 
-        String(new Date().getMonth() + 1).padStart(2, '0') + '-' + 
-        String(new Date().getDate()).padStart(2, '0'),
-      href: fileInput,
-      folder: category,
-      category: category
+        if (res.ok) {
+          alert('Dodano dokument');
+          const data = await res.json();
+          setDocumentsData([...documentsData, data]);
+        } else {
+          alert('Błąd przy dodawaniu dokumentu');
+        }
+    } catch (err) {
+      console.error('Error submitting form:', err);
     }
 
-    setDocumentsData([...documentsData, newItem]);
-    setCategory('');
     setTitleInput('');
-    setFileInput('');
-  }
+    setCategory('');
+    // setDescriptionInput('');
+    setDocumentFile(null);  
+  };
 
   return (
     <main className='main'>

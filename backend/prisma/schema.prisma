@@ -48,10 +48,10 @@ model Photo {
   album       Album    @relation(fields: [albumId], references: [id])
 }
 
-model Docs {
-  id       Int       @id @default(autoincrement())
-  title    String
-  date     DateTime  @default(now())
-  file     String
-  category String
+model Document {
+  id          Int      @id @default(autoincrement())
+  title       String
+  file        String
+  date        DateTime @default(now())
+  category    String?
 }

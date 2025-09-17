@@ -37,6 +37,7 @@ export const createDocument = async (req, res) => {
     console.log('Received document data:', req.body);
 
     let documentKey = 'default.pdf';
+    
     if (req.file) {
       documentKey = await uploadToMinio(req.file, 'DOCS');
       console.log('Document uploaded with key:', documentKey);
