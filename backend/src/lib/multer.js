@@ -11,45 +11,48 @@ const upload = multer({
 });
 
 const s3 = new S3Client({
-  endpoint: "http://minio:9000",
-  region: "us-east-1",
+  endpoint: process.env.MINIO_ENDPOINT || "http://minio:9000",
+  region: process.env.MINIO_REGION || "us-east-1",
   credentials: {
-    accessKeyId: "minioadmin",
-    secretAccessKey: "minioadmin"
+    accessKeyId: process.env.MINIO_ACCESS_KEY || "minioadmin",
+    secretAccessKey: process.env.MINIO_SECRET_KEY || "minioadmin"
   },
   forcePathStyle: true
-  // tls: false 
 });
 
-const BUCKETS = {
+const DEFAULT_BUCKET = process.env.MINIO_BUCKET || 'default-bucket';
+
+const FOLDERS = {
   POSTS: 'posts',
   TEACHERS: 'teachers',
   GALLERY: 'gallery',
   DOCS: 'docs'
 };
 
-async function uploadToMinio(file, bucketName) {
+async function uploadToMinio(file, folderKey) {
   try {
     if (!file) {
       throw new Error('No file provided');
     }
 
-    const bucket = BUCKETS[bucketName];
-    if (!bucket) {
-      throw new Error(`Invalid bucket name: ${bucketName}`);
+    const folder = FOLDERS[folderKey] || (Object.values(FOLDERS).includes(folderKey) ? folderKey : null);
+
+    if (!folder) {
+      throw new Error(`Invalid folder key: ${folderKey}`);
     }
 
-    const key = `${Date.now()}-${file.originalname.replace(/\s+/g, '-')}`;
-    
+    const sanitizedFileName = file.originalname.replace(/\s+/g, '-');
+    const key = `${folder}/${Date.now()}-${sanitizedFileName}`;
+
     const command = new PutObjectCommand({
-      Bucket: bucket,
+      Bucket: DEFAULT_BUCKET,
       Key: key,
       Body: file.buffer,
       ContentType: file.mimetype
     });
 
     await s3.send(command);
-    console.log(`Upload successful to ${bucket}, key:`, key);
+    console.log(`Upload successful to ${DEFAULT_BUCKET}/${key}`);
     
     return key;
 
@@ -60,4 +63,4 @@ async function uploadToMinio(file, bucketName) {
 }
 
 export default upload;
-export { uploadToMinio, BUCKETS };
+export { uploadToMinio, FOLDERS, DEFAULT_BUCKET, s3 };

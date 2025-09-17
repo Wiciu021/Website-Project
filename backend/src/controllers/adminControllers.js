@@ -30,3 +30,32 @@ export const createPost = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+export const createDocument = async (req, res) => {
+  try {
+    const { title, description, date, category } = req.body;
+    console.log('Received document data:', req.body);
+
+    let documentKey = 'default.pdf';
+    if (req.file) {
+      documentKey = await uploadToMinio(req.file, 'DOCS');
+      console.log('Document uploaded with key:', documentKey);
+    }
+
+    const newDocument = await prisma.document.create({
+      data: {
+        title,
+        description,
+        date,
+        file: documentKey,
+        category
+      }
+    });
+
+    console.log('Document created:', newDocument);
+    res.status(201).json(newDocument);
+  } catch (error) {
+    console.error('Error creating document:', error);
+    res.status(500).json({ error: error.message });
+  }
+};
