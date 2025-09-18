@@ -18,8 +18,8 @@ export const sendEmail = async (req, res) => {
         user: config.mailUser,
         pass: config.mailPass
       },
-      debug: true, // Dodaj debugowanie
-      logger: true // Loguj wszystko
+      // debug: true,
+      // logger: true
     });
 
     const mailOptions = {

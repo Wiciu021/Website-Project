@@ -8,10 +8,10 @@ export const getAllTeachers = async (req, res) => {
         { surname: 'asc' }
       ]
     });
-    console.log('Teachers fetched:', teachers); // Add logging
+    console.log('Teachers fetched:', teachers);
     res.json(teachers);
   } catch (err) {
-    console.error('Database error:', err); // Add error logging
+    console.error('Database error:', err);
     res.status(500).json({ error: 'Błąd serwera przy pobieraniu nauczycieli' });
   }
 };

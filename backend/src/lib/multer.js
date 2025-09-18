@@ -1,8 +1,6 @@
 import multer from 'multer';
 import { S3Client, PutObjectCommand, GetObjectCommand } from "@aws-sdk/client-s3";
-import dotenv from 'dotenv';
-
-dotenv.config();
+import config from '../config/config.js';
 
 const storage = multer.memoryStorage();
 const upload = multer({ 
@@ -11,22 +9,23 @@ const upload = multer({
 });
 
 const s3 = new S3Client({
-  endpoint: process.env.MINIO_ENDPOINT || "http://minio:9000",
-  region: process.env.MINIO_REGION || "us-east-1",
+  endpoint: config.minioEndpoint,
+  region: config.minioRegion,
   credentials: {
-    accessKeyId: process.env.MINIO_ACCESS_KEY || "minioadmin",
-    secretAccessKey: process.env.MINIO_SECRET_KEY || "minioadmin"
+    accessKeyId: config.minioAccessKey,
+    secretAccessKey: config.minioSecretKey
   },
   forcePathStyle: true
 });
 
-const DEFAULT_BUCKET = process.env.MINIO_BUCKET || 'default-bucket';
+const DEFAULT_BUCKET = config.minioBucket;
 
 const FOLDERS = {
   POSTS: 'posts',
   TEACHERS: 'teachers',
   GALLERY: 'gallery',
-  DOCS: 'docs'
+  DOCS: 'docs',
+  SUBSTITUTIONS: 'substitutions'
 };
 
 async function uploadToMinio(file, folderKey) {

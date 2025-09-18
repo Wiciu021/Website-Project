@@ -1,16 +1,13 @@
-// scripts/setup-minio-bucket.js
 import { S3Client, CreateBucketCommand, PutBucketPolicyCommand } from "@aws-sdk/client-s3";
-import dotenv from 'dotenv';
 import { DEFAULT_BUCKET } from "../lib/multer.js";
-
-dotenv.config();
+import config from "./config.js";
 
 const s3 = new S3Client({
-  endpoint: process.env.MINIO_ENDPOINT || "http://minio:9000",
-  region: process.env.MINIO_REGION || "us-east-1",
+  endpoint: config.minioEndpoint,
+  region: config.minioRegion,
   credentials: {
-    accessKeyId: process.env.MINIO_ACCESS_KEY || "minioadmin",
-    secretAccessKey: process.env.MINIO_SECRET_KEY || "minioadmin"
+    accessKeyId: config.minioAccessKey,
+    secretAccessKey: config.minioSecretKey
   },
   forcePathStyle: true
 });
