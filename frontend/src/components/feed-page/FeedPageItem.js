@@ -2,14 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const FeedPageItem = React.memo(({ item }) => {
-  console.log('Image URL:', `/posts/${item.img}`);
-  console.log('Post item:', item);
-  
   return (
     <div className='feed-page-item'>
       <div className='card-image-container' style={{
-        backgroundImage: `url(/posts/${item.img})`,
-        // backgroundImage: `url(/paweldobry.jpg)`,
+        backgroundImage: `url(/default-bucket/${item.img})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

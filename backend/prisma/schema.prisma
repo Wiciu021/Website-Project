@@ -28,12 +28,6 @@ model Teacher {
   img               String
 }
 
-model historyData {
-  id    Int @id @default(autoincrement())
-  title String
-  pdf   String
-}
-
 model Album {
   id          Int      @id @default(autoincrement())
   folder      String
@@ -54,9 +48,10 @@ model Photo {
   album       Album    @relation(fields: [albumId], references: [id])
 }
 
-model Docs {
-  id    Int       @id @default(autoincrement())
-  title String
-  date  String
-  file  String
+model Document {
+  id          Int      @id @default(autoincrement())
+  title       String
+  file        String
+  date        DateTime @default(now())
+  category    String?
 }

@@ -1,8 +1,6 @@
 import multer from 'multer';
 import { S3Client, PutObjectCommand, GetObjectCommand } from "@aws-sdk/client-s3";
-import dotenv from 'dotenv';
-
-dotenv.config();
+import config from '../config/config.js';
 
 const storage = multer.memoryStorage();
 const upload = multer({ 
@@ -11,45 +9,49 @@ const upload = multer({
 });
 
 const s3 = new S3Client({
-  endpoint: "http://minio:9000",
-  region: "us-east-1",
+  endpoint: config.minioEndpoint,
+  region: config.minioRegion,
   credentials: {
-    accessKeyId: "minioadmin",
-    secretAccessKey: "minioadmin"
+    accessKeyId: config.minioAccessKey,
+    secretAccessKey: config.minioSecretKey
   },
   forcePathStyle: true
-  // tls: false 
 });
 
-const BUCKETS = {
+const DEFAULT_BUCKET = config.minioBucket;
+
+const FOLDERS = {
   POSTS: 'posts',
   TEACHERS: 'teachers',
   GALLERY: 'gallery',
-  DOCS: 'docs'
+  DOCS: 'docs',
+  SUBSTITUTIONS: 'substitutions'
 };
 
-async function uploadToMinio(file, bucketName) {
+async function uploadToMinio(file, folderKey) {
   try {
     if (!file) {
       throw new Error('No file provided');
     }
 
-    const bucket = BUCKETS[bucketName];
-    if (!bucket) {
-      throw new Error(`Invalid bucket name: ${bucketName}`);
+    const folder = FOLDERS[folderKey] || (Object.values(FOLDERS).includes(folderKey) ? folderKey : null);
+
+    if (!folder) {
+      throw new Error(`Invalid folder key: ${folderKey}`);
     }
 
-    const key = `${Date.now()}-${file.originalname.replace(/\s+/g, '-')}`;
-    
+    const sanitizedFileName = file.originalname.replace(/\s+/g, '-');
+    const key = `${folder}/${Date.now()}-${sanitizedFileName}`;
+
     const command = new PutObjectCommand({
-      Bucket: bucket,
+      Bucket: DEFAULT_BUCKET,
       Key: key,
       Body: file.buffer,
       ContentType: file.mimetype
     });
 
     await s3.send(command);
-    console.log(`Upload successful to ${bucket}, key:`, key);
+    console.log(`Upload successful to ${DEFAULT_BUCKET}/${key}`);
     
     return key;
 
@@ -60,4 +62,4 @@ async function uploadToMinio(file, bucketName) {
 }
 
 export default upload;
-export { uploadToMinio, BUCKETS };
+export { uploadToMinio, FOLDERS, DEFAULT_BUCKET, s3 };

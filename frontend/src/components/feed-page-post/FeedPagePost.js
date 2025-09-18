@@ -28,7 +28,7 @@ const FeedPagePost = () => {
       <div className='wrapper'>
         <div className='post-card'>
           <div className='card-image-container' style={{
-            backgroundImage: `url(/posts/${post.img})`,
+            backgroundImage: `url(/default-bucket/${post.img})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
