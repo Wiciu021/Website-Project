@@ -1,4 +1,4 @@
-import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaYoutube, FaTiktok  } from "react-icons/fa";
 
 export const socialMedia = [
   {
@@ -18,6 +18,12 @@ export const socialMedia = [
     name: "YouTube",
     url: "https://www.youtube.com/@xxlowgdanskuim.zbigniewahe1121",
     icon: <FaYoutube />
+  },
+  {
+    id: 4,
+    name: "TikTok",
+    url: "https://www.tiktok.com/@gdanskxxlo",
+    icon: <FaTiktok />
   }
 ];
 

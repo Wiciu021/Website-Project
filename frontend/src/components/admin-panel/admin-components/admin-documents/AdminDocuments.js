@@ -40,7 +40,7 @@ const AdminDocuments = ({ documentsData, setDocumentsData }) => {
     <main className='main'>
       <div className='wrapper'>
         <h3>Dodaj Dokumenty</h3>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className='input-container'>
             <input
               type="text"
@@ -78,7 +78,7 @@ const AdminDocuments = ({ documentsData, setDocumentsData }) => {
               <option value="history">historia</option>
             </select>
           </div>
-          <button type='submit' onClick={handleSubmit}>dodaj</button>
+          <button type='submit'>dodaj</button>
         </form>
       </div>
     </main>

@@ -33,6 +33,7 @@ import documentsData from "./Data/documents-data";
 import { use, useEffect, useState } from "react";
 import aboutUsData from "./Data/about-us-data";
 import achievementsData from "./Data/achievements-data";
+import teachingStaffData from "./Data/teaching-staff-data";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -84,6 +85,9 @@ function AnimatedRoutes() {
   const [aboutUsDataContent, setAboutUsDataContent] = useState(aboutUsData);
   // achievements data
   const [achievementsDataContent, setAchievementsDataContent] = useState(achievementsData);
+  // teachers data
+  const [teachersData, setTeachersData] = useState(teachingStaffData);
+
   const location = useLocation();
 
   const pageTransition = {
@@ -290,7 +294,7 @@ function AnimatedRoutes() {
           path="/admin-panel/*"
           element={
             <AdminLayout>
-              <AdminPanelSection feedData={feedContentData} setFeedData={setFeedContentData} galleryData={galleryContentData} setGalleryData={setFeedContentData} documentsData={documentsDataContent} setDocumentsData={setDocumentsDataContent}/>
+              <AdminPanelSection feedData={feedContentData} setFeedData={setFeedContentData} galleryData={galleryContentData} setGalleryData={setFeedContentData} documentsData={documentsDataContent} setDocumentsData={setDocumentsDataContent} teachersData={teachersData} setTeachersData={setTeachersData} />
             </AdminLayout>
           }
         />

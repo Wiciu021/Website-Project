@@ -16,7 +16,7 @@ const AdminGallery = ({ galleryData, setGalleryData }) => {
     }
   }
 
-  const handleClick = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const newId = galleryData[galleryData.length - 1] + 1;
@@ -44,7 +44,7 @@ const AdminGallery = ({ galleryData, setGalleryData }) => {
     <main className='main'>
       <div className='wrapper'>
         <h3>Dodaj Zdjecia</h3>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className='input-container'>
             <input
               type="text"
@@ -79,7 +79,7 @@ const AdminGallery = ({ galleryData, setGalleryData }) => {
               onChange={handleFileChange}
             />
             <label htmlFor="file-input" className='file-label'>wybierz zdjecia</label>
-            <button type='submit' onClick={handleClick}>dodaj</button>
+            <button type='submit'>dodaj</button>
           </div>
         </form>
       </div>

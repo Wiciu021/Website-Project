@@ -8,8 +8,10 @@ import AdminPanelFeed from './admin-components/admin-feed/AdminPanelFeed';
 import { AnimatePresence, motion } from "framer-motion";
 import AdminGallery from './admin-components/admin-gallery/AdminGallery';
 import AdminDocuments from './admin-components/admin-documents/AdminDocuments';
+import AdminZastepstwa from './admin-components/admin-zastepstwa/AdminZastepstwa';
+import AdminTeachers from './admin-components/admin-teachers/AdminTeachers';
 
-const AdminPanelSection = ({ feedData, setFeedData, galleryData, setGalleryData, documentsData, setDocumentsData }) => {
+const AdminPanelSection = ({ feedData, setFeedData, galleryData, setGalleryData, documentsData, setDocumentsData, teachersData, setTeachersData }) => {
 
   const location = useLocation();
 
@@ -28,6 +30,8 @@ const AdminPanelSection = ({ feedData, setFeedData, galleryData, setGalleryData,
           <Route path="aktualnosci" element={<motion.div {...pageTransition} style={{ width: '100vw', height: '100vh', flex: 1, display: 'flex', flexDirection: 'column' }} ><AdminPanelFeed setFeedData={setFeedData} feedData={feedData}/></motion.div> } />
           <Route path="galeria" element={<motion.div {...pageTransition} style={{ width: '100vw', height: '100vh', flex: 1, display: 'flex', flexDirection: 'column' }} ><AdminGallery galleryData={galleryData} setGalleryData={setGalleryData} /></motion.div> } />
           <Route path="dokumenty" element={<motion.div {...pageTransition} style={{ width: '100vw', height: '100vh', flex: 1, display: 'flex', flexDirection: 'column' }} ><AdminDocuments documentsData={documentsData} setDocumentsData={setDocumentsData} /></motion.div> } />
+          <Route path="zastepstwa" element={<motion.div {...pageTransition} style={{ width: '100vw', height: '100vh', flex: 1, display: 'flex', flexDirection: 'column' }} ><AdminZastepstwa /></motion.div> } />
+          <Route path="nauczyciele" element={<motion.div {...pageTransition} style={{ width: '100vw', height: '100vh', flex: 1, display: 'flex', flexDirection: 'column' }} ><AdminTeachers teachersData={teachersData} setTeachersData={setTeachersData} /></motion.div> } />
         </Routes>
       </AnimatePresence>
     </section>

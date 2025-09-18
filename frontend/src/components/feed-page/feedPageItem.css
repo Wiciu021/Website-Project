@@ -97,6 +97,12 @@
   font-weight: 600;
 }
 
+.feed-page-section .feed-page-item:hover .card-desctiption-container h3,
+.feed-page-post .post-card:hover .card-desctiption-container h3,
+.erasmus-section .feed-page-item:hover .card-desctiption-container h3 {
+  text-decoration: underline;
+}
+
 .feed-page-section .feed-page-item .card-desctiption-container .description,
 .erasmus-section .feed-page-item .card-desctiption-container .description {
   font-weight: 400;

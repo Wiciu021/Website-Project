@@ -58,7 +58,7 @@ const AdminPanelFeed = ({ setFeedData, feedData }) => {
     <main className='main'>
       <div className='wrapper'>
         <h3>Dodaj Aktualnosci</h3>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className='input-container'>
             <input
               type="text"
@@ -107,7 +107,7 @@ const AdminPanelFeed = ({ setFeedData, feedData }) => {
               <option value="erasmus">erasmus</option>
             </select>
           </div>
-          <button type='submit' onClick={handleSubmit}>dodaj</button>
+          <button type='submit'>dodaj</button>
         </form>
       </div>
     </main>

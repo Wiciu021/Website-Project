@@ -29,6 +29,10 @@
   font-weight: 500;
 }
 
+.header .icon {
+  width: 80px;
+}
+
 .header .nav {
   width: 80%;
   height: 100%;

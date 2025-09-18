@@ -1,4 +1,5 @@
-import { FaRegNewspaper, FaImages, FaFileAlt } from "react-icons/fa";
+import { FaRegNewspaper, FaImages, FaFileAlt, FaCalendarAlt, FaChalkboardTeacher } from "react-icons/fa";
+import { href } from "react-router-dom";
 
 export const adminSidebarData = [
   {
@@ -18,6 +19,18 @@ export const adminSidebarData = [
     href: "/admin-panel/dokumenty",
     label: "Dokumenty",
     icon: <FaFileAlt size={20} />
+  },
+  {
+    id: 'zastepstwa',
+    href: "/admin-panel/zastepstwa",
+    label: 'Zastepstwa',
+    icon: <FaCalendarAlt size={20} />
+  },
+  {
+    id: 'nauczyciele',
+    href: "/admin-panel/nauczyciele",
+    label: 'Nauczyciele',
+    icon: <FaChalkboardTeacher size={20} />
   }
 ];
 

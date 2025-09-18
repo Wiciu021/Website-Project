@@ -30,6 +30,7 @@ const Header = () => {
     <header className='header' ref={headerRef}>
       <div className='header-inner'>
         <RiPlanetLine className='icons'/>
+        {/* <img src="/xxlo-icon.png" alt="" className='icon'/> */}
         <nav className='nav'>
           <NavList 
             headerData={headerData} 
