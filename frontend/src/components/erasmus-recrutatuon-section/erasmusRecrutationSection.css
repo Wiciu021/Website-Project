@@ -32,7 +32,7 @@
   gap: 2rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .erasmus-recrutation-section {
     padding: 2rem 0.5rem;
   }
@@ -44,5 +44,6 @@
 
   .erasmus-recrutation-section .recrutation-wrapper ul {
     gap: 1.25rem;
+    width: 100%;
   }
 }

@@ -22,7 +22,7 @@
   justify-content: space-around;
   align-items: center;
   /* gap: 4rem; */
-  width: 50%;
+  width: 100%;
 }
 
 .for-students-section .button-container .button {
@@ -38,7 +38,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .for-students-section {
     height: 450px;
   }

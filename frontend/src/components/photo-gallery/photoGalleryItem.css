@@ -2,6 +2,7 @@
   height: 350px;
   background-color: var(--bg-light);
   border-radius: var(--radius-small);
+  text-align: center;
 }
 
 .gallery-grid .flip-card .card-inner {
@@ -59,7 +60,7 @@
   text-align: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
   .gallery-grid .flip-card .card-inner .description {
     opacity: 1;
     transform: translateY(-30px);

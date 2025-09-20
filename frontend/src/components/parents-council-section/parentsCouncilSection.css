@@ -233,7 +233,7 @@
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 1400px) {
   .parents-council-section {
     padding: 2rem .5rem;
   } 
@@ -246,19 +246,20 @@
   .parents-council-section .parents-council-wrapper .content-container {
     width: 100%;
     flex-direction: column;  /* stack */
-    align-items: stretch;
+    align-items: center;
     padding: 1rem;
     gap: 2rem;
+    justify-content: center;
   }
 
   .parents-council-section .parents-council-wrapper .content-container .left-section  {
-    width: 100%;
+    width: 90%;
   }
 
   .parents-council-section .parents-council-wrapper .content-container .right-section {
-    position: static;     /* remove absolute on mobile */
+    position: static;     
     transform: none;
-    width: 100%;
+    width: 70%;
     margin-top: 1rem;
     padding: 1.5rem 1rem;
     align-items: center;
@@ -269,5 +270,21 @@
   .parents-council-section .parents-council-wrapper .content-container .left-section .action-container  {
     flex-direction: column;
     padding-block: 3rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .parents-council-section .parents-council-wrapper .content-container .left-section  {
+    width: 100%;
+  }
+
+  .parents-council-section .parents-council-wrapper .content-container .right-section {
+    width: 80%;
+  }
+}
+
+@media (max-width: 900px) {
+  .parents-council-section .parents-council-wrapper .content-container .right-section {
+    width: 100%;
   }
 }

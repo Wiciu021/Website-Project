@@ -50,7 +50,8 @@
   color: var(--text-muted);
 }
 
-@media (max-width: 600px) {
+
+@media (max-width: 800px) {
   .footer .footer-wrapper li {
     align-items: center;
     justify-content: center;

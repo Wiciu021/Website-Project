@@ -204,15 +204,20 @@ input:-moz-autofill {
   scale: 1.1;
 }
 
+@media (max-width: 1200px) {
+  .contact-section .contact-wrapper .right-section {
+    transform: translate(10%, -50%);
+  }
+}
 
-@media (max-width: 600px) {
+@media (max-width: 1150px) {
   .contact-section {
     padding: 2rem .5rem;
   }
 
   .contact-section .contact-wrapper  {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     height: auto;
     width: 100%;
     gap: 3rem;
@@ -221,7 +226,7 @@ input:-moz-autofill {
 
   .contact-section .contact-wrapper .left-section .input-container,
   .contact-section .contact-wrapper .left-section .area-container {
-    width: 90%;
+    width: 60%;
   }
 
   .contact-section .contact-wrapper .left-section {
@@ -231,12 +236,11 @@ input:-moz-autofill {
 
   .contact-section .contact-wrapper .right-section {
     position: static; /* usuń absolute */
-    width: 100%;
+    width: 70%;
     padding: 3rem 1rem;
     transform: none;
     order: 2;
     height: unset;
-    width: 100%;
     margin-left: 0;
     margin-top: 1.5rem;
     align-items: center;
@@ -247,5 +251,26 @@ input:-moz-autofill {
   .contact-section .contact-wrapper .right-section h3 {
     font-size: 2rem;
     text-align: center;
+  }
+}
+
+@media (max-width: 800px) {
+  .contact-section .contact-wrapper .right-section {
+    width: 90%;
+  }
+  .contact-section .contact-wrapper .left-section .input-container,
+  .contact-section .contact-wrapper .left-section .area-container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-section .contact-wrapper .right-section {
+    width: 100%;
+  }
+
+  .contact-section .contact-wrapper .left-section .input-container,
+  .contact-section .contact-wrapper .left-section .area-container {
+    width: 90%;
   }
 }

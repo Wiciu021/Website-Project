@@ -187,7 +187,7 @@
 
 /* media queries pozdrawiam */
 
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
   .header .hamburger-icon,
   .header .close-button {
     display: flex;

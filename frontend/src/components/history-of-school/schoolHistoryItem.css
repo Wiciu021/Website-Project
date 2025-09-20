@@ -70,12 +70,55 @@
   font-weight: 500;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 850px) {
   .school-history-section .timeline-item {
     width: 250px;
     padding: .5rem;
   }
 
+  .school-history-section .timeline-item.left,
+  .school-history-section .timeline-item.right {
+    right: 25%;
+    left: auto;
+  } 
+
+  .school-history-section .dot {
+    left: 20%;
+  }
+
+  .school-history-section .dot.left::before {
+    left: 20%;
+    right: auto;
+  }
+
+  .school-history-section .timeline-item h4 {
+    font-size: var(--font-titles);
+  }
+
+  .school-history-section .timeline-item a {
+    gap: .75rem;
+    padding: .5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .school-history-section .timeline-item.left,
+  .school-history-section .timeline-item.right {
+    right: 15%;
+    left: auto;
+  } 
+
+  .school-history-section .dot {
+    left: 10%;
+  }
+
+  .school-history-section .dot.left::before {
+    left: 10%;
+    right: auto;
+  }
+}
+
+@media (max-width: 500px) {
   .school-history-section .timeline-item.left,
   .school-history-section .timeline-item.right {
     right: 10px;
@@ -91,12 +134,4 @@
     right: auto;
   }
 
-  .school-history-section .timeline-item h4 {
-    font-size: var(--font-titles);
-  }
-
-  .school-history-section .timeline-item a {
-    gap: .75rem;
-    padding: .5rem;
-  }
 }

@@ -75,6 +75,36 @@
   font-weight: 600;
 }
 
+@media (max-width: 1250px) {
+  .feed-page-section .feed-wrapper .feed-grid,
+  .erasmus-section .erasmus-wrapper .erasmus-grid {
+    max-width: unset;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+  }
+  .page-section {
+    padding: 2rem 2rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .page-section {
+    padding: 2rem 1rem;
+  }
+
+  .feed-page-section .feed-wrapper,
+  .erasmus-section .erasmus-wrapper {
+    width: 100%;
+  }
+
+  .feed-page-section .feed-wrapper .feed-grid,
+  .erasmus-section .erasmus-wrapper .erasmus-grid {
+    max-width: unset;
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 600px) {
   .page-section {
     padding: 2rem .5rem;

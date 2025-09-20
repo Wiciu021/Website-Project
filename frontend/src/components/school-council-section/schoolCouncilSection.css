@@ -22,6 +22,7 @@
 
 .school-council-section .school-council-wrapper h3 {
   font-size: clamp(2rem, 5vw + 1rem, 3rem);
+  text-align: center;
 }
 
 .school-council-section .school-council-wrapper .roles-wrapper {
@@ -63,10 +64,11 @@
 .school-council-section .school-council-wrapper .roles-wrapper .role-item .person {
   color: var(--text-muted);
   font-style: italic;
+  text-align: center;
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .school-council-section {
     padding: 2rem 1rem;
   }

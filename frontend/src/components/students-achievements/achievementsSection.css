@@ -86,7 +86,7 @@
   transform: translateY(0);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1050px) {
   .achievements-section {
     padding: 2rem .5rem;
   }

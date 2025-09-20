@@ -54,3 +54,10 @@
   color: var(--text-muted);
   font-size: var(--font-text);
 }
+
+@media (max-width: 670px) {
+  .teaching-staff-section .grid-item {
+    width: 100%;
+    max-width: 450px;
+  }
+}

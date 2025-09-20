@@ -57,15 +57,25 @@
   row-gap: 2rem;
 }
 
-@media (max-width: 600px) {
-  .teaching-staff-section {
-    padding: 2rem .5rem;
+@media (max-width: 1000px) {
+.teaching-staff-section {
+    padding: 2rem 1rem;
   }
 
   .teaching-staff-section .teaching-staff-container {
     gap: 3rem;
   }
 
+  .teaching-staff-section .teaching-staff-wrapper .head-teachers-wrapper,
+  .teaching-staff-section .teaching-staff-wrapper .teachers-wrapper {
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1.5rem;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 670px) {
   .teaching-staff-section .teaching-staff-wrapper .head-teachers-wrapper,
   .teaching-staff-section .teaching-staff-wrapper .teachers-wrapper {
     width: 100%;

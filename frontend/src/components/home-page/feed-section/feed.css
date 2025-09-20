@@ -20,17 +20,18 @@
 
 .feed-section .feed-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   width: 100%;
   height: 100%;
   max-width: 1300px;
   margin: 0 auto; 
   justify-items: center;
+  padding: 1rem;
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .feed-section .feed-container {
     padding-inline: 1rem;
   }

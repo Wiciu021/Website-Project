@@ -22,6 +22,7 @@
 
 .matura-section .matura-wrapper h3 {
   font-size: clamp(2rem, 5vw + 1rem, 3rem);
+  text-align: center;
 }
 
 .matura-section .matura-wrapper ul {
@@ -34,9 +35,9 @@
   height: 100%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .matura-section {
-    padding: 2rem 0.5rem;
+    padding: 2rem 2rem;
   }
 
   .matura-section .matura-wrapper {
@@ -48,5 +49,11 @@
   .matura-section .matura-wrapper h3 {
     text-align: center;
     width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .matura-section {
+    padding: 2rem .5rem;
   }
 }

@@ -42,7 +42,7 @@
   background-color: var(--bg-light);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 850px) {
   .school-history-section {
     padding: 2rem .5rem;
   }
@@ -52,6 +52,18 @@
     width: 100%;
   }
 
+  .school-history-section .school-history-wrapper .school-timeline::before {
+    left: 20%;
+  }
+}
+
+@media (max-width: 600px) {
+  .school-history-section .school-history-wrapper .school-timeline::before {
+    left: 10%;
+  }
+}
+
+@media (max-width: 500px) {
   .school-history-section .school-history-wrapper .school-timeline::before {
     left: 40px;
   }

@@ -23,7 +23,7 @@
   border-radius: var(--radius-small);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .class-profile-section .class-profile-wrapper {
     padding: 1rem 0.5rem;
   }

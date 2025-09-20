@@ -42,7 +42,7 @@
   margin: 0 auto;             
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .photo-gallery-section {
     padding: 2rem .5rem;
   }

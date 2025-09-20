@@ -9,7 +9,7 @@ const SchoolHistorySection = ({ documentsData }) => {
   const { width, height } = useWindowSize();
 
   const length = documentsData.length;
-  const pointer = width > 600 ? 100 : 150; 
+  const pointer = width > 850 ? 100 : 150; 
   return (
     <section className='school-history-section'>
       <div className='school-history-wrapper'>

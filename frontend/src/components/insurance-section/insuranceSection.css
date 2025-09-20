@@ -100,7 +100,7 @@
   white-space: nowrap;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .insurance-section {
     padding: 2rem 0.5rem;
   }

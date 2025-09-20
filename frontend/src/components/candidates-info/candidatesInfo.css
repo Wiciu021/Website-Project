@@ -87,7 +87,7 @@
   align-items: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1150px) {
   .candidates-info-section {
     padding: 2rem .5rem;
   }
@@ -105,7 +105,7 @@
   .candidates-info-section .candidates-info-wrapper .left-section  {
     width: 100%;
     text-align: center;
-    padding: 1rem .5rem;
+    padding: 2rem 1rem;
   }
 
   .candidates-info-section .candidates-info-wrapper .left-section .rules-container,
@@ -126,5 +126,11 @@
   
   .candidates-info-section img {
     width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .candidates-info-section .candidates-info-wrapper .left-section {
+    padding: 2rem .5rem;
   }
 }

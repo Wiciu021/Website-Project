@@ -52,8 +52,9 @@
   background-color: var(--bg-light);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .erasmus-recrutation-section li {
+    width: 100%;
     min-width: unset;
     height: fit-content;
   }

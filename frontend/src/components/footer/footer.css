@@ -58,7 +58,25 @@
   color: var(--accent-3);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1100px) {
+  .footer {
+    height: fit-content;
+  }
+
+  .footer .footer-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    padding: 2rem;
+    align-items: start; /* elementy będą wyśrodkowane w kolumnach */
+  }
+
+  .footer .footer-wrapper .contact-container {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 800px) {
   .footer {
     height: fit-content;
     flex-direction: column;
@@ -66,7 +84,8 @@
   }
 
   .footer .footer-wrapper {
-    padding-block: 2rem;
+    display: flex;
+    padding: 2rem;
     flex-direction: column;
     gap: 2.5rem;
     justify-content: center;

@@ -24,7 +24,7 @@
   font-weight: 500;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .feed-page-post .wrapper {
     min-width: unset;
     width: 100%;
