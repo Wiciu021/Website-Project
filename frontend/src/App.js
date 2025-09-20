@@ -35,6 +35,9 @@ import aboutUsData from "./Data/about-us-data";
 import achievementsData from "./Data/achievements-data";
 import teachingStaffData from "./Data/teaching-staff-data";
 
+
+
+
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 

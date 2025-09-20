@@ -4,7 +4,7 @@
   align-items: center;
   width: 100vw;
   min-height: calc(100vh - 55px);
-  padding: 1rem;
+  padding: 2rem;
   background-color: var(--bg-dark);
 }
 
@@ -21,7 +21,7 @@
 }
 
 .matura-section .matura-wrapper h3 {
-  font-size: var(--font-small-headings);
+  font-size: clamp(2rem, 5vw + 1rem, 3rem);
 }
 
 .matura-section .matura-wrapper ul {
@@ -32,4 +32,21 @@
   gap: 1.25rem;
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 600px) {
+  .matura-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .matura-section .matura-wrapper {
+    padding: 0;
+    gap: 2rem;
+    min-height: auto;
+  }
+
+  .matura-section .matura-wrapper h3 {
+    text-align: center;
+    width: 100%;
+  }
 }

@@ -11,3 +11,9 @@
   min-height: calc(100vh - 55px);
   position: relative;
 }
+
+@media (max-width: 600px) {
+  .erasmus-section {
+    padding: 2rem .5rem;
+  }
+}

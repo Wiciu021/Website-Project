@@ -16,8 +16,9 @@
 }
 
 .achievements-section .achievements-wrapper h2 {
-  font-size: var(--font-headings);
+  font-size: clamp(2rem, 5vw + 1rem, 3rem);
   color: var(--text);
+  text-align: center;
 }
 
 .achievements-section .achievements-wrapper .achievements-timeline {
@@ -83,4 +84,10 @@
   opacity: 1;
   pointer-events: all;
   transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .achievements-section {
+    padding: 2rem .5rem;
+  }
 }

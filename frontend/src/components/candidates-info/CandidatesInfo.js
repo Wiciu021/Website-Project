@@ -2,6 +2,7 @@ import React from 'react'
 import './candidatesInfo.css'
 import { FaPaperclip, FaFilePdf, FaFileWord } from "react-icons/fa";
 import { IoBookOutline } from 'react-icons/io5'
+
 const CandidatesInfo = () => {
   return (
     <section className='candidates-info-section'>
@@ -34,7 +35,7 @@ const CandidatesInfo = () => {
         </div>
         <div className='right-section'>
           <a href="/images/informacje-dla-kandydatow2.png" target='_blank' rel="noopener noreferrer">
-            <img src="/images/informacje-dla-kandydatow2.png" alt="tu mialo byc zdjecie pozdro" />
+            <img src="/paweldobry.jpg" alt="tu mialo byc zdjecie pozdro" />
           </a>
         </div>
       </div>

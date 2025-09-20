@@ -80,3 +80,51 @@
   width: 360px;
   border-radius: var(--radius-small);
 }
+
+.candidates-info-section .right-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .candidates-info-section {
+    padding: 2rem .5rem;
+  }
+
+  .candidates-info-section .candidates-info-wrapper {
+    width: 100%;
+    flex-direction: column;
+    height: fit-content;
+    background-color: transparent;
+    border: none;
+    box-shadow: unset;
+    padding: 1rem .25rem;
+  }
+
+  .candidates-info-section .candidates-info-wrapper .left-section  {
+    width: 100%;
+    text-align: center;
+    padding: 1rem .5rem;
+  }
+
+  .candidates-info-section .candidates-info-wrapper .left-section .rules-container,
+  .candidates-info-section .candidates-info-wrapper .left-section .english-test-container, 
+  .candidates-info-section .candidates-info-wrapper .left-section p,
+  .candidates-info-section .candidates-info-wrapper .left-section .survey-container  {
+    flex-direction: column;
+  }
+
+  .candidates-info-section .candidates-info-wrapper .left-section .rules-container {
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+
+  .candidates-info-section .candidates-info-wrapper .left-section .survey-container {
+    gap: 1.5rem;
+  }
+  
+  .candidates-info-section img {
+    width: 100%;
+  }
+}

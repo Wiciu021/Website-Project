@@ -9,12 +9,22 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  background-color: var(--bg);
-  border-radius: var(--radius-card);
+  background-color: var(--bg-light);
+  border-radius: var(--radius-small);
   padding: 2.75rem 3rem;
   gap: 1.5rem;
   overflow: hidden;
   z-index: 3000;
+}
+
+.teaching-staff-pop-up::after {
+  position: absolute;
+  content: '';
+  height: 5px;
+  width: 80%;
+  border-radius: var(--radius-small);
+  background-color: var(--accent-2);
+  bottom: 40px;
 }
 
 
@@ -51,9 +61,21 @@
 .teaching-staff-pop-up h4 {
   font-weight: 600;
   font-size: var(--font-titles);
+  text-align: center;
 }
 
 .teaching-staff-pop-up p {
   text-align: center;
   font-size: var(--font-small-title);
+}
+
+@media (max-width: 600px) {
+  .teaching-staff-pop-up {
+    width: 95%;
+    height: 400px;
+  }
+
+  .teaching-staff-pop-up::after {
+    bottom: 15px;
+  }
 }

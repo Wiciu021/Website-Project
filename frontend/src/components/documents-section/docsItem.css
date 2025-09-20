@@ -13,7 +13,7 @@
   box-shadow: var(--shadow);
   border: var(--border);
   cursor: pointer;
-  transition: .3s;
+  transition: .4s;
 }
 
 .documents-section li a {
@@ -60,4 +60,28 @@
 .documents-section li:hover {
   transform: scale(1.05);
   background-color: var(--bg-light);
+}
+
+@media (max-width: 600px) {
+  .documents-section li {
+    min-width: unset;
+    width: 100%;
+    height: fit-content;
+    padding: .5rem;
+    gap: .75rem;
+  }
+
+  .documents-section li a {
+    gap: 0.75rem;
+    font-size: var(--font-regular);
+  }
+
+  .documents-section li .title {
+    font-size: var(--font-regular);
+  }
+
+  .documents-section li .date {
+    width: 90px;
+    padding: 4px;
+  }
 }

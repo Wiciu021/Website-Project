@@ -58,3 +58,14 @@
   font-size: var(--font-regular);
   text-align: center;
 }
+
+@media (max-width: 600px) {
+  .gallery-grid .flip-card .card-inner .description {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+
+  .gallery-grid .flip-card .card-inner .description::after {
+    width: 95%;
+  }
+}

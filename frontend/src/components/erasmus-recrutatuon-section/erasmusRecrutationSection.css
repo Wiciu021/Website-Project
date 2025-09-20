@@ -20,7 +20,8 @@
 
 .erasmus-recrutation-section .recrutation-wrapper h3 {
   color: var(--text);
-  font-size: var(--font-small-headings);
+  font-size: clamp(2rem, 5vw + 1rem, 3rem);
+  text-align: center;
 }
 
 .erasmus-recrutation-section .recrutation-wrapper ul {
@@ -29,4 +30,19 @@
   align-items: center;
   flex-direction: column;
   gap: 2rem;
+}
+
+@media (max-width: 600px) {
+  .erasmus-recrutation-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .erasmus-recrutation-section .recrutation-wrapper {
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .erasmus-recrutation-section .recrutation-wrapper ul {
+    gap: 1.25rem;
+  }
 }

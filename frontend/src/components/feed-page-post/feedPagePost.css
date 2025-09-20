@@ -23,3 +23,15 @@
   font-size: 1rem;
   font-weight: 500;
 }
+
+@media (max-width: 600px) {
+  .feed-page-post .wrapper {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .feed-page-post .wrapper .post-card {
+    min-height: 550px;
+    padding: 0;
+  }
+}

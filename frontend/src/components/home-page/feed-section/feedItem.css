@@ -5,7 +5,8 @@
   align-items: center;
   flex: 1;
   height: 450px;
-  max-width: 400px;
+   width: 100%;         /* fill its grid cell */
+  max-width: 400px;    /* optional: limit size */
   border-radius: var(--radius-small);
   overflow: hidden;
   background-color: var(--bg);
@@ -115,3 +116,8 @@
   width: 100%;
 }
 
+@media (max-width: 600px) {
+  .feed-item {
+    height: 420px;
+  }
+}

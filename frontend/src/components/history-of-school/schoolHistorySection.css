@@ -16,10 +16,11 @@
   align-items: center;
   flex-direction: column;
   gap: 3rem;
+  width: 100%;
 }
 
 .school-history-section .school-history-wrapper h2  {
-  font-size: var(--font-small-headings);
+  font-size: clamp(2rem, 5vw + 1rem, 3rem);
 }
 
 .school-history-section .school-history-wrapper .school-timeline {
@@ -39,4 +40,19 @@
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--bg-light);
+}
+
+@media (max-width: 600px) {
+  .school-history-section {
+    padding: 2rem .5rem;
+  }
+
+  .school-history-section .school-history-wrapper .school-timeline {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .school-history-section .school-history-wrapper .school-timeline::before {
+    left: 40px;
+  }
 }

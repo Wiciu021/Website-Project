@@ -16,6 +16,7 @@
 
 .feed-page-post .wrapper .post-card {
   width: 100%;
+  height: 500px;
 }
 
 .feed-page-section .feed-page-item .card-image-container,
@@ -139,3 +140,36 @@
   font-weight: 500;
 }
 
+@media (max-width: 600px) {
+  .feed-page-section .feed-wrapper .feed-grid .feed-page-item,
+  .erasmus-section .feed-page-item {
+    width: 100%;
+    height: auto;
+  }
+
+  .feed-page-post .wrapper .post-card {
+    width: 100%;
+  }
+
+  .feed-page-post .wrapper .post-card {
+    gap: .5rem;
+  }
+
+    .feed-page-section .feed-page-item .card-image-container,
+  .feed-page-post .post-card .card-image-container,
+  .erasmus-section .feed-page-item .card-image-container {
+    height: 200px; /* stała wysokość obrazka – reszta dostosuje się */
+  }
+
+  .feed-page-post .post-card .card-wrapper {
+    padding: .5rem;
+    justify-content: space-around;
+  }
+
+  .feed-page-section .feed-page-item .card-wrapper,
+  .erasmus-section .feed-page-item .card-wrapper {
+    padding-bottom: 1rem;
+  }
+
+
+}

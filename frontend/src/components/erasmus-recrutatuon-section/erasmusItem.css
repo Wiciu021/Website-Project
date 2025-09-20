@@ -12,7 +12,7 @@
   gap: 1rem;
   box-shadow: var(--shadow);
   border: var(--border);
-  transition: .3s;
+  transition: .4s;
   cursor: pointer;
 }
 
@@ -50,4 +50,15 @@
 .erasmus-recrutation-section li:hover {
   transform: scale(1.05);
   background-color: var(--bg-light);
+}
+
+@media (max-width: 600px) {
+  .erasmus-recrutation-section li {
+    min-width: unset;
+    height: fit-content;
+  }
+
+  .erasmus-recrutation-section li p {
+    font-size: var(--font-regular);
+  }
 }

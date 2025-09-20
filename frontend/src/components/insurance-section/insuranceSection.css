@@ -1,6 +1,6 @@
 .insurance-section {
   width: 100vw;
-  height: calc(100vh - 55px);
+  min-height: calc(100vh - 55px);
   background-color: var(--bg-dark);
   padding: 2rem;
   display: flex;
@@ -16,7 +16,8 @@
   flex-direction: column;
   background-color: var(--bg);
   width: 1200px;
-  height: calc(100vh - 55px - 4rem);
+  min-height: calc(100vh - 55px - 4rem);
+  height: 100%;
   padding: 1.5rem 1rem;
   border-radius: var(--radius-small);
   box-shadow: var(--shadow);
@@ -33,16 +34,16 @@
 }
 
 .insurance-section .insurance-wrapper .title-container h3 {
-  font-size: var(--font-small-headings);
+  font-size: clamp(2rem, 5vw + 1rem, 3rem);
 }
 
 .insurance-section .insurance-wrapper .title-container p {
   font-style: italic;
   color: var(--text-muted);
+  text-align: center;
 }
 
 .insurance-section .insurance-wrapper .content-container {
-  
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -55,11 +56,12 @@
 
 .insurance-section .insurance-wrapper .content-container .insurance-option {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  justify-content: center; /* spread internal content */
+  align-items: center;
   gap: 2rem;
-  width: 50%;
+  flex: 1; /* allow vertical growth */
+  height: 350px; /* remove content-only height restriction */
   background-color: var(--bg-light);
   border-radius: var(--radius-small);
   box-shadow: var(--shadow);
@@ -67,6 +69,7 @@
 
 .insurance-section .insurance-wrapper .content-container .insurance-option h4 {
   font-size: var(--font-titles);
+  text-align: center;
 }
 
 .insurance-section .insurance-wrapper .content-container .insurance-option ul {
@@ -80,6 +83,7 @@
 
 .insurance-section .insurance-wrapper .content-container .insurance-option ul li {
   color: var(--text-muted);
+  text-align: center;
 }
 
 .insurance-section .insurance-wrapper .content-container .insurance-option a {
@@ -94,4 +98,34 @@
   border: none;
   font-size: var(--font-regular);
   white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .insurance-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .insurance-section .insurance-wrapper {
+    padding: 0;
+    width: 100%;
+    background-color: transparent;
+    box-shadow: unset;
+    border: none;
+  }
+
+  .insurance-section .insurance-wrapper .title-container {
+    gap: .75rem;
+  }
+
+  .insurance-section .insurance-wrapper .title-container h3 {
+    text-align: center;
+  }
+
+  .insurance-section .insurance-wrapper .content-container {
+    flex-direction: column;
+  }
+  .insurance-section .insurance-wrapper .content-container .insurance-option {
+    padding: 2rem 1rem;
+    width: 100%; 
+  }
 }

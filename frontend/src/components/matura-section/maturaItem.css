@@ -22,13 +22,11 @@
   align-items: center;
   gap: 1rem;
   padding: 0.25rem;
-  /* background-color: var(--accent-4); */
-  /* border-radius: var(--radius-button); */
   width: 100%;
   color: var(--accent-3);
   font-weight: 400;
   font-size: var(--font-regular);
-  transition: .3s;
+  transition: .4s;
 }
 
 .matura-section p {
@@ -55,3 +53,19 @@
   transform: scale(1.05);
 }
 
+@media (max-width: 600px) {
+  .matura-section li {
+    min-width: unset;
+    width: 100%;
+    padding: 1rem .5rem;
+    align-items: flex-start;
+  }
+
+  .matura-section li a {
+    padding: 0;
+  }
+
+  .matura-section p {
+    font-size: var(--font-regular);
+  }
+}

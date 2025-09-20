@@ -13,7 +13,6 @@ const ParentsCouncilSection = () => {
       navigator.clipboard.writeText(text);
     }
     setTextToDisplay('skopiowano')
-    setTimeout(() => setTextToDisplay('skopiuj'), 2000)
   }
 
   const [spanVisible, setSpanVisible] = useState(false);
@@ -25,6 +24,7 @@ const ParentsCouncilSection = () => {
 
   const handleMouseDown = () => {
     setSpanVisible(false);
+    setTextToDisplay('skopiuj')
   }
 
   return (

@@ -31,7 +31,8 @@
 .feed-page-post .title-section h1,
 .erasmus-section .title-section h1 {
   color: var(--text);
-  font-size: var(--font-headings);
+  font-size: clamp(2.5rem, 5vw + 1rem, 3rem);
+  text-align: center;
 }
 
 .feed-page-section .feed-wrapper,
@@ -49,8 +50,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  /* place-items: center;
-  justify-items: center; */
+  max-width: 1200px;
+  width: 100%;
+  place-items: center;
+  justify-items: center;
 }
 
 .feed-page-section .scroll-to-top-button,
@@ -72,3 +75,20 @@
   font-weight: 600;
 }
 
+@media (max-width: 600px) {
+  .page-section {
+    padding: 2rem .5rem;
+  }
+
+  .feed-page-section .feed-wrapper,
+  .erasmus-section .erasmus-wrapper {
+    width: 100%;
+  }
+
+  .feed-page-section .feed-wrapper .feed-grid,
+  .erasmus-section .erasmus-wrapper .erasmus-grid {
+    max-width: unset;
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+}

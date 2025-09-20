@@ -16,12 +16,12 @@
   align-items: center;
   gap: 2rem;
   height: 100%;
-  width: 800px;
+  width: 900px;
   padding: 1rem 2rem;
 }
 
 .school-council-section .school-council-wrapper h3 {
-  font-size: var(--font-small-headings);
+  font-size: clamp(2rem, 5vw + 1rem, 3rem);
 }
 
 .school-council-section .school-council-wrapper .roles-wrapper {
@@ -29,13 +29,14 @@
   border-radius: var(--radius-small);
   box-shadow: var(--shadow);
   border: var(--border);
-  padding: 1.25rem;
+  padding: 1.5rem 1.25rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
   width: 100%;
+  height: fit-content;
 }
 
 .school-council-section .school-council-wrapper .roles-wrapper .role-item {
@@ -62,4 +63,23 @@
 .school-council-section .school-council-wrapper .roles-wrapper .role-item .person {
   color: var(--text-muted);
   font-style: italic;
+}
+
+
+@media (max-width: 600px) {
+  .school-council-section {
+    padding: 2rem 1rem;
+  }
+
+  .school-council-section .school-council-wrapper {
+    padding: 0;
+  }
+
+  .school-council-section .school-council-wrapper h3 {
+    text-align: center;
+  }
+
+  .school-council-section .school-council-wrapper .roles-wrapper .role-item .person {
+    text-align: center;
+  }
 }

@@ -13,7 +13,7 @@
 }
 
 .photo-gallery-section h2 {
-  font-size: var(--font-headings);
+  font-size: clamp(2rem, 5vw + 1rem, 3rem);
   color: var(--text);
   text-align: center;
 }
@@ -40,6 +40,16 @@
   row-gap: 3rem;         
   box-sizing: border-box;     
   margin: 0 auto;             
+}
+
+@media (max-width: 600px) {
+  .photo-gallery-section {
+    padding: 2rem .5rem;
+  }
+
+  .photo-gallery-section .gallery-section-wrapper {
+    padding: 0;
+  }
 }
 
 

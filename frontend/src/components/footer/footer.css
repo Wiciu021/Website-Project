@@ -7,7 +7,7 @@
   align-items: center;
   padding: 1rem;
   position: relative;
-  z-index: 2000;
+  z-index: 900;
 }
 
 .footer .footer-wrapper {
@@ -56,4 +56,35 @@
   justify-content: center;
   align-items: center;
   color: var(--accent-3);
+}
+
+@media (max-width: 600px) {
+  .footer {
+    height: fit-content;
+    flex-direction: column;
+    padding-block: 1rem;
+  }
+
+  .footer .footer-wrapper {
+    padding-block: 2rem;
+    flex-direction: column;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer .footer-wrapper .contact-container {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer .footer-wrapper .contact-container .list-wrapper li {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer .footer-wrapper .contact-container h4 {
+    text-align: center;
+    /* width: 100%; */
+  }
 }

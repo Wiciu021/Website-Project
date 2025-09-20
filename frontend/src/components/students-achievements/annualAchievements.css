@@ -12,7 +12,7 @@
 }
 
 .annual-achievements-section h3 {
-  font-size: var(--font-small-headings);
+  font-size: clamp(2rem, 5vw + 1rem, 3rem);
 }
 
 .annual-achievements-section .annual-achievements-wrapper {
@@ -69,6 +69,19 @@
 
 .annual-achievements-section .annual-achievements-wrapper .month-wrapper ul span strong {
   font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .annual-achievements-section {
+    padding: 0;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .annual-achievements-section .annual-achievements-wrapper {
+    width: 100%;
+    padding: 1rem;
+  }
 }
 
 

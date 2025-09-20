@@ -10,14 +10,15 @@
   font-weight: 600;
   font-size: var(--font-regular);
   position: relative;
-  width: 150px;
+  /* width: 150px; */
+  width: fit-content;
 }
 
 .footer li h4::before,
 .footer .contact-container h4::before {
   position: absolute;
   content: '';
-  width: 40%;
+  width: 80%;
   height: 3px;
   background-color: var(--accent-2);
   border-radius: var(--radius-button);
@@ -49,3 +50,18 @@
   color: var(--text-muted);
 }
 
+@media (max-width: 600px) {
+  .footer .footer-wrapper li {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer .footer-wrapper li h4 {
+    text-align: center;
+  }
+
+  .footer li h4::before,
+  .footer .contact-container h4::before {
+    width: 100%;
+  }
+}

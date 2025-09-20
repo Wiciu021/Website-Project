@@ -11,18 +11,14 @@ const AboutUsItem = ({ item }) => {
     <li ref={ref} key={item.id} className={`${item.id % 2 === 0 ? 'left' : 'right'} ${isVisible ? 'visible' : ''}`} style={{
         justifyContent: item.id % 2 == 0 ? 'right' : null,
       }}>
+      <div className='image-container' style={{
+          backgroundImage: 'url(/paweldobry.jpg)',
+      }}></div>
       <div className='description-container' >
         <h3>{item.title}</h3>
         <p>{item.text}</p>
         <div className='button-wrapper'><Link to={item.href} className='learn-more-button'>dowiedz sie wiecej</Link></div>
       </div>
-      <div className='image-container' style={{
-          backgroundImage: 'url(/paweldobry.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          width: '625px',
-          height: '320px'
-      }}></div>
     </li>
   )
 }

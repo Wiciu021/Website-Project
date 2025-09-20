@@ -104,7 +104,6 @@
   position: absolute;
   top: 100%;
   left: -10%;
-  
   opacity: 0;
   transform: translateY(10px);
   pointer-events: none; /* żeby nie klikało, gdy ukryte */
@@ -176,4 +175,140 @@
 .header .nav .list-4 {
   top: 0;
   left: 100%;
+}
+
+.header .hamburger-icon {
+  display: none;
+}
+
+.header .close-button {
+  display: none;
+}
+
+/* media queries pozdrawiam */
+
+@media (max-width: 600px) {
+  .header .hamburger-icon,
+  .header .close-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: .25rem;
+    font-size: var(--font-titles);
+    background-color: transparent;
+    color: var(--text);
+  }
+
+  .header .close-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;   
+    top: 1rem;            
+    right: 1rem;          
+    width: 40px;
+    height: 40px;
+    background-color: var(--accent-2);
+    border-radius: var(--radius-small);
+    color: var(--accent-3);
+    font-size: var(--font-titles);
+    border: none;
+    cursor: pointer;
+    z-index: 1000;       
+  }
+  
+  .header .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    background-color: var(--bg);
+    transform: translateX(-100%); 
+    transition: .4s ease-in-out; 
+    z-index: 999;
+    opacity: 0;
+  }
+
+  .header .nav.nav-visible {
+    transform: translateX(0); 
+    opacity: 1;
+  }
+  
+  .header .nav ul {
+    padding: 3rem 2rem;
+    gap: 2.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .header .nav ul li {
+    height: auto;              
+    display: flex;
+    flex-direction: column;    
+    align-items: flex-start;    
+  }
+
+  .header .nav ul li .list-dropdown {
+    position: static;          
+    transform: none;            
+    opacity: 0;                 
+    max-height: 0;              
+    overflow: hidden;           
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    /* pointer-events: none;       */
+  }
+
+  /* Gdy aktywny */
+  .header .nav ul li .list-dropdown.show {
+    opacity: 1;
+    max-height: 500px;          
+    pointer-events: auto;
+  }
+
+  .header .nav .list-dropdown ul {
+    width: 100%;
+    background-color: var(--bg);
+    padding-left: 1rem;
+    gap: 1rem;
+    padding-block: 1.5rem;
+  }
+
+  .header .nav .list-dropdown li {
+    width: 100%;
+  }
+
+  .header .nav .list-dropdown li .drop-down-button {
+    width: 100%;
+    justify-content: space-between; 
+    padding: .75rem; 
+    text-align: left;
+  }
+  .header .nav .list-dropdown li .drop-down-button p.nav-link {
+    padding: 0;      
+    width: auto;      
+    gap: .5rem;      
+  }
+
+  .header .nav ul li::after {
+    top: 33px;
+  }
+
+  .header .nav ul li.opened-tab::after {
+    width: 85%;
+  }
+
+  .header .nav ul li:has(.drop-down-button).opened-tab::after {
+    width: 90px;
+  }
+
+  .header .nav ul.ul-3 {
+    padding: .5rem 1.5rem;
+  }
 }

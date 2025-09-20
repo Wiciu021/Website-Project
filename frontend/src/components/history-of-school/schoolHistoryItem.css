@@ -36,7 +36,7 @@
 .school-history-section .dot::before {
   position: absolute;
   content: '';
-  width: 150px;
+  width: 250px;
   z-index: -2;
   height: 10px;
   top: 50%;
@@ -68,4 +68,35 @@
   border-radius: var(--radius-small);
   font-size: 1rem;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .school-history-section .timeline-item {
+    width: 250px;
+    padding: .5rem;
+  }
+
+  .school-history-section .timeline-item.left,
+  .school-history-section .timeline-item.right {
+    right: 10px;
+    left: auto;
+  } 
+
+  .school-history-section .dot {
+    left: 40px;
+  }
+
+  .school-history-section .dot.left::before {
+    left: 10%;
+    right: auto;
+  }
+
+  .school-history-section .timeline-item h4 {
+    font-size: var(--font-titles);
+  }
+
+  .school-history-section .timeline-item a {
+    gap: .75rem;
+    padding: .5rem;
+  }
 }
