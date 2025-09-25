@@ -34,7 +34,7 @@ import { use, useEffect, useState } from "react";
 import aboutUsData from "./Data/about-us-data";
 import achievementsData from "./Data/achievements-data";
 import teachingStaffData from "./Data/teaching-staff-data";
-
+import ProtectedRoute from './components/Auth/ProtectedRoute';
 
 
 
@@ -296,9 +296,11 @@ function AnimatedRoutes() {
         <Route
           path="/admin-panel/*"
           element={
-            <AdminLayout>
-              <AdminPanelSection feedData={feedContentData} setFeedData={setFeedContentData} galleryData={galleryContentData} setGalleryData={setFeedContentData} documentsData={documentsDataContent} setDocumentsData={setDocumentsDataContent} teachersData={teachersData} setTeachersData={setTeachersData} />
-            </AdminLayout>
+            <ProtectedRoute>
+              <AdminLayout>
+                <AdminPanelSection feedData={feedContentData} setFeedData={setFeedContentData} galleryData={galleryContentData} setGalleryData={setFeedContentData} documentsData={documentsDataContent} setDocumentsData={setDocumentsDataContent} teachersData={teachersData} setTeachersData={setTeachersData} />
+              </AdminLayout>
+            </ProtectedRoute>
           }
         />
         <Route

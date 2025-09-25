@@ -3,6 +3,8 @@ import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import config from './config/config.js';
+
+// Import routes
 import postRoutes from './routes/postRoutes.js';
 import teachersRoutes from './routes/teachersRoutes.js';
 import docsRoutes from './routes/docsRoutes.js';
@@ -10,6 +12,10 @@ import galleryRoutes from './routes/galleryRoutes.js';
 import loginRoutes from './routes/loginRoutes.js';
 import contactRoutes from './routes/contactRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
+import authRoutes from './routes/authRoutes.js';
+
+// Import middleware
+import authMiddleware from './middlewares/authMiddleware.js';
 
 const app = express();
 
@@ -21,13 +27,20 @@ app.use(cors({
 }));
 app.use(express.json());
 
+// Public routes (no auth required)
+app.use('/api/auth', authRoutes);
 app.use('/api/aktualnosci', postRoutes);
 app.use('/api/zespol-nauczycieli', teachersRoutes);
 app.use('/api/dokumenty-szkolne', docsRoutes);
 app.use('/api/galeria', galleryRoutes);
 app.use('/api/login', loginRoutes);
 app.use('/api/kontakt', contactRoutes);
-app.use('/api/admin', adminRoutes);
+
+// Protected admin routes (auth required)
+app.use('/api/admin', authMiddleware, adminRoutes);
+
+// Static files
+app.use('/static', express.static(path.join(__dirname, '../static')));
 
 app.listen(config.port, '0.0.0.0', () => {
   console.log(`Backend działa na porcie ${config.port}`);

@@ -1,1 +1,0 @@
-// helper to check student/admin role

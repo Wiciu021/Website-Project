@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import authService from '../../../../services/authService.js';
 import './adminPanelFeed.css';
 
 const AdminPanelFeed = ({ setFeedData, feedData }) => {
@@ -18,40 +19,47 @@ const AdminPanelFeed = ({ setFeedData, feedData }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    /*const today = new Date().getFullYear() + '-' + 
-    String(new Date().getMonth() + 1).padStart(2, '0') + '-' + 
-    String(new Date().getDate()).padStart(2, '0');*/
     
     const formData = new FormData();
     formData.append("title", titleInput);
     formData.append("description", descriptionInput);
     formData.append("category", category);
-    formData.append("author", "Twoja Stara");
+    formData.append("author", "Admin");
     formData.append("image", imageFile);
     formData.append("date", new Date().toISOString());
 
     try {
+      // Get fresh token
+      const token = await authService.updateToken();
+      
+      console.log('Making request with token:', token ? 'Present' : 'Missing');
+
       const res = await fetch('/api/admin/posts', {
         method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
         body: formData
       });
 
       if (res.ok) {
-        alert('Dodano post');
         const data = await res.json();
         setFeedData([...feedData, data]);
+        alert('Post created successfully!');
+        
+        // Reset form
+        setTitleInput('');
+        setDescriptionInput('');
+        setImageFile(null);
       } else {
-        alert('Błąd przy dodawaniu postu');
+        const error = await res.json();
+        console.error('Server error:', error);
+        alert(`Error creating post: ${error.error || 'Unknown error'}`);
       }
     } catch (error) {
       console.error('Error submitting form:', error);
+      alert('Network error occurred');
     }
-
-    setTitleInput('');
-    setCategory('');
-    setDescriptionInput('');
-    setImageFile(null);
   };
 
   return (
