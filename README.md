@@ -63,7 +63,7 @@ It features a **public-facing portal** for school information and a secure **adm
 3. **Initialize the database**
   - Run your project's migration/seed script inside the backend container
   ```
-  docker-compose exec backend npx prisma migrate deploy
+  docker compose exec backend npx prisma migrate deploy
   ```
 4. **Configure Keycloak (first-time setup):**
   - Access Keycloak admin: http://localhost:8080/admin/
@@ -98,7 +98,7 @@ The project is designed to be deployed using Docker Compose. For production:
 ### Database Issues
   If tables are missing:
   ```
-  docker-compose exec backend npx prisma migrate deploy
+  docker compose exec backend npx prisma migrate deploy
   ```
 ### Keycloak Authentication Issues
   should work
@@ -106,7 +106,7 @@ The project is designed to be deployed using Docker Compose. For production:
 ### File Upload Issues
 Check MinIO bucket permissions and configuration:
   ```
-  docker-compose exec backend node src/config/setupBuckets.js
+  docker compose exec backend node src/config/setupBuckets.js
   ```
 
 ---
