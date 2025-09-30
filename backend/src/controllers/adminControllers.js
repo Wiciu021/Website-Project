@@ -89,3 +89,33 @@ export const createSubstitution = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+export const createTeacher = async (req, res) => {
+  try {
+    const { name, surname, position, category } = req.body;
+    console.log('Received teacher data:', req.body);
+
+    let imageKey = 'default.png';
+
+    if (req.file) {
+      imageKey = await uploadToMinio(req.file, 'TEACHERS');
+      console.log('Image uploaded with key:', imageKey);
+    }
+
+    const newTeacher = await prisma.teacher.create({
+      data: {
+        name,
+        surname,
+        position,
+        img: imageKey,
+        category
+      }
+    });
+
+    console.log('Teacher created:', newTeacher);
+    res.status(201).json(newTeacher);
+  } catch (error) {
+    console.error('Error creating teacher:', error);
+    res.status(500).json({ error: error.message });
+  }
+}

@@ -23,8 +23,8 @@ model Teacher {
   id                Int      @id @default(autoincrement())
   name              String
   surname           String
-  jobClassification String
-  roleType          String
+  position          String
+  category          String
   img               String
 }
 
