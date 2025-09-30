@@ -7,7 +7,6 @@ class AuthService {
   }
 
   async initKeycloak() {
-    // Prevent multiple initializations
     if (this.initPromise) {
       return this.initPromise;
     }
@@ -16,24 +15,30 @@ class AuthService {
       return keycloak.authenticated;
     }
 
-    this.initPromise = keycloak.init({
-      onLoad: 'check-sso',
-      checkLoginIframe: false,
-      pkceMethod: 'S256'
-    }).then((authenticated) => {
+    try {
+      console.log('Initializing Keycloak...');
+      this.initPromise = keycloak.init({
+        onLoad: 'check-sso',
+        checkLoginIframe: false,
+        pkceMethod: 'S256'
+      });
+      
+      const authenticated = await this.initPromise;
       this.initialized = true;
       console.log('Keycloak initialized, authenticated:', authenticated);
-      return authenticated;
-    }).catch((error) => {
-      console.error('Failed to initialize Keycloak', error);
-      this.initPromise = null;
-      return false;
-    });
 
-    return this.initPromise;
+      return authenticated;
+    } catch (error) {
+      console.error('Failed to initialize Keycloak', error);
+
+      this.initPromise = null;
+      
+      return false;
+    }
   }
 
   login() {
+    console.log('Redirecting to Keycloak login...');
     return keycloak.login();
   }
 
@@ -49,12 +54,10 @@ class AuthService {
     return keycloak.token;
   }
 
-  async updateToken() {
+  async updateToken(minValidity = 30) {
     try {
-      const refreshed = await keycloak.updateToken(5);
-      if (refreshed) {
-        console.log('Token refreshed');
-      }
+      const refreshed = await keycloak.updateToken(minValidity);
+      console.log('Token refresh result:', refreshed ? 'refreshed' : 'still valid');
       return keycloak.token;
     } catch (error) {
       console.error('Failed to refresh token', error);

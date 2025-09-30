@@ -29,7 +29,6 @@ const AdminPanelFeed = ({ setFeedData, feedData }) => {
     formData.append("date", new Date().toISOString());
 
     try {
-      // Get fresh token
       const token = await authService.updateToken();
       
       console.log('Making request with token:', token ? 'Present' : 'Missing');
@@ -37,7 +36,7 @@ const AdminPanelFeed = ({ setFeedData, feedData }) => {
       const res = await fetch('/api/admin/posts', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${token}` //skibidi
         },
         body: formData
       });
@@ -47,7 +46,6 @@ const AdminPanelFeed = ({ setFeedData, feedData }) => {
         setFeedData([...feedData, data]);
         alert('Post created successfully!');
         
-        // Reset form
         setTitleInput('');
         setDescriptionInput('');
         setImageFile(null);
