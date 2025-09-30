@@ -118,4 +118,4 @@ export const createTeacher = async (req, res) => {
     console.error('Error creating teacher:', error);
     res.status(500).json({ error: error.message });
   }
-}
+};

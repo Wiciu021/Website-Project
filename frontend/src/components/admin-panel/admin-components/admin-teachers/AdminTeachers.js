@@ -6,16 +6,16 @@ const AdminTeachers = ({ teachersData, setTeachersData }) => {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [position, setPosition] = useState('');
-  const [imageFile, setImageFile] = useState('');
+  const [imageFile, setImageFile] = useState(null);
   const [category, setCategory] = useState('');
 
   const handleFileChange = (e) => {
     if (e.target.files.length > 0) {
-      imageFile(e.target.files[0]);
+      setImageFile(e.target.files[0]);
     } else {
-      imageFile('');
+      setImageFile(null);
     }
-  }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();

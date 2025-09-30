@@ -55,3 +55,9 @@ model Document {
   date        DateTime @default(now())
   category    String?
 }
+
+model Substitution {
+  id    Int      @id @default(autoincrement())
+  date  String
+  file  String
+}

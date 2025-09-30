@@ -4,7 +4,7 @@ import {
   createDocument, 
   createSubstitution, 
   //createGalleryImage, 
-  createTeacher 
+  createTeacher,
 } from '../controllers/adminControllers.js';
 import upload from '../lib/multer.js';
 

@@ -13,7 +13,7 @@ const TeachingStaffPopUp = ({ itemId, setShowPopUp, teachers }) => {
         <IoCloseOutline />
       </button>
       <img 
-        src={`/static/images/teaching-staff/${item.img}`} 
+        src={`/default-bucket/${item.img}`} 
         alt={`${item.name} ${item.surname}`} 
       />
       <h4>{item.name} {item.surname}</h4>

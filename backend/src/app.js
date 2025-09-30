@@ -8,7 +8,6 @@ import postRoutes from './routes/postRoutes.js';
 import teachersRoutes from './routes/teachersRoutes.js';
 import docsRoutes from './routes/docsRoutes.js';
 import galleryRoutes from './routes/galleryRoutes.js';
-import loginRoutes from './routes/loginRoutes.js';
 import contactRoutes from './routes/contactRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
 import authRoutes from './routes/authRoutes.js';
@@ -30,7 +29,6 @@ app.use('/api/aktualnosci', postRoutes);
 app.use('/api/zespol-nauczycieli', teachersRoutes);
 app.use('/api/dokumenty-szkolne', docsRoutes);
 app.use('/api/galeria', galleryRoutes);
-app.use('/api/login', loginRoutes);
 app.use('/api/kontakt', contactRoutes);
 
 // Protected admin routes
