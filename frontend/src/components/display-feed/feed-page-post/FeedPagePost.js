@@ -1,8 +1,6 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import feedData from '../../Data/feed-data'
-import '../feed-page/feedPageItem.css'
-import '../feed-page/feedPage.css'
+import feedData from '../../../Data/feed-data'
 import './feedPagePost.css'
 
 const FeedPagePost = () => {

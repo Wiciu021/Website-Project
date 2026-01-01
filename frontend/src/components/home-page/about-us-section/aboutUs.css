@@ -1,5 +1,5 @@
 .about-us-section {
-  min-height: 100vh;
+  height: fit-content;
   background-color: var(--bg-dark);
   padding: 5rem 2rem;
   display: flex;
@@ -53,5 +53,12 @@
   }
   .about-us-section .about-us-wrapper ul {
     gap: 3rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .about-us-section .about-us-wrapper ul {
+    max-width: 1600px;
+    padding-inline: 2rem;
   }
 }

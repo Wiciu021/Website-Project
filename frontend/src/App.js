@@ -4,8 +4,8 @@ import ForStudent from "./components/home-page/for-student-section/ForStudent";
 import Feed from "./components/home-page/feed-section/Feed";
 import Footer from "./components/footer/Footer";
 import { BrowserRouter, Routes, Route, useLocation  } from 'react-router-dom'
-import FeedPage from "./components/feed-page/FeedPage";
-import FeedPagePost from "./components/feed-page-post/FeedPagePost";
+import FeedPage from "./components/general-feed-page/GeneralFeedPage";
+import FeedPagePost from "./components/display-feed/feed-page-post/FeedPagePost";
 import LoginPopUp from "./components/login-popup/LoginPopUp";
 import DocumentsSection from "./components/documents-section/DocumentsSection";
 import TeachingStaffSection from "./components/teaching-staff-section/TeachingStaffSection";
@@ -34,9 +34,7 @@ import { use, useEffect, useState } from "react";
 import aboutUsData from "./Data/about-us-data";
 import achievementsData from "./Data/achievements-data";
 import teachingStaffData from "./Data/teaching-staff-data";
-
-
-
+import GeneralFeedPage from "./components/general-feed-page/GeneralFeedPage";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -90,13 +88,13 @@ function AnimatedRoutes() {
   const [achievementsDataContent, setAchievementsDataContent] = useState(achievementsData);
   // teachers data
   const [teachersData, setTeachersData] = useState(teachingStaffData);
-
+  
   const location = useLocation();
 
   const pageTransition = {
-    initial: { opacity: 0, y: 10 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -10 },
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
     transition: { duration: 0.3 },
   };
 
@@ -118,7 +116,7 @@ function AnimatedRoutes() {
           element={
             <DefaultLayout>
               <motion.div {...pageTransition}>
-                <FeedPage feedData={feedContentData} />
+                <GeneralFeedPage feedData={feedContentData} />
               </motion.div>
             </DefaultLayout>
           }
@@ -248,7 +246,7 @@ function AnimatedRoutes() {
           element={
             <DefaultLayout>
               <motion.div {...pageTransition}>
-                <SchoolCouncilSection />
+                <SchoolCouncilSection feedData={feedContentData} />
               </motion.div>
             </DefaultLayout>
           }

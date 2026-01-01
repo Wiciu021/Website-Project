@@ -174,3 +174,41 @@
 
 
 }
+
+@media (min-width: 1550px) {
+  .feed-page-section .feed-wrapper .feed-grid .feed-page-item,
+  .erasmus-section .feed-page-item {
+    height: 550px;
+    width: 450px;
+  }
+
+  .feed-page-section .feed-page-item .card-desctiption-container h3,
+  .feed-page-post .post-card .card-desctiption-container h3,
+  .erasmus-section .feed-page-item .card-desctiption-container h3 {
+    font-size: var(--font-button);
+  }
+
+  .feed-page-section .feed-page-item .card-desctiption-container .description,
+  .erasmus-section .feed-page-item .card-desctiption-container .description { 
+    font-size: var(--font-regular);
+  }
+
+  .feed-page-section .feed-page-item .card-wrapper,
+  .feed-page-post .post-card .card-wrapper,
+  .erasmus-section .feed-page-item .card-wrapper {
+    height: calc(100% - 260px);
+    padding: .75rem 1rem 1.5rem 1rem;
+    justify-content: space-between;
+  }
+
+  .feed-page-section .feed-page-item .card-image-container,
+  .feed-page-post .post-card .card-image-container,
+  .erasmus-section .feed-page-item .card-image-container {
+    height: 260px !important;
+  }
+
+  .feed-page-post .wrapper .post-card {
+    width: 900px !important;
+    height: 600px;
+  } 
+}

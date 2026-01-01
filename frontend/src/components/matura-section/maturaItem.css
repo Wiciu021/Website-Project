@@ -69,3 +69,13 @@
     font-size: var(--font-regular);
   }
 }
+
+@media (min-width: 1600px) {
+  .matura-section li {
+    padding: 1.25rem 1rem;
+  }
+
+  .matura-section li a p {
+    font-size: var(--font-button);
+  }
+}

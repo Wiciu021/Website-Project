@@ -19,7 +19,8 @@
 }
 
 .class-profile-section .class-profile-wrapper img {
-  width: 390px;
+  width: 100%;
+  max-width: 900px;
   border-radius: var(--radius-small);
 }
 

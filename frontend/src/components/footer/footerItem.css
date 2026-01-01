@@ -66,3 +66,19 @@
     width: 100%;
   }
 }
+
+@media (min-width: 1600px) {
+  .footer li h4,
+  .footer .contact-container h4 {
+    font-size: var(--font-small-title);
+  }
+
+  .footer .children-list li .item-list  {
+    font-size: var(--font-regular);
+  }
+
+  .footer li h4::before,
+  .footer .contact-container h4::before {
+    height: 4px;
+  }
+}

@@ -1,6 +1,5 @@
 import React from 'react'
 import './loginPopUp.css'
-import '../feed-page/feedPage.css'
 
 const LoginPopUp = () => {
   const handleSubmit = (event) => {

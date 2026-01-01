@@ -16,13 +16,14 @@
   flex-direction: column;
   background-color: var(--bg);
   width: 1200px;
-  min-height: calc(100vh - 55px - 4rem);
+  min-height: min(calc(100vh - 55px - 4rem), 750px);
   height: 100%;
   padding: 1.5rem 1rem;
   border-radius: var(--radius-small);
   box-shadow: var(--shadow);
   border: var(--border);
   gap: 2rem;
+  max-height: 1000px;
 }
 
 .insurance-section .insurance-wrapper .title-container {

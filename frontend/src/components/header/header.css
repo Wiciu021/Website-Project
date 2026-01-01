@@ -312,3 +312,29 @@
     padding: .5rem 1.5rem;
   }
 }
+
+@media (min-width: 1600px) {
+  .header {
+    height: 60px;
+  }
+
+  .header .header-inner {
+    max-width: 1500px;
+  }
+
+  .header .icons {
+    font-size: var(--font-medium-titles);
+  }
+
+  .header .nav ul li::after {
+    height: 5px;
+  } 
+
+  .header .nav ul li {
+    font-size: var(--font-small-title);
+  }
+
+  .header .nav p.nav-link {
+    font-size: var(--font-small-title);
+  }
+}

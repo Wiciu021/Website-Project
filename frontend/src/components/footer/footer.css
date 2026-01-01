@@ -107,3 +107,10 @@
     /* width: 100%; */
   }
 }
+
+@media (min-width: 1600px) {
+  .footer .footer-wrapper .contact-container .list-wrapper li {
+    height: 40px;
+    width: 40px;
+  }
+}

@@ -57,3 +57,9 @@
     padding: 2rem .5rem;
   }
 }
+
+@media (min-width: 1600px) {
+  .matura-section .matura-wrapper {
+    max-width: 1400px;
+  }
+}

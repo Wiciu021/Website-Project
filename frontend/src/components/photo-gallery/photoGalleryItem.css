@@ -70,3 +70,9 @@
     width: 95%;
   }
 }
+
+@media (min-width: 1500px)  {
+  .gallery-grid .flip-card {
+    height: 380px;
+  }
+}

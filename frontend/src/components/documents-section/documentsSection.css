@@ -16,6 +16,7 @@
 
 .documents-section .docs-wrapper {
   max-width: 1000px;
+  width: 100%;
 }
 
 .documents-section .docs-wrapper h2 {
@@ -40,5 +41,11 @@
 
   .documents-section .docs-wrapper h2  {
     text-align: center;
+  }
+}
+
+@media (min-width: 1600px) {
+  .documents-section .docs-wrapper {
+    max-width: 1300px;
   }
 }

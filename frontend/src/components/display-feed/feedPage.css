@@ -122,3 +122,22 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+@media (min-width: 1550px) {
+  .feed-page-section .feed-wrapper,
+  .erasmus-section .erasmus-wrapper {
+    max-width: 1450px;
+    width: 100%;
+  }
+  .feed-page-section .feed-wrapper .feed-grid,
+.erasmus-section .erasmus-wrapper .erasmus-grid  {
+  max-width: 1400px;
+  width: 100%;
+}
+.feed-page-post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+}

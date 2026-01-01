@@ -70,6 +70,44 @@ export const feedData = [
     date: '2025-07-05',
     author: 'Magdalena Kowalczyk',
     category: 'School'
+  },
+
+  // --- NEW schoolCouncil ITEMS ---
+  {
+    id: 9,
+    title: 'Wybory do Samorządu Uczniowskiego',
+    description: 'Uczniowie zaprezentowali swoje kandydatury i programy, a następnie wzięli udział w szkolnych wyborach.',
+    img: 'council1',
+    date: '2025-07-22',
+    author: 'Anna Nowak',
+    category: 'schoolCouncil'
+  },
+  {
+    id: 10,
+    title: 'Pierwsze zebranie Samorządu Uczniowskiego',
+    description: 'Nowo wybrani członkowie omówili swoje plany oraz propozycje działań na najbliższy semestr.',
+    img: 'council2',
+    date: '2025-07-25',
+    author: 'Karol Wiśniewski',
+    category: 'schoolCouncil'
+  },
+  {
+    id: 11,
+    title: 'Akcja charytatywna organizowana przez Samorząd',
+    description: 'Samorząd Uczniowski zorganizował zbiórkę artykułów szkolnych dla potrzebujących dzieci.',
+    img: 'council3',
+    date: '2025-07-28',
+    author: 'Magdalena Kowalczyk',
+    category: 'schoolCouncil'
+  },
+  {
+    id: 12,
+    title: 'Spotkanie Samorządu z Dyrekcją',
+    description: 'Przedstawiciele Samorządu Uczniowskiego przedstawili swoje pomysły na poprawę życia szkolnego.',
+    img: 'council4',
+    date: '2025-07-30',
+    author: 'Piotr Zieliński',
+    category: 'schoolCouncil'
   }
 ];
 

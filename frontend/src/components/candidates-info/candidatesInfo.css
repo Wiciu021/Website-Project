@@ -134,3 +134,21 @@
     padding: 2rem .5rem;
   }
 }
+
+@media (min-width: 1400px) {
+  
+  .candidates-info-section .candidates-info-wrapper {
+    max-width: 1350px;
+    width: 100%;
+    height: 900px;
+  }
+
+  .candidates-info-section .candidates-info-wrapper .left-section h3 {
+    font-size: var(--font-small-headings);
+  }
+
+  .candidates-info-section .candidates-info-wrapper .left-section button {
+    font-size: var(--font-small-title);
+    padding: 10px 12px;
+  }
+}

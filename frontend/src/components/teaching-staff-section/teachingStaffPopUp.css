@@ -79,3 +79,14 @@
     bottom: 15px;
   }
 }
+
+@media (min-width: 1500px) {
+  .teaching-staff-pop-up {
+    height: 500px;
+    width: 500px;
+  }
+
+  .teaching-staff-pop-up::after {
+    bottom: 50px;
+  }
+}

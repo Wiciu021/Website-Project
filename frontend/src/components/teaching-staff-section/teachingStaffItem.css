@@ -61,3 +61,26 @@
     max-width: 450px;
   }
 }
+
+@media (min-width: 1500px) {
+  .teaching-staff-section .grid-item {
+    width: 400px;
+    height: 400px;
+    gap: 1rem;
+  }
+
+  .teaching-staff-section .grid-item img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .teaching-staff-section .grid-item p {
+    font-size: var(--font-regular);
+  }
+  
+  .teaching-staff-section .grid-item:hover::after  {
+    width: 90%;
+    bottom: 30px;
+  } 
+
+}
