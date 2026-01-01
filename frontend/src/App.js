@@ -294,9 +294,11 @@ function AnimatedRoutes() {
         <Route
           path="/admin-panel/*"
           element={
-            <AdminLayout>
-              <AdminPanelSection feedData={feedContentData} setFeedData={setFeedContentData} galleryData={galleryContentData} setGalleryData={setFeedContentData} documentsData={documentsDataContent} setDocumentsData={setDocumentsDataContent} teachersData={teachersData} setTeachersData={setTeachersData} />
-            </AdminLayout>
+            <ProtectedRoute>
+              <AdminLayout>
+                <AdminPanelSection feedData={feedContentData} setFeedData={setFeedContentData} galleryData={galleryContentData} setGalleryData={setFeedContentData} documentsData={documentsDataContent} setDocumentsData={setDocumentsDataContent} teachersData={teachersData} setTeachersData={setTeachersData} />
+              </AdminLayout>
+            </ProtectedRoute>
           }
         />
         <Route

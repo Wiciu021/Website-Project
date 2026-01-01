@@ -1,34 +1,64 @@
 import React, { useState } from 'react'
+import authService from '../../../../services/authService';
 
 const AdminTeachers = ({ teachersData, setTeachersData }) => {
 
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [position, setPosition] = useState('');
-  const [imageFile, setImageFile] = useState('');
+  const [imageFile, setImageFile] = useState(null);
   const [category, setCategory] = useState('');
 
   const handleFileChange = (e) => {
     if (e.target.files.length > 0) {
-      imageFile(e.target.files[0]);
+      setImageFile(e.target.files[0]);
     } else {
-      imageFile('');
+      setImageFile(null);
     }
-  }
+  };
 
-  const handleSubmit = () => {
-    const newId = teachersData[teachersData.length - 1].id + 1;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    const newItem = {
-      id: newId,
-      name: name,
-      surname: surname,
-      jobClassification: position,
-      roleType: category,
-      img: imageFile
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("surname", surname);
+    formData.append("position", position);
+    formData.append("category", category);
+    formData.append("image", imageFile);
+
+    try {
+      const token = await authService.updateToken();
+
+      console.log('Making request with token:', token ? 'Present' : 'Missing');
+
+      const res = await fetch('/api/admin/teachers', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
+        body: formData
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        setTeachersData([...teachersData, data]);
+        alert('Teacher added successfully!');
+      } else {
+        const error = await res.json();
+        console.error('Server error:', error);
+        alert(`Error adding teacher: ${error.error || 'Unknown error'}`);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Network error occurred');
     }
 
-    setTeachersData([...teachersData, newItem]);
+    setName('');
+    setSurname('');
+    setPosition('');
+    setImageFile(null);
+    setCategory('');
   }
 
   return (
@@ -80,6 +110,7 @@ const AdminTeachers = ({ teachersData, setTeachersData }) => {
               required
               className='file-input'
               id='file-input'
+              onChange={handleFileChange}
             />
             <label htmlFor="file-input" className='file-label'>wybierz zdjecie</label>
             <select

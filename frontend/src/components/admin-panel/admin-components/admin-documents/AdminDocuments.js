@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
+import authService from '../../../../services/authService.js';
 
 const AdminDocuments = ({ documentsData, setDocumentsData }) => {
 
   const [titleInput, setTitleInput] = useState('');
   const [documentFile, setDocumentFile] = useState(null);
   const [category, setCategory] = useState('');
-  // const [descriptionInput, setDescriptionInput] = useState('');
 
   const handleFileChange = (e) => {
     if (e.target.files.length > 0) {
@@ -21,30 +21,38 @@ const AdminDocuments = ({ documentsData, setDocumentsData }) => {
       const formData = new FormData();
       formData.append('title', titleInput);
       formData.append('category', category);
-      // formData.append('description', descriptionInput);
       formData.append('date', new Date().toISOString());
       formData.append('document', documentFile);
     
       try {
+        const token = await authService.updateToken();
+
+        console.log('Making request with token:', token ? 'Present' : 'Missing');
+
         const res = await fetch('/api/admin/docs', {
           method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${token}`
+          },
           body: formData
         });
 
         if (res.ok) {
-          alert('Dodano dokument');
+          alert('Document added successfully!');
           const data = await res.json();
           setDocumentsData([...documentsData, data]);
         } else {
-          alert('Błąd przy dodawaniu dokumentu');
+          const error = await res.json();
+          console.error('Server error:', error);
+          alert(`Error adding document: ${error.error || 'Unknown error'}`);
         }
-    } catch (err) {
-      console.error('Error submitting form:', err);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Network error occurred');
     }
 
     setTitleInput('');
     setCategory('');
-    // setDescriptionInput('');
     setDocumentFile(null);  
   };
 

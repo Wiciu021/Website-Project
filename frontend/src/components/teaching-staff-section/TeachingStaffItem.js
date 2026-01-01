@@ -11,8 +11,8 @@ const TeachingStaffItem = ({ item, showPopUp, setShowPopUp }) => {
   return (
     <div className='grid-item' onClick={handleClick}>
       <img 
-        src={`/static/images/teaching-staff/${!imageError ? item.img : 'default.jpg'}`}
-        alt={`tu mialo byc zdjecie pozdro`} 
+        src={`/default-bucket/${item.img}`}
+        alt={`${item.name} ${item.surname}`} 
         onError={() => setImageError(true)}
       />
       <h4>{item.name} {item.surname}</h4>

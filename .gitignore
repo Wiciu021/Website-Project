@@ -1,11 +1,11 @@
 # Environment variables
 .env
 
-# Prisma artifacts (adjust if you store migrations in this directory)
-prisma/migrations/
-prisma/dev.db*
-prisma/*.db
-prisma/*.db-journal
+# Prisma artifacts
+backend/prisma/migrations/
+backend/prisma/dev.db*
+backend/prisma/*.db
+backend/prisma/*.db-journal
 
 # Build artifacts
 dist/

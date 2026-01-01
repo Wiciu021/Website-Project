@@ -23,8 +23,8 @@ model Teacher {
   id                Int      @id @default(autoincrement())
   name              String
   surname           String
-  jobClassification String
-  roleType          String
+  position          String
+  category          String
   img               String
 }
 
@@ -54,4 +54,10 @@ model Document {
   file        String
   date        DateTime @default(now())
   category    String?
+}
+
+model Substitution {
+  id    Int      @id @default(autoincrement())
+  date  String
+  file  String
 }

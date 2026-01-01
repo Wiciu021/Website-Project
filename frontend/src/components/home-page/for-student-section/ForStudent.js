@@ -1,6 +1,8 @@
 import React from 'react'
 import './forStudent.css'
 
+// dodac te zastępstwa
+
 const ForStudent = () => {
   return (
     <section className='for-students-section'>

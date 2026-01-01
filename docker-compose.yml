@@ -1,6 +1,7 @@
 services:
   frontend:
     build: ./frontend
+    container_name: frontend
     volumes:
       - ./frontend:/app
       - build_files:/app/build
@@ -9,6 +10,7 @@ services:
 
   backend:
     build: ./backend
+    container_name: backend
     env_file:
       - ./.env
     ports:
@@ -19,13 +21,15 @@ services:
     volumes:
       - ./backend:/app
       - static_data:/app/static/images/posts
-    command: sh -c "sleep 5 && node src/config/setupBuckets.js && npm start" # only for the first time
+    command: sh -c "sleep 5 && node src/config/setupBuckets.js && npm start"
     depends_on:
       - db
       - minio
+      - keycloak
 
   nginx:
     build: ./nginx
+    container_name: nginx
     ports:
       - "80:80"
     volumes:
@@ -38,6 +42,7 @@ services:
 
   db:
     image: postgres:15
+    container_name: db
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
@@ -53,8 +58,8 @@ services:
       - "9000:9000"
       - "9001:9001"
     environment:
-      MINIO_ROOT_USER: ${MINIO_ACCESS_KEY:-minioadmin}
-      MINIO_ROOT_PASSWORD: ${MINIO_SECRET_KEY:-minioadmin}
+      MINIO_ROOT_USER: ${MINIO_ACCESS_KEY}
+      MINIO_ROOT_PASSWORD: ${MINIO_SECRET_KEY}
       MINIO_BROWSER_REDIRECT_URL: http://localhost:9001
       MINIO_SERVER_URL: http://minio:9000
     volumes:
@@ -67,17 +72,39 @@ services:
       interval: 30s
       timeout: 20s
       retries: 3
-  
+
   keycloak:
-    image: quay.io/keycloak/keycloak:26.0.0
-    command: start-dev
+    image: quay.io/keycloak/keycloak:22.0
+    container_name: keycloak
     environment:
       KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
       KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://keycloak-db:5432/keycloak
+      KC_DB_USERNAME: keycloak
+      KC_DB_PASSWORD: keycloak
+      KC_HOSTNAME_STRICT: false
+      KC_HOSTNAME_STRICT_HTTPS: false
+      KC_HTTP_ENABLED: true
     ports:
       - "8080:8080"
+    command: start-dev
     depends_on:
-      - db
+      - keycloak-db
+    volumes:
+      - keycloak-app-data:/opt/keycloak/data
+    networks:
+      - default
+
+  keycloak-db:
+    image: postgres:15
+    container_name: keycloak-db
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: keycloak
+    volumes:
+      - keycloak-db-data:/var/lib/postgresql/data
     networks:
       - default
 
@@ -85,6 +112,8 @@ volumes:
   static_data:
   postgres-data:
   build_files:
+  keycloak-db-data:
+  keycloak-app-data:
 
 networks:
   default:

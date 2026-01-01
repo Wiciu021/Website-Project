@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import './teachingStaffSection.css'
 import TeachingStaffItem from './TeachingStaffItem'
 import TeachingStaffPopUp from './TeachingStaffPopUp'
-import teachingStaffData from '../../Data/teaching-staff-data'
+//import teachingStaffData from '../../Data/teaching-staff-data'
 
-const TeachingStaffSection = () => {
-  const [teachers, setTeachers] = useState(teachingStaffData);
+const TeachingStaffSection = ({ teachingStaffData }) => {
+  const [teachers, setTeachers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [showPopUp, setShowPopUp] = useState(false);
@@ -14,7 +14,9 @@ const TeachingStaffSection = () => {
     const fetchTeachers = async () => {
       try {
         const response = await fetch('/api/zespol-nauczycieli');
-        if (!response.ok) throw new Error('Network response was not ok');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
         const data = await response.json();
         setTeachers(data);
       } catch (err) {
@@ -53,7 +55,7 @@ const TeachingStaffSection = () => {
           <h3>Dyrekcja</h3>
           <div className='head-teachers-wrapper'>
             {teachers
-              .filter(item => item.roleType === 'headTeacher')
+              .filter(item => item.category === 'headTeacher')
               .map(item => (
                 <TeachingStaffItem 
                   key={item.id} 
@@ -66,7 +68,7 @@ const TeachingStaffSection = () => {
           <h3>Nauczyciele</h3>
           <div className='teachers-wrapper'>
             {teachers
-              .filter(item => item.roleType === 'teacher')
+              .filter(item => item.category === 'teacher')
               .map(item => (
                 <TeachingStaffItem 
                   key={item.id} 
