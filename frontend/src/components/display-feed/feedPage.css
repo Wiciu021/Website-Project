@@ -49,7 +49,7 @@
 .erasmus-section .erasmus-wrapper .erasmus-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 3rem;
   max-width: 1200px;
   width: 100%;
   place-items: center;

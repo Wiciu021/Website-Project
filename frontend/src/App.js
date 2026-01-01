@@ -35,6 +35,7 @@ import aboutUsData from "./Data/about-us-data";
 import achievementsData from "./Data/achievements-data";
 import teachingStaffData from "./Data/teaching-staff-data";
 import GeneralFeedPage from "./components/general-feed-page/GeneralFeedPage";
+import ProtectedRoute from "./components/Auth/ProtectedRoute";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();

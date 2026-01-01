@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import { createRipple, clearRipple } from '../../../../hooks/rippleEffect';
 
 const AdminSchoolCouncil = () => {
   const [titleInput, setTitleInput] = useState('');
@@ -93,7 +94,7 @@ const AdminSchoolCouncil = () => {
               />
               <label htmlFor="file-input" className='file-label'>wybierz plik</label>
             </div>
-          <button type='submit'>dodaj</button>
+          <button className='ripple-button' onMouseEnter={createRipple} onMouseLeave={clearRipple} type='submit'>dodaj</button>
           </div>
         </form>
       </div>

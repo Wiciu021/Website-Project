@@ -123,7 +123,7 @@ input:-moz-autofill {
 }
 
 .contact-section .contact-wrapper .left-section .submit-button {
-  padding: 8px 16px;
+  padding: 10px 18px;
   font-family: inherit;
   background-color: var(--button-primary);
   color: var(--button-color);

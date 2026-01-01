@@ -1,6 +1,7 @@
 import React from 'react'
 import './teachingStaffPopUp.css'
 import { IoCloseOutline } from "react-icons/io5";
+import { createRipple, clearRipple } from '../../hooks/rippleEffect';
 
 const TeachingStaffPopUp = ({ itemId, setShowPopUp, teachers }) => {
   const item = teachers.find(staff => staff.id === itemId);
@@ -9,7 +10,7 @@ const TeachingStaffPopUp = ({ itemId, setShowPopUp, teachers }) => {
 
   return (
     <div className='teaching-staff-pop-up'>
-      <button className='close-button' onClick={() => setShowPopUp(false)}>
+      <button className='close-button ripple-button' onClick={() => setShowPopUp(false)} onMouseEnter={createRipple} onMouseLeave={clearRipple}>
         <IoCloseOutline />
       </button>
       <img 

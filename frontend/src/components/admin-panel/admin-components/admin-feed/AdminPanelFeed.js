@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import authService from '../../../../services/authService.js';
 import './adminPanelFeed.css';
+import { createRipple, clearRipple } from '../../../../hooks/rippleEffect.js';
 
 const AdminPanelFeed = ({ setFeedData, feedData }) => {
 
@@ -113,7 +114,7 @@ const AdminPanelFeed = ({ setFeedData, feedData }) => {
               <option value="erasmus">erasmus</option>
             </select>
           </div>
-          <button type='submit'>dodaj</button>
+          <button className='ripple-button' onMouseEnter={createRipple} onMouseLeave={clearRipple} type='submit'>dodaj</button>
         </form>
       </div>
     </main>
