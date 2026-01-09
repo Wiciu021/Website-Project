@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 // import './adminGallery.css'
+import { createRipple, clearRipple } from '../../../../hooks/rippleEffect';
 
 const AdminGallery = ({ galleryData, setGalleryData }) => {
 
@@ -79,7 +80,7 @@ const AdminGallery = ({ galleryData, setGalleryData }) => {
               onChange={handleFileChange}
             />
             <label htmlFor="file-input" className='file-label'>wybierz zdjecia</label>
-            <button type='submit'>dodaj</button>
+            <button className='ripple-button' onMouseEnter={createRipple} onMouseLeave={clearRipple} type='submit'>dodaj</button>
           </div>
         </form>
       </div>

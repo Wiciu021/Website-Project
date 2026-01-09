@@ -3,6 +3,7 @@ import headerData from '../../Data/header-nav'
 import FooterItem from './FooterItem'
 import socialMedia from '../../Data/social-media-data'
 import './footer.css'
+import { createRipple, clearRipple } from '../../hooks/rippleEffect'
 
 const Footer = () => {
   return (
@@ -16,7 +17,7 @@ const Footer = () => {
           
           <div className='list-wrapper'>
             {
-              socialMedia && socialMedia.length ? socialMedia.map(dataItem => <li key={dataItem.name}><a href={dataItem.url} rel='noopener noreferrer' target='_blank' className='item-list'>{dataItem.icon}</a></li>) : null
+              socialMedia && socialMedia.length ? socialMedia.map(dataItem => <li className='ripple-button' onMouseEnter={createRipple} onMouseLeave={clearRipple} key={dataItem.name}><a href={dataItem.url} rel='noopener noreferrer' target='_blank' className='item-list'>{dataItem.icon}</a></li>) : null
             }
           </div>
         </div>

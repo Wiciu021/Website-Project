@@ -1,5 +1,4 @@
-import { FaRegNewspaper, FaImages, FaFileAlt, FaCalendarAlt, FaChalkboardTeacher } from "react-icons/fa";
-import { href } from "react-router-dom";
+import { FaRegNewspaper, FaImages, FaFileAlt, FaCalendarAlt, FaChalkboardTeacher, FaUsers } from "react-icons/fa";
 
 export const adminSidebarData = [
   {
@@ -31,6 +30,12 @@ export const adminSidebarData = [
     href: "/admin-panel/nauczyciele",
     label: 'Nauczyciele',
     icon: <FaChalkboardTeacher size={20} />
+  },
+  {
+    id: 'samorzad',
+    href: "/admin-panel/samorzad",
+    label: 'Samorząd',
+    icon: <FaUsers size={20} />   // ← DODANA IKONA
   }
 ];
 

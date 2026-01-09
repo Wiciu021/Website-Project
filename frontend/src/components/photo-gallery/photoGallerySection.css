@@ -52,4 +52,11 @@
   }
 }
 
+@media (min-width: 1500px) {
+  .photo-gallery-section .gallery-section-wrapper .gallery-grid {
+    max-width: 1400px;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  }
+}
+
 

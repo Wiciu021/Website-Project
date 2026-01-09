@@ -3,6 +3,22 @@
   background-color: var(--bg-light);
   border-radius: var(--radius-small);
   text-align: center;
+  transform: translateY(60px);
+  opacity: 0;
+  transition: .3s;
+}
+
+.gallery-grid .flip-card.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.gallery-grid .flip-card:nth-child(3n + 2) {
+  transition-delay: .2s;
+}
+
+.gallery-grid .flip-card:nth-child(3n) {
+  transition-delay: .4s;
 }
 
 .gallery-grid .flip-card .card-inner {
@@ -68,5 +84,11 @@
 
   .gallery-grid .flip-card .card-inner .description::after {
     width: 95%;
+  }
+}
+
+@media (min-width: 1500px)  {
+  .gallery-grid .flip-card {
+    height: 380px;
   }
 }

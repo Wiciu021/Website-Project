@@ -2,8 +2,9 @@ import React from 'react'
 import schoolCouncilData from '../../Data/school-council-data'
 import * as FaIcons from "react-icons/fa";
 import './schoolCouncilSection.css'
+import FeedPage from '../display-feed/FeedPage';
 
-const SchoolCouncilSection = () => {
+const SchoolCouncilSection = ({ feedData }) => {
   return (
     <section className='school-council-section'>
       <div className='school-council-wrapper'>
@@ -26,6 +27,7 @@ const SchoolCouncilSection = () => {
           }
         </div>
       </div>
+      <FeedPage feedData={feedData} title={'Samorzad Info'}/>
     </section>
   )
 }

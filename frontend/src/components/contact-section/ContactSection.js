@@ -3,6 +3,7 @@ import './contactSection.css'
 import contactData from '../../Data/contact-data'
 import socialMediaData from '../../Data/social-media-data'
 import { useState } from 'react'
+import { createRipple, clearRipple } from '../../hooks/rippleEffect'
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -97,7 +98,7 @@ const ContactSection = () => {
             <label htmlFor="message">Wiadomość</label>
           </div>
 
-          <button type='submit' className='submit-button'>wyslij</button>
+          <button type='submit' className='submit-button ripple-button' onMouseEnter={createRipple} onMouseLeave={clearRipple}>wyslij</button>
         </form>
         <div className='right-section'>
           <h3>Informacje kontaktowe</h3>
@@ -114,7 +115,7 @@ const ContactSection = () => {
             {
               socialMediaData && socialMediaData.length ? socialMediaData.map(dataItem => 
                 <li key={dataItem.id}>
-                  <a href={dataItem.url} rel="noopener noreferrer" target='_blank' >{dataItem.icon}</a>
+                  <a href={dataItem.url} rel="noopener noreferrer" target='_blank' className='ripple-button' onMouseEnter={createRipple} onMouseLeave={clearRipple}>{dataItem.icon}</a>
                 </li>
               ) : null
             }

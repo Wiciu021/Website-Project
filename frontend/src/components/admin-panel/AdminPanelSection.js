@@ -10,6 +10,7 @@ import AdminGallery from './admin-components/admin-gallery/AdminGallery';
 import AdminDocuments from './admin-components/admin-documents/AdminDocuments';
 import AdminZastepstwa from './admin-components/admin-zastepstwa/AdminZastepstwa';
 import AdminTeachers from './admin-components/admin-teachers/AdminTeachers';
+import AdminSchoolCouncil from './admin-components/admin-samorzad/AdminSchoolCouncil';
 
 const AdminPanelSection = ({ feedData, setFeedData, galleryData, setGalleryData, documentsData, setDocumentsData, teachersData, setTeachersData }) => {
 
@@ -32,6 +33,7 @@ const AdminPanelSection = ({ feedData, setFeedData, galleryData, setGalleryData,
           <Route path="dokumenty" element={<motion.div {...pageTransition} style={{ width: '100vw', height: '100vh', flex: 1, display: 'flex', flexDirection: 'column' }} ><AdminDocuments documentsData={documentsData} setDocumentsData={setDocumentsData} /></motion.div> } />
           <Route path="zastepstwa" element={<motion.div {...pageTransition} style={{ width: '100vw', height: '100vh', flex: 1, display: 'flex', flexDirection: 'column' }} ><AdminZastepstwa /></motion.div> } />
           <Route path="nauczyciele" element={<motion.div {...pageTransition} style={{ width: '100vw', height: '100vh', flex: 1, display: 'flex', flexDirection: 'column' }} ><AdminTeachers teachersData={teachersData} setTeachersData={setTeachersData} /></motion.div> } />
+          <Route path="samorzad" element={<motion.div {...pageTransition} style={{ width: '100vw', height: '100vh', flex: 1, display: 'flex', flexDirection: 'column' }} ><AdminSchoolCouncil teachersData={teachersData} setTeachersData={setTeachersData} /></motion.div> } />
         </Routes>
       </AnimatePresence>
     </section>

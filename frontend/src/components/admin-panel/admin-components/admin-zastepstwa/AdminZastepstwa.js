@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import authService from '../../../../services/authService.js';
+import { createRipple, clearRipple } from '../../../../hooks/rippleEffect.js';
 
 const AdminZastepstwa = () => {
   const [substitutionFile, setSubstitutionFile] = useState(null);
@@ -64,7 +65,7 @@ const AdminZastepstwa = () => {
               onChange={handleFileChange}
             />
             <label htmlFor="file-input" className='file-label'>wybierz plik</label>
-            <button type='submit'>dodaj</button>
+            <button className='ripple-button' onMouseEnter={createRipple} onMouseLeave={clearRipple} type='submit'>dodaj</button>
           </div>
         </form>
       </div>

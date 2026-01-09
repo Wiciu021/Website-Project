@@ -1,5 +1,5 @@
 .feed-section {
-  min-height: calc(100vh - 55px);
+  height: fit-content;
   width: 100vw;
   display: flex;
   justify-content: top;
@@ -34,5 +34,12 @@
 @media (max-width: 768px) {
   .feed-section .feed-container {
     padding-inline: 1rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .feed-section .feed-container {
+    max-width: 1600px;
+    padding: 2rem;
   }
 }

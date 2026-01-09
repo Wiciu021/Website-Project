@@ -82,5 +82,14 @@
     grid-template-columns: 1fr;
     row-gap: 1.5rem;
     justify-items: center;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1550px) {
+  .teaching-staff-section .teaching-staff-container,
+  .teaching-staff-section .teaching-staff-wrapper .head-teachers-wrapper,
+  .teaching-staff-section .teaching-staff-wrapper .teachers-wrapper  {
+    max-width: 1300px;
   }
 }

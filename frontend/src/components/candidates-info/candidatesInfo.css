@@ -42,6 +42,8 @@
   font-weight: 700;
 }
 
+
+
 .candidates-info-section .candidates-info-wrapper .left-section .rules-container,
 .candidates-info-section .candidates-info-wrapper .left-section .english-test-container, 
 .candidates-info-section .candidates-info-wrapper .left-section p,
@@ -66,6 +68,10 @@
   border: none;
   font-size: var(--font-regular);
   white-space: nowrap;
+}
+
+.candidates-info-section .candidates-info-wrapper .left-section .english-test-container button {
+  width: 250px;
 }
 
 .candidates-info-section .candidates-info-wrapper .left-section button a {
@@ -132,5 +138,27 @@
 @media (max-width: 600px) {
   .candidates-info-section .candidates-info-wrapper .left-section {
     padding: 2rem .5rem;
+  }
+
+  .candidates-info-section .candidates-info-wrapper .left-section .english-test-container button {
+    width: 200px;
+  }
+}
+
+@media (min-width: 1400px) {
+  
+  .candidates-info-section .candidates-info-wrapper {
+    max-width: 1350px;
+    width: 100%;
+    height: 900px;
+  }
+
+  .candidates-info-section .candidates-info-wrapper .left-section h3 {
+    font-size: var(--font-small-headings);
+  }
+
+  .candidates-info-section .candidates-info-wrapper .left-section button {
+    font-size: var(--font-small-title);
+    padding: 10px 12px;
   }
 }

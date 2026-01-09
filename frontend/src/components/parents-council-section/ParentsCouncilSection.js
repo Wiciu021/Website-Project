@@ -5,6 +5,7 @@ import { IoDocumentOutline } from 'react-icons/io5';
 import { FaEnvelope} from "react-icons/fa";
 import parentsCouncilPrezydium from '../../Data/prezydium-data';
 import bankAccounts from '../../Data/bank-account-data';
+import { createRipple, clearRipple } from '../../hooks/rippleEffect';
 
 const ParentsCouncilSection = () => {
 
@@ -56,9 +57,9 @@ const ParentsCouncilSection = () => {
                   display: spanVisible ? 'block' : 'none'
                 }} className='copy-span' >{textToDisplay}</span>
               </div>
-              <a href="/docs-files/Regulamin-RR-XXLO-Gdansk-11.2024-final-2.pdf" rel='noopener noreferrer' target='_blank'><IoDocumentOutline style={{
+              <a className='ripple-button' href="/docs-files/Regulamin-RR-XXLO-Gdansk-11.2024-final-2.pdf" rel='noopener noreferrer' target='_blank' onMouseEnter={createRipple} onMouseLeave={clearRipple}><IoDocumentOutline style={{
                 color: 'var(--button-color)'
-              }}/> Regulamin Rady Rodziców</a>
+              }} /> Regulamin Rady Rodziców</a>
             </div>
           </div>
           <div className='right-section'>   

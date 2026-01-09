@@ -121,3 +121,20 @@
     height: 420px;
   }
 }
+
+@media (min-width: 1600px) {
+  .feed-item {
+    height: 550px;
+    max-width: 600px;
+  }
+
+  .feed-item .description-container h3 {
+    font-size: var(--font-titles);
+  }
+
+  .feed-item .date-container {
+    font-size: var(--font-text);
+    padding: 10px 12px;
+  }
+  
+}

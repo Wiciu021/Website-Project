@@ -2,8 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 800px;
-  height: 500px;
+  width: 1000px;
+  height: 700px;
+  max-width: 95%;
   position: fixed;
   top: calc(50% + 55px/2);
   left: 50%;
@@ -69,6 +70,19 @@
 @media (max-width: 800px) {
   .swiper-container {
     width: 95%;
-    height: 340px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .swiper-container {
+    height: 650px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .swiper-container {
+    width: 1200px;
+    height: 800px;
   }
 }

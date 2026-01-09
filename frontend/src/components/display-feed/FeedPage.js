@@ -6,12 +6,12 @@ import './feedPageItem.css'
 import { IoChevronUpOutline } from 'react-icons/io5';
 // import feedData from '../../Data/feed-data'
 
-const FeedPage = ({ feedData }) => {
+const FeedPage = ({ feedData, title }) => {
   const [posts, setPosts] = useState(feedData);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+  /*useEffect(() => {
     const fetchPosts = async () => {
       try {
         const response = await fetch('/api/aktualnosci');
@@ -29,12 +29,12 @@ const FeedPage = ({ feedData }) => {
     };
 
     fetchPosts();
-  }, []);
+  }, []);*/
 
   return (
     <section className='feed-page-section page-section'>
       <div className='title-section'>
-        <h1>Aktualności</h1>
+        <h1>{title}</h1>
       </div>
       <div className='feed-wrapper'>
         <div className='feed-grid' style={{

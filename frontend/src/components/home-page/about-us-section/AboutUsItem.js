@@ -2,6 +2,7 @@ import React from 'react'
 import './aboutUsItem.css'
 import { Link } from 'react-router-dom'
 import useInView from '../../../hooks/useInView'
+import { createRipple, clearRipple } from '../../../hooks/rippleEffect'
 
 const AboutUsItem = ({ item }) => {
 
@@ -17,7 +18,7 @@ const AboutUsItem = ({ item }) => {
       <div className='description-container' >
         <h3>{item.title}</h3>
         <p>{item.text}</p>
-        <div className='button-wrapper'><Link to={item.href} className='learn-more-button'>dowiedz sie wiecej</Link></div>
+        <div className='button-wrapper'><Link to={item.href} className='learn-more-button ripple-button' onMouseEnter={createRipple} onMouseLeave={clearRipple}>dowiedz sie wiecej</Link></div>
       </div>
     </li>
   )

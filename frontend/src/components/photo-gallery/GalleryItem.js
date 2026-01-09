@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './photoGalleryItem.css'
+import useInView from '../../hooks/useInView';
 
 const GalleryItem = ({ setShowSwiper, item, length, idx }) => {
 
@@ -9,10 +10,11 @@ const GalleryItem = ({ setShowSwiper, item, length, idx }) => {
     setShowSwiper(item.folder);
   }
 
-
+  const [ref, isVisible] = useInView({ threshold: 0.2 });
+  
   return (
     <>
-      <div className='flip-card' onClick={handleClick}>
+      <div ref={ref} className={`flip-card ${isVisible ? 'visible' : ''}`} onClick={handleClick}>
 
         <div className='card-inner' style={{
             // backgroundImage: `url(/static/images/gallery/${item.folder}/${item.img}.jpg)`,

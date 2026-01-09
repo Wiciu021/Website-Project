@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import authService from '../../../../services/authService';
-
+import { createRipple, clearRipple } from '../../../../hooks/rippleEffect';
 const AdminTeachers = ({ teachersData, setTeachersData }) => {
 
   const [name, setName] = useState('');
@@ -126,7 +126,7 @@ const AdminTeachers = ({ teachersData, setTeachersData }) => {
               <option value="headTeacher">dyrektor</option>
             </select>
           </div>
-            <button type='submit'>dodaj</button>
+            <button className='ripple-button' onMouseEnter={createRipple} onMouseLeave={clearRipple} type='submit'>dodaj</button>
         </form>
       </div>
     </main>
