@@ -44,3 +44,21 @@ export const deletePost = async (req, res) => {
     res.status(500).json({ error: 'Błąd przy usuwaniu posta' });
   }
 };
+
+export const getRecentPosts = async (req, res) => {
+  try { 
+    const limit = parseInt(req.query.limit ?? 3);
+    if (!Number.isFinite(limit) || limit <= 0) limit = 3;
+
+    const posts = await prisma.post.findMany({
+      orderBy: { date: 'desc' },
+      take: limit
+    });
+
+    res.set('Cache-Control', 'no-store');
+    res.json(posts);
+  } catch (err) {
+    console.error('Database error:', err);
+    res.status(500).json({ error: 'Błąd serwera przy pobieraniu postów' });
+  }
+}

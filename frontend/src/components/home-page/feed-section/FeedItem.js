@@ -7,7 +7,7 @@ const FeedItem = ({ item, index }) => {
 
   const [ref, isVisible] = useInView({ threshold: 0.2 });
 
-  console.log('Image URL:', `/posts/${item.img}`);
+  console.log('Image URL:', `/default-bucket/${item.img}`);
   console.log('Post item:', item);
   
   return (
@@ -19,14 +19,14 @@ const FeedItem = ({ item, index }) => {
         </div>
       <div className='wrapper'>
         <div className="image-wrapper" style={{
-          backgroundImage: `url(/posts/${item.img})`,
+          backgroundImage: `url(/default-bucket/${item.img})`,
           // backgroundImage: `url(/paweldobry.jpg)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}></div>
       </div>
       <div className='description-container'>
-        <Link to={`/post/${item.id}`} className='link'><h3>{item.title}</h3></Link>
+        <Link to={`/aktualnosci/${item.id}`} className='link'><h3>{item.title}</h3></Link>
       </div>
     </div>
   )
