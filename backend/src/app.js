@@ -11,6 +11,7 @@ import galleryRoutes from './routes/galleryRoutes.js';
 import contactRoutes from './routes/contactRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
 import authRoutes from './routes/authRoutes.js';
+import substitutionRoutes from './routes/substitutionRoutes.js';
 
 import authMiddleware from './middlewares/authMiddleware.js';
 
@@ -30,6 +31,7 @@ app.use('/api/zespol-nauczycieli', teachersRoutes);
 app.use('/api/dokumenty-szkolne', docsRoutes);
 app.use('/api/galeria', galleryRoutes);
 app.use('/api/kontakt', contactRoutes);
+app.use('/api/zastepstwa', substitutionRoutes);
 
 // Protected admin routes
 app.use('/api/admin', authMiddleware, adminRoutes);
