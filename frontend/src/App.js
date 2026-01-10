@@ -36,6 +36,7 @@ import achievementsData from "./Data/achievements-data";
 import teachingStaffData from "./Data/teaching-staff-data";
 import GeneralFeedPage from "./components/general-feed-page/GeneralFeedPage";
 import ProtectedRoute from "./components/Auth/ProtectedRoute";
+import HomePage from "./components/home-page/HomePage";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -47,16 +48,16 @@ const ScrollToTop = () => {
   return null;
 }
 
-function HomePage({ feedData, aboutUsData }) {
-  return (
-    <>
-      <HeroSection />
-      <ForStudent />
-      <Feed feedData={feedData} />
-      <AboutUs aboutUsData={aboutUsData} />
-    </>
-  )
-}
+// function HomePage({ feedData, aboutUsData }) {
+//   return (
+//     <section>
+//       <HeroSection />
+//       <ForStudent />
+//       <Feed feedData={feedData} />
+//       <AboutUs aboutUsData={aboutUsData} />
+//     </section>
+//   )
+// }
 
 function DefaultLayout({ children }) {
   return (

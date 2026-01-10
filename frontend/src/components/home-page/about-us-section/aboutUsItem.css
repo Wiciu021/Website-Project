@@ -28,7 +28,7 @@
   padding-right: 9.5rem;
   padding-left: 2rem;
   padding-block: 2rem;
-  background-color: var(--bg-light);
+  background-color: var(--bg);
   border-radius: var(--radius-small);
   box-shadow: var(--shadow);
   display: flex;

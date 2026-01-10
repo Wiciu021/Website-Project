@@ -6,7 +6,7 @@ const HeroSection = () => {
     <section className='hero-section'>
       <div className='hero-container'>
         <div className='text-container'>
-          <h1>XX Licum Ogólnokształcące w Gdańsku</h1>
+          <h1>XX Liceum Ogólnokształcące w Gdańsku</h1>
           <p>Tutaj stajesz się kimś, kim chcesz być</p>
         </div>
       </div>

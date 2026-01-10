@@ -6,7 +6,10 @@
   height: 300px;
   width: 100%;
   gap: 4rem;
-  background-color: var(--bg-dark);
+  /* background-color: var(--bg-dark); */
+  background-color: transparent;
+  position: relative;
+  z-index: 30;
 }
 
 .for-students-section h2{

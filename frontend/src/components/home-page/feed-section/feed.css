@@ -7,7 +7,15 @@
   flex-direction: column;
   overflow: hidden;
   gap: 3rem;
+  background-color: var(--accent-4);
   background-color: var(--bg-dark);
+  /* background-image: linear-gradient(
+    80deg,
+    var(--bg-dark),
+    var(--accent-4)
+  ); */
+  background-color: transparent;
+  /* lowkey to jest do przemyslenia pozdro */
   padding-block: 55px;
 }
 
