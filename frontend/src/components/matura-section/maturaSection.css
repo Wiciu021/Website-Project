@@ -6,6 +6,7 @@
   min-height: calc(100vh - 55px);
   padding: 2rem;
   background-color: var(--bg-dark);
+  background-image: linear-gradient(130deg, var(--bg-dark), var(--bg-dark), var(--accent-5), var(--accent-5), var(--accent-4));
 }
 
 .matura-section .matura-wrapper {

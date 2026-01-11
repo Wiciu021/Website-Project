@@ -8,6 +8,8 @@
   padding-bottom: 3rem;
   background-color: var(--bg-dark);
   color: var(--text);
+    background-image: linear-gradient(155deg, var(--bg-dark), var(--bg-dark), var(--accent-5), var(--accent-5), var(--accent-4));
+
 }
 
 .school-history-section .school-history-wrapper {

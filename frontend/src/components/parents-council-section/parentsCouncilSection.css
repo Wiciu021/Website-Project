@@ -5,6 +5,7 @@
   width: 100vw;
   min-height: calc(100vh - 55px);
   background-color: var(--bg-dark);
+  background-image: linear-gradient(135deg, var(--bg-dark), var(--bg-dark), var(--accent-5), var(--accent-5), var(--accent-4));
   color: var(--text);
   padding: 3rem;
 }

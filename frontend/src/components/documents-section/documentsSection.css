@@ -3,6 +3,7 @@
   padding-block: 2rem;
   width: 100%;
   background-color: var(--bg-dark);
+  background-image: linear-gradient(130deg, var(--bg-dark), var(--bg-dark), var(--accent-5), var(--accent-5), var(--accent-4));
 }
 
 .documents-section,

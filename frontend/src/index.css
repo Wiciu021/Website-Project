@@ -80,8 +80,8 @@ html, body {
 body.light-mode {
   /* Backgrounds */
     --bg-dark: hsl(190, 10%, 91%);     
-    --bg: hsl(190, 10%, 88%);          
-    --bg-light: hsl(190, 10%, 85%);    
+    --bg: hsl(190, 15%, 91%);          
+    --bg-light: hsl(190, 15%, 88%);    
 
     /* Text */
     --text: hsl(220, 20%, 25%);     

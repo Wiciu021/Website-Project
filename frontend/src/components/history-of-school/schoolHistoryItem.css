@@ -2,7 +2,7 @@
   position: absolute;
   width: 320px;
   height: 80px;
-  background-color: var(--bg-light);
+  background-color: var(--bg);
   box-shadow: var(--shadow);
   border: var(--border-card);
   border-radius: var(--radius-small);

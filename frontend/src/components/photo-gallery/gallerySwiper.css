@@ -60,11 +60,38 @@
   font-family: 'Parkinsans', sans-serif;
   font-weight: 600;
   font-size: var(--font-big-title);
-  border-radius: var(--radius-smalll);
+  border-radius: var(--radius-small);
   padding: 5px;
   position: absolute;
   top: 10px;
   right: 10px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+  /* display: block !important; */
+  padding: 12px 25px;
+  background-color: var(--accent-4);
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  z-index: 2000;
+  font-size: var(--font-big-title);
+  position: absolute;
+  top: 50%;
+}
+.swiper-button-prev {
+  left: 0;
+  transform: translate(50%, -50%);
+}
+.swiper-button-next {
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 24px;
 }
 
 @media (max-width: 800px) {

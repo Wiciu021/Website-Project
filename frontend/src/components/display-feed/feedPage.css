@@ -11,7 +11,7 @@
 
 .feed-page-section,
 .feed-page-post {
-  background-color: var(--bg-dark);
+  background-color: transparent;
   color: var(--text);
   min-height: calc(100vh - 55px);
   position: relative;
@@ -73,6 +73,22 @@
   border-radius: var(--radius-full);
   font-size: var(--font-button);
   font-weight: 600;
+}
+
+.feed-page-section .scroll-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+
+.feed-page-section .scroll-button {
+  background-color: var(--accent-2);
+  color: var(--accent-3);
+  border: none;
+  font-size: var(--font-button);
+  padding: 20px 25px;
+  border-radius: var(--radius-full);
 }
 
 @media (max-width: 1250px) {
