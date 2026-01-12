@@ -25,7 +25,7 @@
 .school-history-section .dot {
   height: 30px;
   width: 30px;
-  background-color: var(--bg-light);
+  background-color: var(--accent-2);
   border-radius: var(--radius-full);
   position: absolute;
   left: 50%;
@@ -41,7 +41,7 @@
   height: 10px;
   top: 50%;
   transform: translateY(-50%);
-  background-color: var(--bg-light);
+  background-color: var(--accent-2);
 }
 
 .school-history-section .dot.left::before {

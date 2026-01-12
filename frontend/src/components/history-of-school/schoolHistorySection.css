@@ -41,7 +41,7 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--bg-light);
+  background-color: var(--accent-2);
 }
 
 @media (max-width: 850px) {
