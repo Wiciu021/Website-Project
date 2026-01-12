@@ -32,7 +32,7 @@
   align-items: center;
   justify-content: center; */
   grid-template-columns: 1fr;
-  gap: 5rem;
+  gap: 3rem;
   max-width: 1300px;
   justify-items: center;
 }
@@ -43,11 +43,11 @@
   }
 
   .about-us-section .about-us-wrapper {
-    gap: 5rem;
+    gap: 3rem;
   }
 
   .about-us-section .about-us-wrapper ul {
-    gap: 7rem;
+    gap: 3rem;
   }
 }
 
