@@ -89,7 +89,7 @@
 }
 
 @media (max-width: 1050px) {
-  .achievements-section {
-    padding: 2rem .5rem;
+  .achievements-section { 
+    padding: 2rem 1rem;
   }
 }

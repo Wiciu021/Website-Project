@@ -1,159 +1,44 @@
 .page-section {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   gap: 3rem;
-  padding-block: 1.5rem;
-  padding-bottom: 3rem;
-  /* padding-top: 55px; */
+  padding: 2rem 1rem 3rem;
 }
 
-.feed-page-section,
-.feed-page-post {
-  background-color: transparent;
-  color: var(--text);
-  min-height: calc(100vh - 55px);
-  position: relative;
+.feed-page-section .title-section {
+  font-size: var(--font-big-title);
 }
 
-.feed-page-section .title-section,
-.feed-page-post .title-section,
-.erasmus-section .title-section {
-  height: 100px;
+/* ===== GRID ===== */
+.feed-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.feed-page-section .title-section h1,
-.feed-page-post .title-section h1,
-.erasmus-section .title-section h1 {
-  color: var(--text);
-  font-size: clamp(2.5rem, 5vw + 1rem, 3rem);
-  text-align: center;
-}
-
-.feed-page-section .feed-wrapper,
-.erasmus-section .erasmus-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 1200px;
-  height: fit-content;
-  min-height: calc(60vh);
-}
-
-.feed-page-section .feed-wrapper .feed-grid,
-.erasmus-section .erasmus-wrapper .erasmus-grid {
+.feed-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2rem;
+  row-gap: 3rem;
   width: 100%;
-  place-items: center;
+  max-width: 1500px;
   justify-items: center;
 }
 
-.feed-page-section .scroll-to-top-button,
-.erasmus-section .scroll-to-top-button {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 50%;
-  z-index: 100;
-  transform: translateX(50%);
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--button-color);
-  background-color: var(--button-primary);
-  padding: 0.5rem;
-  border-radius: var(--radius-full);
-  font-size: var(--font-button);
-  font-weight: 600;
-}
 
-.feed-page-section .scroll-buttons {
+
+/* ===== PAGINATION ===== */
+.scroll-buttons {
   display: flex;
-  justify-content: center;
   gap: 1rem;
 }
 
-
-.feed-page-section .scroll-button {
+.scroll-button {
+  border: none;
+  padding: 16px;
+  border-radius: 50%;
   background-color: var(--accent-2);
   color: var(--accent-3);
-  border: none;
-  font-size: var(--font-button);
-  padding: 20px 25px;
-  border-radius: var(--radius-full);
-}
-
-@media (max-width: 1250px) {
-  .feed-page-section .feed-wrapper .feed-grid,
-  .erasmus-section .erasmus-wrapper .erasmus-grid {
-    max-width: unset;
-    width: 100%;
-    grid-template-columns: 1fr 1fr;
-  }
-  .page-section {
-    padding: 2rem 2rem;
-  }
-}
-
-@media (max-width: 850px) {
-  .page-section {
-    padding: 2rem 1rem;
-  }
-
-  .feed-page-section .feed-wrapper,
-  .erasmus-section .erasmus-wrapper {
-    width: 100%;
-  }
-
-  .feed-page-section .feed-wrapper .feed-grid,
-  .erasmus-section .erasmus-wrapper .erasmus-grid {
-    max-width: unset;
-    width: 100%;
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .page-section {
-    padding: 2rem .5rem;
-  }
-
-  .feed-page-section .feed-wrapper,
-  .erasmus-section .erasmus-wrapper {
-    width: 100%;
-  }
-
-  .feed-page-section .feed-wrapper .feed-grid,
-  .erasmus-section .erasmus-wrapper .erasmus-grid {
-    max-width: unset;
-    width: 100%;
-    grid-template-columns: 1fr;
-  }
-}
-
-
-@media (min-width: 1550px) {
-  .feed-page-section .feed-wrapper,
-  .erasmus-section .erasmus-wrapper {
-    max-width: 1450px;
-    width: 100%;
-  }
-  .feed-page-section .feed-wrapper .feed-grid,
-.erasmus-section .erasmus-wrapper .erasmus-grid  {
-  max-width: 1400px;
-  width: 100%;
-}
-.feed-page-post {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 }

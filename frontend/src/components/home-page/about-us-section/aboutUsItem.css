@@ -113,7 +113,7 @@
   right: 0;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1300px) {
   .about-us-section li {
     position: static;       
     width: 100%;

@@ -122,6 +122,14 @@ body {
   font-family: "Parkinsans", sans-serif;
   width: 100vw;
   height: fit-content;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  
 }
 
 ul {

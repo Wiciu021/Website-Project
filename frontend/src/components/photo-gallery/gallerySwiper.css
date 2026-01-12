@@ -78,15 +78,15 @@
   z-index: 2000;
   font-size: var(--font-big-title);
   position: absolute;
-  top: 50%;
+  bottom: 50%;
 }
 .swiper-button-prev {
   left: 0;
-  transform: translate(50%, -50%);
+  transform: translate(50%, 50%);
 }
 .swiper-button-next {
   right: 0;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 50%);
 }
 
 .swiper-button-next::after,
@@ -97,13 +97,21 @@
 @media (max-width: 800px) {
   .swiper-container {
     width: 95%;
-    height: 400px;
+    max-height: 400px;
+  }
+  .swiper-button-prev {
+    left: 0;
+    bottom: 50px;
+  }
+  .swiper-button-next {
+    right: 0;
+    bottom: 50px;
   }
 }
 
 @media (max-width: 1000px) {
   .swiper-container {
-    height: 650px;
+    height: 600px;
   }
 }
 

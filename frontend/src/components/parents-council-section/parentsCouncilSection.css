@@ -234,9 +234,9 @@
 }
 
 
-@media (max-width: 1400px) {
+@media (max-width: 1420px) {
   .parents-council-section {
-    padding: 2rem .5rem;
+    padding: 2rem 2rem;
   } 
 
   .parents-council-section .parents-council-wrapper {

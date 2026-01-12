@@ -37,9 +37,9 @@
   justify-items: center;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1100px) {
   .about-us-section {
-    padding: 2rem 1rem;
+    padding: 2rem 2rem;
   }
 
   .about-us-section .about-us-wrapper {
