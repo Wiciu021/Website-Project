@@ -2,37 +2,40 @@ import prisma from '../lib/prisma.js';
 
 export const getAllPosts = async (req, res) => {
   try {
-    const posts = await prisma.post.findMany({ 
-      orderBy: { date: 'desc' } 
+    const posts = await prisma.post.findMany({
+      orderBy: { date: 'desc' },
+      include: { images: true }
     });
-    console.log('Posts fetched:', posts);
+    res.set('Cache-Control', 'no-store');
     res.json(posts);
-  } catch (err) {
-    console.error('Database error:', err);
-
-    res.status(500).json({ error: 'Błąd serwera przy pobieraniu postów' });
+  } catch {
+    res.status(500).json({ error: 'Server error' });
   }
 };
 
 export const getPostById = async (req, res) => {
-  const id = parseInt(req.params.id);
-  if (isNaN(id)) {
-    return res.status(400).json({ error: 'Nieprawidłowy id posta' });
-  }
-
   try {
-    const post = await prisma.post.findUnique({ where: { id } });
-    if (!post) {
-      return res.status(404).json({ error: 'Post nie znaleziony' });
-    }
+    const id = Number(req.params.id);
+
+    if (!Number.isInteger(id)) return res.status(404).json({ error: 'Not found' });
+
+    const post = await prisma.post.findUnique({
+      where: { id },
+      include: { images: true }
+    });
+
+    if (!post) return res.status(404).json({ error: 'Not found' });
+
+    res.set('Cache-Control', 'no-store');
     res.json(post);
-  } catch (err) {
-    res.status(500).json({ error: 'Błąd serwera przy pobieraniu posta' });
+  } catch {
+    res.status(500).json({ error: 'Server error' });
   }
 };
 
 export const deletePost = async (req, res) => {
   const id = parseInt(req.params.id);
+  
   if (isNaN(id)) {
     return res.status(400).json({ error: 'Nieprawidłowy id posta' });
   }
@@ -46,19 +49,17 @@ export const deletePost = async (req, res) => {
 };
 
 export const getRecentPosts = async (req, res) => {
-  try { 
-    const limit = parseInt(req.query.limit ?? 3);
+  try {
+    let limit = Number(req.query.limit ?? 3);
     if (!Number.isFinite(limit) || limit <= 0) limit = 3;
-
     const posts = await prisma.post.findMany({
       orderBy: { date: 'desc' },
-      take: limit
+      take: limit,
+      include: { images: true }
     });
-
     res.set('Cache-Control', 'no-store');
     res.json(posts);
-  } catch (err) {
-    console.error('Database error:', err);
-    res.status(500).json({ error: 'Błąd serwera przy pobieraniu postów' });
+  } catch {
+    res.status(500).json({ error: 'Server error' });
   }
-}
+};

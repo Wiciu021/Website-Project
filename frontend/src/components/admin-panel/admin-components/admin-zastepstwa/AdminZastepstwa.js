@@ -7,9 +7,9 @@ const AdminZastepstwa = () => {
 
   const handleFileChange = (e) => {
     if (e.target.files.length > 0) {
-      setSubstitutionFile(e.target.files[0].name);
+      setSubstitutionFile(e.target.files[0]);
     } else {
-      setSubstitutionFile('');
+      setSubstitutionFile(null);
     }
   }
 
@@ -17,7 +17,7 @@ const AdminZastepstwa = () => {
     e.preventDefault();
     
     const formData = new FormData();
-    formData.append("file", substitutionFile);
+    formData.append("document", substitutionFile);
     formData.append("date", new Date().toISOString());
 
     try {

@@ -4,8 +4,8 @@ import ForStudent from "./components/home-page/for-student-section/ForStudent";
 import Feed from "./components/home-page/feed-section/Feed";
 import Footer from "./components/footer/Footer";
 import { BrowserRouter, Routes, Route, useLocation  } from 'react-router-dom'
-import FeedPage from "./components/general-feed-page/GeneralFeedPage";
-import FeedPagePost from "./components/display-feed/feed-page-post/FeedPagePost";
+import FeedPage from './components/display-feed/FeedPage'
+import FeedPagePost from './components/display-feed/feed-page-post/FeedPagePost';
 import LoginPopUp from "./components/login-popup/LoginPopUp";
 import DocumentsSection from "./components/documents-section/DocumentsSection";
 import TeachingStaffSection from "./components/teaching-staff-section/TeachingStaffSection";
@@ -118,13 +118,13 @@ function AnimatedRoutes() {
           element={
             <DefaultLayout>
               <motion.div {...pageTransition}>
-                <GeneralFeedPage feedData={feedContentData} />
+                <FeedPage />
               </motion.div>
             </DefaultLayout>
           }
         />
         <Route
-          path="/post/:id"
+          path="/aktualnosci/:id"
           element={
             <DefaultLayout>
               <motion.div {...pageTransition}>

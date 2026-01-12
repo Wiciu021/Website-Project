@@ -16,7 +16,16 @@ model Post {
   author      String
   date        DateTime @default(now())
   img         String
+  images      PostImage[]
   category    String
+}
+
+model PostImage {
+  id        Int      @id @default(autoincrement())
+  key       String
+  createdAt DateTime @default(now())
+  postId    Int
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
 }
 
 model Teacher {

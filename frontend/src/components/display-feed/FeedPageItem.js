@@ -6,11 +6,13 @@ import { createRipple, clearRipple } from '../../hooks/rippleEffect';
 const FeedPageItem = React.memo(({ item }) => {
 
   const [ref, isVisible] = useInView({ threshold: 0.2 });
+  const primaryKey = item?.images?.[0]?.key || item?.img;
+  const imageUrl = primaryKey ? `/default-bucket/${primaryKey}` : '/paweldobry.jpg';
 
   return (
     <div ref={ref} className={`feed-page-item ${isVisible ? 'visible' : ''} `}>
       <div className='card-image-container' style={{
-        backgroundImage: `url(/default-bucket/${item.img})`,
+        backgroundImage: `url(${imageUrl})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -30,7 +32,7 @@ const FeedPageItem = React.memo(({ item }) => {
         </div>
         <div className='card-footer-container'>
           <h4>{item.author}</h4>
-          <Link to={`/post/${item.id}`} className='see-more-button ripple-button' onMouseEnter={createRipple} onMouseLeave={clearRipple}>więcej</Link>
+          <Link to={`/aktualnosci/${item.id}`} className='see-more-button ripple-button' onMouseEnter={createRipple} onMouseLeave={clearRipple}>więcej</Link>
         </div>
       </div>
     </div>

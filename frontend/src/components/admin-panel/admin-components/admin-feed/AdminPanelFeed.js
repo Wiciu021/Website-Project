@@ -7,15 +7,11 @@ const AdminPanelFeed = ({ setFeedData, feedData }) => {
 
   const [titleInput, setTitleInput] = useState('');
   const [descriptionInput, setDescriptionInput] = useState('');
-  const [imageFile, setImageFile] = useState(null);
+  const [images, setImages] = useState([]);
   const [category, setCategory] = useState('');
 
   const handleFileChange = (e) => {
-    if (e.target.files.length > 0) {
-      setImageFile(e.target.files[0]);
-    } else {
-      setImageFile(null);
-    }
+    setImages(Array.from(e.target.files || []));
   };
 
   const handleSubmit = async (e) => {
@@ -26,8 +22,8 @@ const AdminPanelFeed = ({ setFeedData, feedData }) => {
     formData.append("description", descriptionInput);
     formData.append("category", category);
     formData.append("author", "Admin");
-    formData.append("image", imageFile);
     formData.append("date", new Date().toISOString());
+    images.forEach(f => formData.append("images", f)); // multiple
 
     try {
       const token = await authService.updateToken();
@@ -49,7 +45,7 @@ const AdminPanelFeed = ({ setFeedData, feedData }) => {
         
         setTitleInput('');
         setDescriptionInput('');
-        setImageFile(null);
+        setImages([]);
       } else {
         const error = await res.json();
         console.error('Server error:', error);
@@ -97,6 +93,7 @@ const AdminPanelFeed = ({ setFeedData, feedData }) => {
                 required
                 className='file-input'
                 id='file-input'
+                multiple
                 onChange={handleFileChange}
               />
               <label htmlFor="file-input" className='file-label'>wybierz plik</label>

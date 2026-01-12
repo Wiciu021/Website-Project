@@ -5,13 +5,14 @@ export const createPost = async (req, res) => {
   try {
     const { title, description, date, author, category } = req.body;
     
+    /*
     let imageKey = 'default.png';
     // create deafault image in minio to show if no image is provided
 
     if (req.file) {
       imageKey = await uploadToMinio(req.file, 'POSTS');
       console.log('Image uploaded with key:', imageKey);
-    }
+    }*/
 
     const newPost = await prisma.post.create({
       data: {
@@ -24,8 +25,45 @@ export const createPost = async (req, res) => {
       }
     });
 
-    console.log('Post created:', newPost);
-    res.status(201).json(newPost);
+    let files = [];
+    if (Array.isArray(req.files) && req.files.length > 0) {
+      files = req.files;
+    } else if (req.file) {
+      files = [req.file];
+    }
+    const imagesData = [];
+
+    for (const file of files) {
+      const key = `posts/${Date.now()}-${file.originalname}`;
+      await s3.send(new PutObjectCommand({
+        Bucket: DEFAULT_BUCKET,
+        Key: key,
+        Body: file.buffer,
+        ContentType: file.mimetype,
+        CacheControl: 'no-cache'
+      }));
+      imagesData.push({ key, postId: post.id });
+    }
+
+    if (imagesData.length > 0) {
+      await prisma.postImage.createMany({
+        data: imagesData
+      });
+      await prisma.post.update({
+        where: { id: post.id },
+        data: {
+          img: imagesData[0].key
+        }
+      });
+    }
+
+    const fullPost = await prisma.post.findUnique({
+      where: { id: post.id },
+      include: { images: true }
+    });
+
+    console.log('Post created:', fullPost);
+    res.status(201).json(fullPost);
   } catch (error) {
     console.error('Error creating post:', error);
     res.status(500).json({ error: error.message });
@@ -73,6 +111,8 @@ export const createSubstitution = async (req, res) => {
     if (req.file) {
       documentKey = await uploadToMinio(req.file, 'SUBSTITUTIONS');
       console.log('Substitution uploaded with key:', documentKey);
+    } else {
+      console.warn('No file provided for substitution; using default.');
     }
 
     const newSubstitution = await prisma.substitution.create({

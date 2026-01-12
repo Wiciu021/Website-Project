@@ -7,7 +7,10 @@ const FeedItem = ({ item, index }) => {
 
   const [ref, isVisible] = useInView({ threshold: 0.2 });
 
-  console.log('Image URL:', `/default-bucket/${item.img}`);
+  const primaryKey = item?.images?.[0]?.key || item?.img;
+  const imageUrl = primaryKey ? `/default-bucket/${primaryKey}` : '/paweldobry.jpg';
+
+  console.log('Image URL:', imageUrl);
   console.log('Post item:', item);
   
   return (
@@ -19,8 +22,7 @@ const FeedItem = ({ item, index }) => {
         </div>
       <div className='wrapper'>
         <div className="image-wrapper" style={{
-          backgroundImage: `url(/default-bucket/${item.img})`,
-          // backgroundImage: `url(/paweldobry.jpg)`,
+          backgroundImage: `url(${imageUrl})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}></div>
