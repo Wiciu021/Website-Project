@@ -6,6 +6,8 @@
   padding: 2rem;
   background-color: var(--bg-dark);
   color: var(--text);
+    background-image: linear-gradient(115deg, var(--bg-dark), var(--bg-dark), var(--accent-5), var(--accent-5), var(--accent-4));
+
 }
 
 .candidates-info-section .candidates-info-wrapper {
@@ -30,11 +32,11 @@
   flex-direction: column;
   gap: 2.75rem;
   padding: 1rem 2rem;
-  background-color: var(--bg-light);
+  /* background-color: var(--bg-light); */
   /* height: calc(100vh - 55px - 6rem); */
   width: 65%;
-  border-radius: var(--radius-small);
-  box-shadow: var(--shadow);
+  /* border-radius: var(--radius-small); */
+  /* box-shadow: var(--shadow); */
 }
 
 .candidates-info-section .candidates-info-wrapper .left-section h3 {

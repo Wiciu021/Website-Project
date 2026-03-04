@@ -3,7 +3,7 @@ export const feedData = [
     id: 1,
     title: 'Zabawy na świeżym powietrzu',
     description: 'Uczniowie klasy 2B spędzili dzień na świeżym powietrzu, biorąc udział w grach zespołowych i zabawach integracyjnych.',
-    img: 'kids1',
+    image: ['kids1_1.jpg', 'kids1_2.jpg', 'kids1_3.jpg'],
     date: '2025-07-20',
     author: 'Anna Nowak',
     category: 'School'
@@ -12,7 +12,7 @@ export const feedData = [
     id: 2,
     title: 'Zajęcia plastyczne w klasie 1A',
     description: 'Dzieci rozwijały swoją kreatywność, tworząc prace plastyczne z różnorodnych materiałów.',
-    img: 'kids2',
+    image: ['kids2_1.jpg', 'kids2_2.jpg'],
     date: '2025-07-18',
     author: 'Karol Wiśniewski',
     category: 'School'
@@ -21,7 +21,7 @@ export const feedData = [
     id: 3,
     title: 'Wspólne czytanie w bibliotece szkolnej',
     description: 'Klasa 3C odwiedziła bibliotekę, gdzie nauczyciel czytał fragmenty nowej książki o przygodach detektywa Liska.',
-    img: 'kids3',
+    image: ['kids3_1.jpg', 'kids3_2.jpg'],
     date: '2025-07-15',
     author: 'Magdalena Kowalczyk',
     category: 'School'
@@ -30,7 +30,7 @@ export const feedData = [
     id: 4,
     title: 'Eksperymenty z fizyki klasa 6',
     description: 'Uczniowie przeprowadzali proste eksperymenty z grawitacją i ciśnieniem powietrza podczas zajęć w laboratorium.',
-    img: 'kids4',
+    image: ['kids4_1.jpg', 'kids4_2.jpg', 'kids4_3.jpg'],
     date: '2025-07-12',
     author: 'Piotr Zieliński',
     category: 'School'
@@ -39,7 +39,7 @@ export const feedData = [
     id: 5,
     title: 'Wyjazd Erasmus do Hiszpanii',
     description: 'Uczniowie klasy 4B uczestniczyli w tygodniowej wymianie międzynarodowej w ramach programu Erasmus.',
-    img: 'erasmus1',
+    image: ['erasmus1_1.jpg', 'erasmus1_2.jpg', 'erasmus1_3.jpg'],
     date: '2025-07-10',
     author: 'Anna Nowak',
     category: 'Erasmus'
@@ -48,7 +48,7 @@ export const feedData = [
     id: 6,
     title: 'Spotkanie online z partnerami z Włoch',
     description: 'Uczniowie i nauczyciele rozmawiali z włoską szkołą partnerską o wspólnych projektach edukacyjnych.',
-    img: 'erasmus2',
+    image: ['erasmus2_1.jpg', 'erasmus2_2.jpg'],
     date: '2025-07-08',
     author: 'Karol Wiśniewski',
     category: 'Erasmus'
@@ -57,7 +57,7 @@ export const feedData = [
     id: 7,
     title: 'Warsztaty kulinarne Erasmus',
     description: 'Uczniowie przygotowywali tradycyjne potrawy z krajów partnerskich programu Erasmus.',
-    img: 'erasmus3',
+    image: ['erasmus3_1.jpg', 'erasmus3_2.jpg', 'erasmus3_3.jpg'],
     date: '2025-07-03',
     author: 'Piotr Zieliński',
     category: 'Erasmus'
@@ -66,48 +66,10 @@ export const feedData = [
     id: 8,
     title: 'Lekcja muzyki na świeżym powietrzu',
     description: 'Klasa 2A grała na instrumentach i śpiewała w ogrodzie szkolnym.',
-    img: 'kids5',
+    image: ['kids5_1.jpg', 'kids5_2.jpg'],
     date: '2025-07-05',
     author: 'Magdalena Kowalczyk',
     category: 'School'
-  },
-
-  // --- NEW schoolCouncil ITEMS ---
-  {
-    id: 9,
-    title: 'Wybory do Samorządu Uczniowskiego',
-    description: 'Uczniowie zaprezentowali swoje kandydatury i programy, a następnie wzięli udział w szkolnych wyborach.',
-    img: 'council1',
-    date: '2025-07-22',
-    author: 'Anna Nowak',
-    category: 'schoolCouncil'
-  },
-  {
-    id: 10,
-    title: 'Pierwsze zebranie Samorządu Uczniowskiego',
-    description: 'Nowo wybrani członkowie omówili swoje plany oraz propozycje działań na najbliższy semestr.',
-    img: 'council2',
-    date: '2025-07-25',
-    author: 'Karol Wiśniewski',
-    category: 'schoolCouncil'
-  },
-  {
-    id: 11,
-    title: 'Akcja charytatywna organizowana przez Samorząd',
-    description: 'Samorząd Uczniowski zorganizował zbiórkę artykułów szkolnych dla potrzebujących dzieci.',
-    img: 'council3',
-    date: '2025-07-28',
-    author: 'Magdalena Kowalczyk',
-    category: 'schoolCouncil'
-  },
-  {
-    id: 12,
-    title: 'Spotkanie Samorządu z Dyrekcją',
-    description: 'Przedstawiciele Samorządu Uczniowskiego przedstawili swoje pomysły na poprawę życia szkolnego.',
-    img: 'council4',
-    date: '2025-07-30',
-    author: 'Piotr Zieliński',
-    category: 'schoolCouncil'
   }
 ];
 

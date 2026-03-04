@@ -1,7 +1,7 @@
 .annual-achievements-section {
   width: 100vw;
   min-height: calc(100vh - 55px);
-  background-color: var(--bg-dark);
+  background-color: transparent;
   color: var(--text);
   display: flex;
   justify-content: flex-start;

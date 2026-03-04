@@ -10,6 +10,8 @@
   flex-direction: column;
   padding: 1rem;
   gap: 3rem;
+    background-image: linear-gradient(135deg, var(--bg-dark), var(--bg-dark), var(--accent-5), var(--accent-5), var(--accent-4));
+
 }
 
 .photo-gallery-section h2 {

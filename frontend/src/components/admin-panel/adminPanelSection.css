@@ -8,4 +8,5 @@ body.remove-margin {
   width: 100vw;
   background-color: var(--bg-dark);
   display: flex;
+  background-image: linear-gradient(135deg, var(--bg-dark), var(--bg-dark), var(--accent-5), var(--accent-5), var(--accent-4));
 }

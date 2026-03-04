@@ -1,9 +1,10 @@
 import React from 'react'
 import FeedPage from '../display-feed/FeedPage'
+import './generalFeed.css'
 
 const GeneralFeedPage = ({ feedData }) => {
   return (
-    <FeedPage feedData={feedData} title={'Aktualnosci'} />
+    <section className='general-feed-section'><FeedPage feedData={feedData} title={'Aktualnosci'} /></section>
   )
 }
 
