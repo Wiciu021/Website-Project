@@ -59,7 +59,7 @@ const authMiddleware = (req, res, next) => {
 
   jwt.verify(token, getKey, {
     audience: ['school-admin', 'account'], //account bo nie dziala samo school-admin nwm czemu
-    issuer: 'http://localhost:8080/realms/school-realm', 
+    issuer: 'http://auth.stronaxxlo.pl/realms/school-realm', 
     algorithms: ['RS256']
   }, (err, decoded) => {
     if (err) {

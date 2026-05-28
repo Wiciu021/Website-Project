@@ -21,7 +21,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 app.use(cors({
-  origin: ['http://localhost', 'http://localhost:3000', 'http://localhost:80']
+  origin: ['http://stronaxxlo.pl', 'http://localhost:3000', 'http://localhost:80']
 }));
 app.use(express.json());
 
