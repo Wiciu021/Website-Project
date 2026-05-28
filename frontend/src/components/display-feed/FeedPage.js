@@ -4,6 +4,8 @@ import FeedPageItem from './FeedPageItem'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 import { createRipple, clearRipple } from '../../hooks/rippleEffect'
 
+// work with this version
+
 const FeedPage = () => {
   const [posts, setPost] = useState([])
   const [loading, setLoading] = useState(true);
